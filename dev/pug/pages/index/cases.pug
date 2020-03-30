@@ -1,0 +1,58 @@
+-
+    var cases = [
+        {
+            name: 'Августин',
+            text: 'Аналитика, сайт, интеграция с R-Keeper, базовое SEO)',
+            link: '#'
+        },
+        {
+            name: 'АМАМ ',
+            text: 'Аналитика, сайт',
+            link: '#'
+        },
+        {
+            name: 'Академия мебели',
+            text: 'Аналитика, сайт, настройка CRM',
+            link: '#'
+        },
+        {
+            name: 'Радуга окон',
+            text: 'Аналитика, сайт, SEO, контекстная реклама, настройка CRM',
+            link: '#'
+        },
+        {
+            name: 'КвинТур',
+            text: 'Аналитика, сайт, SEO, контекстная реклама',
+            link: '#'
+        },
+        {
+            name: 'БестАвто',
+            text: 'Аналитика, сайт',
+            link: '#'
+        },
+        {
+            name: 'АгроЭксперт',
+            text: 'Аналитика, сайт',
+            link: '#'
+        },
+    ]
+
+// Cases
+section.section
+    .b-cases
+        .h2._title Кейсы
+        ._cards
+            each card in cases
+                a(href=card.link, alt=card.name)._card
+                    .h3._card-title= card.name
+                    ._card-footer
+                        ._btn-wrap
+                            button.b-btn.-small.-round.-light._btn
+                                +icon('arrow', 'btn__icon-arrow')
+                        ._card-desc= card.text
+            ._other
+                button.b-btn.-round.-big._btn-next
+                    +icon('arrow', 'btn__icon-next-arrow')
+                    | Смотреть еще
+                    br
+                    | больше кейсов

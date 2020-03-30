@@ -1,0 +1,50 @@
+.cases
+    &__title
+        font-size: 45px
+        line-height: 50px
+        font-weight: 200
+        margin-bottom: 55px
+    &__cards
+        +row-flex()
+    &__card
+        +col()
+        +size(4)
+        display: flex
+        flex-direction: column
+        text-decoration: none
+        color: $main-font-color
+        padding: 40px 30px
+        background-color: $grey
+        justify-content: space-between
+        height: 330px
+        margin-bottom: 20px
+        transition: all .8s ease
+        &:hover,
+        &:focus
+            background-color: $black
+            color: $white
+            & .cases__btn-wrap
+                width: 30%
+                margin-right: 4%
+        &-title
+            font-size: 40px
+            line-height: 50px
+
+        &-footer
+            display: flex
+            align-items: center
+
+    &__btn
+        &-wrap
+            width: 0
+            overflow: hidden
+            transition: all .8s ease
+
+    &__card-desc
+        width: 65%
+    &__other
+        +col()
+        +size(4)
+        display: flex
+        justify-content: center
+        align-items: center
