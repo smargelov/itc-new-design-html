@@ -14,3 +14,46 @@ block content
 					+icon('plus', 'btn__icon-plus')
 					| Заказать  консультацию
 
+	// Blue tab-slider
+	-
+		var tabs = [
+			{
+				title: 'Поисковое продвижение',
+				text: 'Продвигаем по трафику, позициям и часам. Ставим четкие и понятные цели, строим стратегию продвижения на полгода вперед.',
+				link: '#',
+			},
+			{
+				title: 'Контекстная реклама',
+				text: 'Продвигаем по трафику, позициям и часам. Ставим четкие и понятные цели, строим стратегию продвижения на полгода вперед.',
+				link: '#',
+			},
+			{
+				title: 'Продвижение в соцсетях',
+				text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium adipisci atque dolorum maiores quidem sequi.',
+				link: '#',
+			},
+			{
+				title: 'Разработка сайтов',
+				text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium adipisci atque dolorum maiores quidem sequi.',
+				link: '#',
+			},
+			{
+				title: 'Поддержка сайтов',
+				text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium adipisci atque dolorum maiores quidem sequi.',
+				link: '#',
+			},
+		]
+	section.section
+		.b-taber
+			._left
+				ul._title-items
+					each item, index in tabs
+						li(data-target="tab-num-" + (index + 1), class= index === 0 ? 'active' : '')._title-item
+							p._title= item.title
+			._right
+				ul._cards
+					each item, index in tabs
+						div(id="tab-num-" + (index + 1), class= index === 0 ? 'active' : '')._card
+							p._text= item.text
+							a(href=item.link, alt=item.title).b-btn.-round.-small.-light._btn
+								+icon('arrow', 'btn__icon-arrow')
