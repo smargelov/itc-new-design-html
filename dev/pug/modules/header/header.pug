@@ -1,1 +1,48 @@
-header.header
+-
+    var nav = [
+        {
+            name: 'Порфолио',
+            link: '#'
+        },
+        {
+            name: 'Услуги',
+            link: '#'
+        },
+        {
+            name: 'Компания',
+            link: '#'
+        },
+        {
+            name: 'Блог',
+            link: '#'
+        },
+        {
+            name: 'Контакты',
+            link: '#'
+        },
+    ]
+
+header.b-header
+    ._top-line
+        ._logo
+            +icon('logo', 'header__logo-icon')
+        ._showreel
+            a._link(href='#', alt='Showreel')
+                +icon('triangle-right')
+                | Showreel
+        ._city
+            a._link(href='#', alt='Брянск')
+                +icon('triangle-down')
+                | Брянск
+        ._phone
+            a._link(href='tel:+78005512557', alt='8 (800) 551-25-57') 8 (800) 551-25-57
+        nav.b-main-nav._main-nav
+            ul._items
+                each item in nav
+                    li._item
+                        a(href=item.link, alt=item.name)._link= item.name
+
+            .b-sandwich._sandwich
+                ._line.-top
+                ._line.-middle
+                ._line.-bottom

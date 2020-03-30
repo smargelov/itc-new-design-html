@@ -1,0 +1,92 @@
+.header
+    height: 120px
+
+    &__top-line
+        display: flex
+        justify-content: space-between
+        align-items: center
+
+    &__logo
+        &-icon
+            max-width: 121px
+            max-height: 120px
+
+    &__showreel
+        display: flex
+
+    &__city
+        display: flex
+
+    &__phone
+
+    &__link
+        display: flex
+        align-items: center
+        text-decoration: none
+        color: $accent
+
+        svg
+            width: 17px
+            height: 17px
+            margin-right: 10px
+
+    &__main-nav
+
+.main-nav
+    display: flex
+    align-items: center
+
+    &__items
+        display: flex
+        justify-content: space-between
+
+    &__item
+        &:not(:last-child)
+            margin-right: 25px
+
+    &__link
+        text-decoration: none
+        color: $main-font-color
+
+    &__sandwich
+        margin-left: 40px
+
+.sandwich
+    cursor: pointer
+    height: 20px
+    position: relative
+    width: 32px
+
+    &.is
+        &-active
+            .sandwich__line
+            &--top
+                top: 10px
+                transform: rotate(45deg)
+
+            &--middle
+                opacity: 0
+
+            &--bottom
+                top: 10px
+                transform: rotate(-45deg)
+
+    &__line
+        background-color: $main-font-color
+        display: block
+        height: 2px
+        left: 0
+        position: absolute
+        transition: all linear .4s
+        width: 100%
+
+        &--top
+            top: 0
+
+        &--middle
+            top: 9px
+
+        &--bottom
+            top: 18px
+
+
