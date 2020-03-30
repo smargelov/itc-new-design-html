@@ -1,0 +1,20 @@
+.hero
+    padding-top: 40px
+    padding-bottom: 40px
+    +row-flex()
+
+    &__text
+        +col()
+        +size(8)
+
+    &__action
+        +col()
+        +size(4)
+        display: flex
+        justify-content: flex-end
+        align-items: center
+
+    &__title
+        font-size: 120px
+        line-height: 130px
+        font-weight: 500
