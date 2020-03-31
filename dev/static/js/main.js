@@ -1,6 +1,30 @@
 $(document).ready(function () {
     svg4everybody({});
 
+    const countNum = (elementClass, endNum, startNum = 0, animTime = 1000) => {
+        $({numberValue: startNum}).animate({numberValue: endNum}, {
+            duration: animTime,
+            easing: "swing",
+            step: function (val) {
+                $(elementClass).html(Math.ceil(val));
+            }
+        });
+    };
+    let countBlock = $('.counters'),
+        counterStatus = true;
+    $(window).scroll(function () {
+        let scrollEvent = ($(window).scrollTop()  > (countBlock.offset().top - $(window).height()));
+
+        if (scrollEvent && counterStatus) {
+            counterStatus = false;
+            $('.counters__num').each(function () {
+                    countNum(this, $(this).data('num'))
+                }
+            )
+        }
+
+    })
+
 });
 
 

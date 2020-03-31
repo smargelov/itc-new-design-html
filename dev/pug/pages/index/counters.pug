@@ -1,0 +1,37 @@
+-
+    var counts = [
+        {
+            num: 2010,
+            text: 'год образования ITC MEDIA',
+        },
+        {
+            num: 300,
+            text: 'успешных кейсов',
+            before: '>',
+        },
+        {
+            num: 25,
+            text: 'специалистов',
+        },
+        {
+            num: 16,
+            text: 'место в России по версии рейтинга «SEO Глазами Клиента»',
+            special: true,
+        },
+        {
+            num: 7,
+            text: 'место в составе AGIMA Partners Club',
+            special: true,
+        },
+    ]
+
+// Counters
+section.section
+    .b-counters
+        each card in counts
+            ._card(class= card.special ? 'counters__card--spec' : '')
+                ._top
+                    if card.before
+                        ._before= card.before
+                    ._num(data-num= card.num) 0
+                ._desc= card.text

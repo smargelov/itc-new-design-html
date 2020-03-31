@@ -1,0 +1,20 @@
+.counters
+    display: flex
+    justify-content: space-between
+    &__card
+        flex: 1
+        display: flex
+        flex-direction: column
+        align-items: center
+        &:not(:last-child)
+            margin-right: 20px
+        &--spec
+            color: $accent
+    &__top
+        display: flex
+        align-items: center
+        font-size: 80px
+        line-height: 90px
+        margin-bottom: 5px
+    &__desc
+        text-align: center
