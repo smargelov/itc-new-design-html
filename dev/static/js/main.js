@@ -23,6 +23,17 @@ $(document).ready(function () {
             )
         }
     })
+    let feedbackCarousel = $('#feedback-carousel');
+    feedbackCarousel.owlCarousel({
+        items: 1,
+        loop: true
+    });
+    $('.feedback__prev').click(function () {
+        feedbackCarousel.trigger("prev.owl.carousel")
+    });
+    $('.feedback__next').click(function () {
+        feedbackCarousel.trigger("next.owl.carousel")
+    });
 
 });
 
