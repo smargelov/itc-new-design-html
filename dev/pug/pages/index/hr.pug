@@ -1,0 +1,31 @@
+-
+    let vacancies = [
+        {
+            name: 'SMM-специалист',
+            link: '',
+        },
+        {
+            name: 'Специалист по контекстной рекламе',
+            link: '',
+        },
+        {
+            name: 'SEO-специалист',
+            link: '',
+        },
+        {
+            name: 'Аналитик',
+            link: '',
+        },
+    ]
+
+// HR section
+section.section
+    .b-hr
+        h2.h2._title Работа у нас
+        ._wrap
+            ul._vacancies
+                each vacancy in vacancies
+                    li._vacancy
+                        a(href=vacancy.link, title=vacancy.name)._link= vacancy.name
+            ._text
+                | Присылайте короткий рассказ о себе, резюме и портфолио с пометкой «работа» на почту  #[a(href="mailto:hr@itc-media.ru") hr@itc-media.ru]

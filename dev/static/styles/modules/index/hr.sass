@@ -1,0 +1,19 @@
+.hr
+    &__wrap
+        padding: 65px
+        background-color: $grey
+        +row-flex()
+    &__vacancies
+        +col()
+        +size(6)
+    &__vacancy
+        &:not(:last-child)
+            margin-bottom: 30px
+        & a
+            text-decoration: none
+            color: $accent
+    &__text
+        +col()
+        +size(6)
+        font-size: 40px
+        line-height: 50px
