@@ -1,1 +1,38 @@
-footer.footer
+-
+    let icons = [
+        {
+            name: 'Agima',
+            link: '#',
+            icon: 'agima',
+        },
+        {
+            name: 'FaceBook',
+            link: '#',
+            icon: 'fb',
+        },
+        {
+            name: 'VK',
+            link: '#',
+            icon: 'vk',
+        },
+        {
+            name: 'Instagram',
+            link: '#',
+            icon: 'insta',
+        },
+    ]
+
+footer.b-footer
+    ._col
+        ._copy © 2010–2020, ITC MEDIA агентство интернет-маркетинга #[a(href="mailto:manager@itc-media.ru") manager@itc-media.ru]
+    ._col.footer__btn-wrap
+        button.b-btn.-round.-big._btn
+            +icon('plus', 'btn__icon-plus')
+            | Заказать  консультацию
+    ._col
+        ._social
+            each icon in icons
+                a(href= icon.link, title= icon.name)._icon
+                    +icon(icon.icon, 'footer__social-icon')
+
+
