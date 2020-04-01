@@ -7,9 +7,21 @@
     border: 1px solid $accent
     background-color: transparent
     color: $accent
+    +sm-block()
+        font-size: 15px
+        line-height: 20px
     svg
         fill: $accent
         stroke: $accent
+    &:hover
+        .icon-plus,
+        .icon-empty_triangle
+            animation: pulse 1s infinite ease-in-out
+        .icon-arrow:not(.btn__icon-arrow-left)
+            animation: right-pulse 1s infinite ease-in-out
+        .icon-arrow-left
+            animation: left-pulse 1s infinite ease-in-out
+
 
     &--round
         border-radius: 50%
@@ -19,7 +31,9 @@
         min-height: 76px
 
     &--big
-        +sizebox(230px)
+        +sizebox(208px)
+        +sm-block()
+            +sizebox(140px)
 
     &--blue
         background-color: $accent
@@ -38,12 +52,13 @@
         &-plus
             width: 57px
             height: 57px
-            margin-bottom: 10px
+            margin-bottom: 5px
+            +sm-block()
+                +sizebox(40px)
         &-arrow
             width: 38px
             height: 29px
-            &--flip
-                transform: rotateZ(180deg)
+
         &-next-arrow
             width: 38px
             height: 29px

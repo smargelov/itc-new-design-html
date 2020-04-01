@@ -6,14 +6,22 @@
     &__vacancies
         +col()
         +size(6)
+        +size-sm(12)
+
     &__vacancy
         &:not(:last-child)
             margin-bottom: 30px
-        & a
-            text-decoration: none
-            color: $accent
+        +md-block()
+            &:not(:last-child)
+                margin-bottom: 15px
     &__text
         +col()
         +size(6)
+        +size-sm(12)
         font-size: 40px
         line-height: 50px
+        +md-block()
+            font-size: 30px
+            line-height: 35px
+        +sm-block()
+            margin-top: 40px

@@ -5,17 +5,20 @@
     &__items
         display: flex
         justify-content: space-between
+        +md-block()
+            display: none
 
     &__item
         &:not(:last-child)
             margin-right: 25px
 
     &__link
-        text-decoration: none
         color: $main-font-color
 
     &__sandwich
         margin-left: 40px
+        +sm-block()
+            margin-left: 20px
 
 .sandwich
     cursor: pointer

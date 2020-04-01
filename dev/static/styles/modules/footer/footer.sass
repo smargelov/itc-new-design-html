@@ -2,12 +2,19 @@ footer
 	flex: 0 0 auto
 .footer
     margin-top: 80px
-    margin-bottom: 22px
+    padding-bottom: 22px
     +row-flex()
     align-items: center
     &__col
         +col()
         +size(4)
+        +size-sm(6)
+        &:nth-child(2)
+            +size-sm(12)
+            +sm-block()
+                order: 1
+                margin-top: 20px
+
     &__btn-wrap
         display: flex
         justify-content: center
@@ -18,12 +25,17 @@ footer
     &__icon
         &:not(:last-child)
             margin-right: 30px
+            +sm-block()
+                margin-right: 10px
+        &:hover,
+        &:focus
+            svg
+                fill: $accent
+                transition: fill .5s ease
     &__social-icon
         height: 26px
         width: auto
-    a
-        text-decoration: none
-        color: $accent
+
 .icon
     &-agima
         width: 68px

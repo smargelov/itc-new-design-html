@@ -4,6 +4,8 @@
     padding: 60px 30px
     background-color: $accent
     color: $white
+    +sm-block()
+        flex-wrap: wrap
 
     &__left
         width: 50%
@@ -18,15 +20,32 @@
             width: 1px
             background-color: $white
             opacity: .3
+            +sm-block()
+                bottom: 0
+                right: 0
+                left: 0
+                top: auto
+                width: auto
+                height: 1px
+
+        +sm-block()
+            width: 100%
+            padding-bottom: 40px
+            margin-bottom: 40px
 
     &__right
         width: 50%
+        +sm-block()
+            width: 100%
 
     &__title-item
         opacity: .5
         transition: all .5s ease
+
         &:not(:last-child)
             margin-bottom: 30px
+            +sm-block()
+                margin-bottom: 10px
         &.active
             opacity: 1
             position: relative
@@ -39,12 +58,15 @@
                 right: 0
                 top: 50%
                 background-color: $white
+                +md(width, 30px)
 
     &__title
         font-size: 40px
         line-height: 55px
         font-weight: 100
-
+        +md-block()
+            font-size: 25px
+            line-height: 35px
     &__card
         display: none
         justify-content: space-between
@@ -54,6 +76,8 @@
     &__text
         line-height: 27px
         padding-left: 30px
+        +sm-block()
+            padding-left: 0
 
     &__btn
         min-width: 76px

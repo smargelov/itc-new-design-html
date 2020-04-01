@@ -26,16 +26,13 @@ header.b-header
     ._top-line
         ._logo
             +icon('logo', 'header__logo-icon')
-        ._showreel
-            a._link(data-fancybox, href="https://youtu.be/I_l8eApu9G4&amp;autoplay=1&amp;rel=0&amp;controls=0&amp;showinfo=0")
-                +icon('triangle-right')
-                | Showreel
-        ._city
-            a._link(href='#', title='Брянск')
-                +icon('triangle-down')
-                | Брянск
-        ._phone
-            a._link(href='tel:+78005512557', title='8 (800) 551-25-57') 8 (800) 551-25-57
+        ._links
+            ._city
+                a._link(href='#', title='Брянск')
+                    | Брянск
+                    +icon('triangle-down')
+            ._phone
+                a._link(href='tel:+78005512557', title='8 (800) 551-25-57') 8 (800) 551-25-57
         nav.b-main-nav._main-nav
             ul._items
                 each item in nav

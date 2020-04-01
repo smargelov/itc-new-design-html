@@ -10,24 +10,31 @@
         &-icon
             max-width: 121px
             max-height: 120px
+            fill: $main-font-color
+        +sm-block()
+            margin-right: 20px
 
-    &__showreel
-        display: flex
+    &__phone
+        +sm-block()
+            display: none
 
     &__city
         display: flex
+        margin-right: 40px
+        +sm-block()
+            margin-right: 20px
 
-    &__phone
+    &__links
+        display: flex
 
     &__link
         display: flex
         align-items: center
-        text-decoration: none
-        color: $accent
 
         svg
             width: 17px
             height: 17px
-            margin-right: 10px
+            margin-left: 10px
+            fill: $accent
 
     &__main-nav

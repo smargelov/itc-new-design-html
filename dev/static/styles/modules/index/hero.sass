@@ -18,3 +18,24 @@
         font-size: 120px
         line-height: 130px
         font-weight: 500
+        +md-block()
+            font-size: 75px
+            line-height: 90px
+        +sm-block()
+            font-size: 42px
+            line-height: 55px
+    &__showreel
+        +col()
+        +size(12)
+        display: flex
+        margin-top: 55px
+        +sm-block()
+            margin-top: 40px
+    &__link
+        display: flex
+        align-items: center
+        svg
+            width: 17px
+            height: 17px
+            margin-right: 10px
+            fill: $accent

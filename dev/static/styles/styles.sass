@@ -1,5 +1,6 @@
 //@import 'utils/libs'
 @import 'utils/vars'
+@import 'utils/animations'
 @import 'utils/grid'
 @import 'utils/mixins'
 @import 'utils/fonts'
@@ -26,6 +27,14 @@ a[href^='mailto:'],
 a[href^='tel:']
   white-space: nowrap
 
+
+a
+  color: $accent
+  text-decoration: none
+  transition: all .5s ease
+  &:hover,
+  &:focus
+    color: $main-font-color
 
 ul[class],
 ol[class] 
