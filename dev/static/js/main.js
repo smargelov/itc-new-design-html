@@ -1,6 +1,8 @@
 $(document).ready(function () {
     svg4everybody({});
 
+    // Number counter
+
     const countNum = (elementClass, endNum, startNum = 0, animTime = 1000) => {
         $({numberValue: startNum}).animate({numberValue: endNum}, {
             duration: animTime,
@@ -22,7 +24,10 @@ $(document).ready(function () {
                 }
             )
         }
-    })
+    });
+
+    // Owl carousel
+
     let feedbackCarousel = $('#feedback-carousel');
     feedbackCarousel.owlCarousel({
         items: 1,
@@ -34,6 +39,19 @@ $(document).ready(function () {
     $('.feedback__next').click(function () {
         feedbackCarousel.trigger("next.owl.carousel")
     });
+
+    // Taber
+
+    $('.taber__title-item').on('click', function () {
+        let target = $(this).data('target');
+        $('.taber__title-item').removeClass('active');
+        $(this).addClass('active');
+        $('.taber__card').removeClass('active');
+        $('#'+target).addClass('active');
+    })
+
+    // Fancybox video
+
 
 });
 

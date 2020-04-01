@@ -36,6 +36,7 @@
     "smart-grid": "^2.1.2"
   },
   "dependencies": {
+    "@fancyapps/fancybox": "^3.5.7",
     "normalize.css": "^8.0.1",
     "owl.carousel": "^2.3.4",
     "phantomjs-prebuilt": "^2.1.16",
