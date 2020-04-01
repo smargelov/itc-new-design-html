@@ -43,7 +43,7 @@ section.section
         h2.h2._title Кейсы
         ._cards
             each card in cases
-                a(href=card.link, alt=card.name)._card
+                a(href=card.link, title=card.name)._card
                     .h3._card-title= card.name
                     ._card-footer
                         ._btn-wrap

@@ -39,5 +39,5 @@ section.section
                 each item, index in tabs
                     div(id="tab-num-" + (index + 1), class= index === 0 ? 'active' : '')._card
                         p._text= item.text
-                        a(href=item.link, alt=item.title).b-btn.-round.-small.-light._btn
+                        a(href=item.link, title=item.title).b-btn.-round.-small.-light._btn
                             +icon('arrow', 'btn__icon-arrow')
