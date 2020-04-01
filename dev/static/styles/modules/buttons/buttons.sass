@@ -10,6 +10,9 @@
     +sm-block()
         font-size: 15px
         line-height: 20px
+    +xs-block()
+        font-size: 10px
+        line-height: 14px
     svg
         fill: $accent
         stroke: $accent
@@ -34,6 +37,8 @@
         +sizebox(208px)
         +sm-block()
             +sizebox(140px)
+        +xs-block()
+            +sizebox(80px)
 
     &--blue
         background-color: $accent
@@ -55,6 +60,8 @@
             margin-bottom: 5px
             +sm-block()
                 +sizebox(40px)
+            +xs-block()
+                display: none
         &-arrow
             width: 38px
             height: 29px

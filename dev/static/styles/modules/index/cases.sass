@@ -23,22 +23,37 @@
             & .cases__btn-wrap
                 width: 30%
                 margin-right: 4%
+                +xs-block()
+                    width: 25%
         &-title
             font-size: 40px
             line-height: 50px
+            +xs-block()
+                font-size: 30px
+                line-height: 40px
+        &-desc
+            +xs-block()
+                font-size: 16px
+                line-height: 20px
 
         &-footer
             display: flex
             align-items: center
 
     &__btn
+        +xs-block()
+            +sizebox(50px)
+            min-width: 50px
+            min-height: 50px
+            svg
+                width: 25px
         &-wrap
             width: 0
             overflow: hidden
             transition: all .8s ease
 
     &__card-desc
-        width: 65%
+        width: 75%
     &__other
         +col()
         +size(4)
@@ -47,3 +62,8 @@
         display: flex
         justify-content: center
         align-items: center
+        +xs-block()
+            .cases__btn-next
+                +sizebox(200px)
+                font-size: 20px
+                line-height: 27px
