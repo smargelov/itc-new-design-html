@@ -48,7 +48,10 @@ $(document).ready(function () {
         $(this).addClass('active');
         $('.taber__card').removeClass('active');
         $('#' + target).addClass('active');
-    })
+    });
+
+
+    // City menu
 
     $('#cityView').on('click', function (e) {
         e.preventDefault();
@@ -62,7 +65,6 @@ $(document).ready(function () {
         $(this).find('.header__cities').slideUp(300);
         $(this).removeClass('active');
     })
-
 
 });
 
