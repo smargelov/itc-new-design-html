@@ -5,47 +5,47 @@
 @import 'utils/mixins'
 @import 'utils/fonts'
 
-html 
-  font-size: $base-font-size
-  height: 100%
+html
+    font-size: $base-font-size
+    height: 100%
 
-body 
-  min-height: 100vh
-  scroll-behavior: smooth
-  text-rendering: optimizeSpeed
-  line-height: 1.5
-  font-family: $main-font-family
-  font-weight: 300
-  font-style: normal
+body
+    min-height: 100vh
+    scroll-behavior: smooth
+    text-rendering: optimizeSpeed
+    line-height: 1.5
+    font-family: $main-font-family
+    font-weight: 300
+    font-style: normal
 
 *,
 *::before,
-*::after  
-  box-sizing: border-box
+*::after
+    box-sizing: border-box
 
 a[href^='mailto:'],
 a[href^='tel:']
-  white-space: nowrap
+    white-space: nowrap
 
 
 a
-  color: $accent
-  text-decoration: none
-  transition: all .5s ease
-  &:hover,
-  &:focus
-    color: $main-font-color
-  &.link--icon
-    svg
-      fill: $accent
-    &:hover, &:focus
-      svg
-        fill: $main-font-color
+    color: $accent
+    text-decoration: none
+    transition: all .5s ease
+    &:hover,
+    &:focus
+        color: $main-font-color
+    &.link--icon
+        svg
+            fill: $accent
+        &:hover, &:focus
+            svg
+                fill: $main-font-color
 
 ul[class],
-ol[class] 
-  list-style: none
-  padding: 0
+ol[class]
+    list-style: none
+    padding: 0
 
 body,
 h1,
@@ -61,28 +61,28 @@ figcaption,
 blockquote,
 dl,
 dd
-  margin: 0
+    margin: 0
 
-a:not([class]) 
-  text-decoration-skip-ink: auto
+a:not([class])
+    text-decoration-skip-ink: auto
 
-img 
-  max-width: 100%
-  display: block
+img
+    max-width: 100%
+    display: block
 
 input,
 button,
 textarea,
-select 
-  font: inherit
+select
+    font: inherit
 
 /* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
-@media (prefers-reduced-motion: reduce) 
-  * 
-    animation-duration: 0.01ms !important
-    animation-iteration-count: 1 !important
-    transition-duration: 0.01ms !important
-    scroll-behavior: auto !important
+@media (prefers-reduced-motion: reduce)
+    *
+        animation-duration: 0.01ms !important
+        animation-iteration-count: 1 !important
+        transition-duration: 0.01ms !important
+        scroll-behavior: auto !important
 
 audio,
 canvas,
@@ -90,51 +90,56 @@ iframe,
 img,
 svg,
 video,
-textarea 
-  vertical-align: middle
+textarea
+    vertical-align: middle
 
-textarea 
-  resize: none
+textarea
+    resize: none
 
-section 
-  position: relative
+section
+    position: relative
 
 input,
 select,
-button 
-  outline: none
+button
+    outline: none
 
-.wrapper 
-  +wrapper()
+.wrapper
+    +wrapper()
 
-.content 
-  flex: 1 0 auto
+.content
+    flex: 1 0 auto
 
 .section
-  padding-top: 40px
-  padding-bottom: 40px
-  +xs-block()
-    padding-top: 20px
-    padding-bottom: 20px
+    padding-top: 40px
+    padding-bottom: 40px
+    +xs-block()
+        padding-top: 20px
+        padding-bottom: 20px
 
 .h2
-  font-size: 45px
-  line-height: 50px
-  font-weight: 200
-  margin-bottom: 55px
-  +xs-block()
-    font-size: 35px
-    line-height: 40px
-    margin-bottom: 20px
+    font-size: 45px
+    line-height: 50px
+    font-weight: 200
+    margin-bottom: 55px
+    +xs-block()
+        font-size: 35px
+        line-height: 40px
+        margin-bottom: 20px
 
 .hidden
-  overflow: hidden
-  height: 0
-  width: 0
+    overflow: hidden
+    height: 0
+    width: 0
 
 .mobile-none
-  +sm-block()
-    display: none
+    +sm-block()
+        display: none !important
+
+.desktop-none
+    display: none !important
+    +sm-block()
+        display: flex !important
 
 //Модули
 @import 'modules/modules'

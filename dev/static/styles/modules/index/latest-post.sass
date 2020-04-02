@@ -5,6 +5,15 @@
         +col()
         +size(4)
         +size-sm(12)
+    &__title-wrap
+        display: flex
+        align-items: center
+        justify-content: space-between
+        +sm-block()
+            margin-bottom: 40px
+    &__title
+        +sm-block()
+            margin-bottom: 0
 
     &__img
         display: block
@@ -20,11 +29,18 @@
     &__btn-wrap
         +col()
         +size(4)
-        +size-sm(12)
+        +size-sm(8)
         display: flex
         justify-content: center
         padding-top: 50px
+        +sm-block()
+            justify-content: flex-end
+            padding-top: 0
     &__btn
         +sizebox(194px)
         font-size: 20px
         line-height: 27px
+        +sm-block()
+            +sizebox(150px)
+            font-size: 17px
+            line-height: 23px

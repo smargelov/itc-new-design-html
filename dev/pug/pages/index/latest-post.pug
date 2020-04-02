@@ -1,7 +1,12 @@
 // Latest-post section
 section.section
     .b-latest-post
-        h2.h2._title Блог
+        ._title-wrap
+            h2.h2._title Блог
+            ._btn-wrap.desktop-none
+                    button.b-btn.-round.-big._btn
+                        //+icon('plus', 'btn__icon-plus')
+                        | Подписаться на рассылку
         ._items
             ._item
                 ._category Интернет-маркетинг
@@ -13,7 +18,7 @@ section.section
                 a(href="#", title="Вся правда про SSL-сертификаты", style="background-image: url(images/content/ssl.jpg)")._img
                 a(href="#", title="Вся правда про SSL-сертификаты")._name
                     | Вся правда про SSL-сертификаты
-            ._btn-wrap
+            ._btn-wrap.mobile-none
                 button.b-btn.-round.-big._btn
                     //+icon('plus', 'btn__icon-plus')
                     | Подписаться на рассылку
