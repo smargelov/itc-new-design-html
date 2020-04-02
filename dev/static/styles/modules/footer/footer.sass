@@ -5,18 +5,21 @@ footer
     padding-bottom: 22px
     +row-flex()
     align-items: center
+    +xs-block()
+        margin-top: 20px
     &__col
         +col()
         +size(4)
         +size-sm(6)
         +size-xs(12)
         &:nth-child(2)
+            +xs-block()
+                margin-top: 20px
+        &:nth-child(3)
             +size-sm(12)
             +sm-block()
-                order: 1
                 margin-top: 20px
-            +xs-block()
-                order: 0
+
 
     &__btn-wrap
         display: flex
@@ -25,6 +28,10 @@ footer
     &__social
         display: flex
         justify-content: flex-end
+        +sm-block()
+            justify-content: flex-start
+        +xs-block()
+            justify-content: center
     &__icon
         &:not(:last-child)
             margin-right: 30px
@@ -38,6 +45,9 @@ footer
     &__social-icon
         height: 26px
         width: auto
+    &__copy
+        +xs-block()
+            text-align: center
 
 .icon
     &-agima

@@ -16,17 +16,17 @@ module.exports = function () {
 
     $.gulp.task('img:build', () => {
         return $.gulp.src(imgPATH.input)
-            .pipe(cache(imagemin([
-                imgCompress({
-                    loops: 4,
-                    min: 70,
-                    max: 80,
-                    quality: 'high'
-                }),
-                imagemin.gifsicle(),
-                imagemin.optipng(),
-                imagemin.svgo()
-            ])))
+            // .pipe(cache(imagemin([
+            //     imgCompress({
+            //         loops: 4,
+            //         min: 70,
+            //         max: 80,
+            //         quality: 'high'
+            //     }),
+            //     imagemin.gifsicle(),
+            //     imagemin.optipng(),
+            //     imagemin.svgo()
+            // ])))
             .pipe($.gulp.dest(imgPATH.output));
     });
 

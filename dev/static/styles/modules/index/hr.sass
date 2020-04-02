@@ -3,6 +3,8 @@
         padding: 65px
         background-color: $grey
         +row-flex()
+        +xs-block()
+            padding: 40px 20px
     &__vacancies
         +col()
         +size(6)
@@ -14,6 +16,11 @@
         +md-block()
             &:not(:last-child)
                 margin-bottom: 15px
+        +xs-block()
+            font-size: 18px
+            line-height: 24px
+            &:not(:last-child)
+                margin-bottom: 5px
     &__text
         +col()
         +size(6)
@@ -25,3 +32,8 @@
             line-height: 35px
         +sm-block()
             margin-top: 40px
+            margin-left: 0
+            margin-right: 0
+        +xs-block()
+            font-size: 20px
+            line-height: 27px

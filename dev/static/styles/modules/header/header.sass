@@ -13,6 +13,9 @@
             fill: $main-font-color
         +sm-block()
             margin-right: 20px
+        &:hover, &:focus
+            svg
+                fill: $accent
 
     &__phone
         +sm-block()
@@ -23,6 +26,8 @@
         margin-right: 40px
         position: relative
         min-width: 200px
+        +xs-block()
+            display: none
 
         a
             z-index: 5
