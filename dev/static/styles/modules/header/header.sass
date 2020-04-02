@@ -21,8 +21,30 @@
     &__city
         display: flex
         margin-right: 40px
+        position: relative
+        min-width: 200px
+
+        a
+            z-index: 5
         +sm-block()
             margin-right: 20px
+    &__cities
+        position: absolute
+        z-index: 4
+        left: -25px
+        right: -25px
+        top: -20px
+        padding-top: 70px
+        padding-left: 25px
+        padding-right: 25px
+        background-color: rgba($grey, .95)
+        padding-bottom: 60px
+        display: none
+    &__subcities
+        opacity: 0
+        transition: opacity .3s ease
+        &.active
+            opacity: 1
 
     &__links
         display: flex

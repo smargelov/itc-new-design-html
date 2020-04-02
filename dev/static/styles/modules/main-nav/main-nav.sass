@@ -14,6 +14,8 @@
 
     &__link
         color: $main-font-color
+        &:hover, &:focus
+            color: $accent
 
     &__sandwich
         margin-left: 40px
@@ -25,6 +27,9 @@
     height: 20px
     position: relative
     width: 32px
+    &:hover, &:focus
+        .sandwich__line
+            background-color: $accent
 
     &.is
         &-active

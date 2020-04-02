@@ -21,6 +21,40 @@
             link: '#'
         },
     ]
+    var cities = [
+        {
+            name: 'Брянск',
+            link: '#'
+        },
+        {
+            name: 'Москва',
+            link: '#'
+        },
+        {
+            name: 'Казань',
+            link: '#'
+        },
+        {
+            name: 'Краснодар',
+            link: '#'
+        },
+        {
+            name: 'Нижний Новгород',
+            link: '#'
+        },
+        {
+            name: 'Ростов',
+            link: '#'
+        },
+        {
+            name: 'Симферополь',
+            link: '#'
+        },
+        {
+            name: 'Санкт-Петербург',
+            link: '#'
+        },
+    ]
 
 header.b-header
     ._top-line
@@ -28,9 +62,16 @@ header.b-header
             +icon('logo', 'header__logo-icon')
         ._links
             ._city
-                a._link(href='#', title='Брянск')
+                a._link.link--icon#cityView(href='#', title='Брянск')
                     | Брянск
                     +icon('triangle-down')
+                ._cities
+                    ul._subcities
+                        each city in cities
+                            li._subcity
+                                a._link(href= city.link, title= city.name)= city.name
+
+
             ._phone
                 a._link(href='tel:+78005512557', title='8 (800) 551-25-57') 8 (800) 551-25-57
         nav.b-main-nav._main-nav

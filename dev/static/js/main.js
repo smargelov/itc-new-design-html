@@ -15,7 +15,7 @@ $(document).ready(function () {
     let countBlock = $('.counters'),
         counterStatus = true;
     $(window).scroll(function () {
-        let scrollEvent = ($(window).scrollTop()  > (countBlock.offset().top - $(window).height()));
+        let scrollEvent = ($(window).scrollTop() > (countBlock.offset().top - $(window).height()));
 
         if (scrollEvent && counterStatus) {
             counterStatus = false;
@@ -47,10 +47,21 @@ $(document).ready(function () {
         $('.taber__title-item').removeClass('active');
         $(this).addClass('active');
         $('.taber__card').removeClass('active');
-        $('#'+target).addClass('active');
+        $('#' + target).addClass('active');
     })
 
-    // Fancybox video
+    $('#cityView').on('click', function (e) {
+        e.preventDefault();
+    });
+    $('#cityView').parent('.header__city').hover(function () {
+        $(this).addClass('active');
+        $(this).find('.header__cities').slideDown(300);
+        $(this).find('.header__subcities').addClass('active');
+    }, function () {
+        $(this).find('.header__subcities').removeClass('active');
+        $(this).find('.header__cities').slideUp(300);
+        $(this).removeClass('active');
+    })
 
 
 });

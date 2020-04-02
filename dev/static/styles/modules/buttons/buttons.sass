@@ -7,6 +7,7 @@
     border: 1px solid $accent
     background-color: transparent
     color: $accent
+    transition: all .4s ease
     +sm-block()
         font-size: 15px
         line-height: 20px
@@ -16,7 +17,13 @@
     svg
         fill: $accent
         stroke: $accent
-    &:hover
+    &:hover, &:focus
+        background-color: $accent
+        color: $white
+        svg
+            fill: $white
+            stroke: $white
+
         .icon-plus,
         .icon-empty_triangle
             animation: pulse 1s infinite ease-in-out
@@ -46,12 +53,23 @@
             fill: $white
             stroke: $white
             color: $white
+        &:hover, &:focus
+            background-color: $white
+            svg
+                fill: $accent
+                stroke: $accent
     &--light
         border: 1px solid $white
         svg
             stroke: $white
             fill: $white
             color: $white
+        &:hover, &:focus
+            background-color: $white
+            color: $accent
+            svg
+                fill: $accent
+                stroke: $accent
 
     &__icon
         &-plus
