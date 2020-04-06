@@ -66,6 +66,25 @@ $(document).ready(function () {
         $(this).removeClass('active');
     })
 
+    // Popups
+    $('[data-action="popup"]').click(function (e) {
+        e.preventDefault();
+        $('.overlay').fadeIn(300);
+        $('.popup').slideDown(500);
+    })
+    let closePopup = () => {
+        $('.popup').slideUp(500);
+        $('.overlay').fadeOut(300);
+    }
+    $('.popup__close').click(closePopup);
+    $('.overlay').click(closePopup);
+    $(document).keydown(function (eventObject) {
+        if (eventObject.which == 27) {
+            closePopup();
+        }
+        ;
+    });
+
 });
 
 
