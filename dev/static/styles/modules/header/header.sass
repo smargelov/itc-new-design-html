@@ -1,3 +1,45 @@
+.header--active-menu
+    &.header
+        background-color: transparent
+        backdrop-filter: none
+        .sandwich
+            &:hover, &:focus
+                .sandwich__line
+                    background-color: darken($white, 30%)
+        .sandwich__line
+            background-color: $white
+    .header
+        &__logo
+            &-icon
+                fill: $white
+            &:hover, &:focus
+                svg
+                    fill: darken($white, 30%)
+        &__link
+            color: $white
+            svg
+                fill: $white
+            &:hover, &:focus
+                color: darken($white, 30%)
+                svg
+                    fill: darken($white, 30%)
+        &__btn
+            color: $white
+            border: 1px solid $white
+            &:hover, &:focus
+                background-color: $white
+                color: $accent
+        &__city
+            a
+                &:hover, &:focus
+                    color: $accent
+                    svg
+                        fill: $accent // todo fixed hoverout
+        &__cities
+            a
+                color: $accent
+
+
 .header
     height: 120px
     position: fixed

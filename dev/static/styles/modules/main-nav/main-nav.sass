@@ -1,26 +1,51 @@
-.main-nav
-    display: flex
-    align-items: center
+.megamenu
+    position: fixed
+    right: 0
+    left: 0
+    top: 0
+    z-index: 5
+    min-height: 100vh
+    background-color: rgba($accent, .85)
+    backdrop-filter: blur(10px)
+    padding-top: 150px
 
-    &__items
-        display: flex
-        justify-content: space-between
-        +md-block()
-            display: none
+    &__cols
+        +row-flex()
+        padding-top: 35px
 
+        border-top: 1px solid rgba($white, .3)
+    &__col
+        +col()
+        +size(4)
+        &:nth-child(3)
+            display: flex
+            align-self: flex-start
     &__item
         &:not(:last-child)
-            margin-right: 25px
-
+            margin-bottom: 20px
     &__link
-        color: $main-font-color
+        color: $white
         &:hover, &:focus
-            color: $accent
+            color: darken($white, 30%)
 
-    &__sandwich
-        margin-left: 40px
-        +sm-block()
-            margin-left: 20px
+    &__btn-wrap
+        flex: 1
+        display: flex
+        justify-content: center
+        align-items: center
+
+    &__social
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+    &__icon
+        &:hover, &:focus
+            svg
+                fill: darken($white, 30%)
+    &__social-icon
+        height: 26px
+        fill: $white
+
 
 .sandwich
     cursor: pointer

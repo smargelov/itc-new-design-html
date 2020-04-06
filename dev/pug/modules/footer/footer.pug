@@ -1,26 +1,4 @@
--
-    let icons = [
-        {
-            name: 'Agima',
-            link: '#',
-            icon: 'agima',
-        },
-        {
-            name: 'FaceBook',
-            link: '#',
-            icon: 'fb',
-        },
-        {
-            name: 'VK',
-            link: '#',
-            icon: 'vk',
-        },
-        {
-            name: 'Instagram',
-            link: '#',
-            icon: 'insta',
-        },
-    ]
+include ../../utils/data
 
 footer.b-footer
     ._col
@@ -31,7 +9,7 @@ footer.b-footer
             | Заказать  консультацию
     ._col
         ._social
-            each icon in icons
+            each icon in socialIcons
                 a(href= icon.link, title= icon.name)._icon
                     +icon(icon.icon, 'footer__social-icon')
 

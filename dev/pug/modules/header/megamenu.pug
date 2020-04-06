@@ -1,0 +1,28 @@
+include ../../utils/data
+
+.b-megamenu
+    .wrapper
+        ._cols
+            ._col
+                ul._main._list
+                    each item in mainMenu
+                        li._item
+                            a(href= item.link, title= item.name)._link= item.name
+            ._col
+                ul._second._list
+                    each item in secondMenu
+                        li._item
+                            a(href= item.link, title= item.name)._link= item.name
+
+            ._col
+                ._btn-wrap
+                    button.b-btn.-user.-big.-round.-light._btn
+                        +icon('user', 'btn__icon-user')
+                        | Личный
+                        br
+                        | кабинет
+                ul._social
+                    each icon in socialIcons
+                        if icon.name !== 'Agima'
+                            a(href= icon.link, title= icon.name)._icon
+                                +icon(icon.icon, 'megamenu__social-icon')

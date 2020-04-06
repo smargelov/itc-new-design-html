@@ -1,62 +1,6 @@
--
-    var nav = [
-        {
-            name: 'Порфолио',
-            link: '#'
-        },
-        {
-            name: 'Услуги',
-            link: '#'
-        },
-        {
-            name: 'Компания',
-            link: '#'
-        },
-        {
-            name: 'Блог',
-            link: '#'
-        },
-        {
-            name: 'Контакты',
-            link: '#'
-        },
-    ]
-    var cities = [
-        {
-            name: 'Брянск',
-            link: '#'
-        },
-        {
-            name: 'Москва',
-            link: '#'
-        },
-        {
-            name: 'Казань',
-            link: '#'
-        },
-        {
-            name: 'Краснодар',
-            link: '#'
-        },
-        {
-            name: 'Нижний Новгород',
-            link: '#'
-        },
-        {
-            name: 'Ростов',
-            link: '#'
-        },
-        {
-            name: 'Симферополь',
-            link: '#'
-        },
-        {
-            name: 'Санкт-Петербург',
-            link: '#'
-        },
-    ]
+include ../../utils/data
 
-header.b-header
+header.b-header.-active-menu
     .wrapper
         ._top-line
             ._top-left
@@ -80,9 +24,11 @@ header.b-header
                                 li._subcity
                                     a._link(href= city.link, title= city.name)= city.name
 
-                button.b-btn.-flat(data-action='popup', data-target='consultation') Заказать консультацию
+                button.b-btn.-flat._btn(data-action='popup', data-target='consultation') Заказать консультацию
 
                 .b-sandwich._sandwich
                     ._line.-top
                     ._line.-middle
                     ._line.-bottom
+
+include megamenu
