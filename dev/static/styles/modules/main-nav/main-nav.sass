@@ -1,3 +1,14 @@
+=megaItem($h: 30)
+    opacity: 0
+    transform: translate3d(0, $h * -1px ,0)
+=megaItemView()
+    opacity: 1
+    transform: none
+=delayLoop($start: 0.3)
+    @for $i from 1 through 10
+        &:nth-child(#{$i})
+            transition-delay: ($start + $i * 0.05) * 1s
+
 .megamenu
     position: fixed
     right: 0
@@ -8,6 +19,15 @@
     background-color: rgba($accent, .85)
     backdrop-filter: blur(10px)
     padding-top: 150px
+    transform: translate3d(0, -100%, 0)
+    transition: transform .5s cubic-bezier(.785,.135,.15,.86)
+
+    &.is-active
+        transform: none
+        .megamenu__item,
+        .megamenu__icon,
+        .megamenu__btn
+            +megaItemView()
 
     &__cols
         +row-flex()
@@ -20,7 +40,14 @@
         &:nth-child(3)
             display: flex
             align-self: flex-start
+        &:nth-child(1)
+            .megamenu__item
+                +delayLoop()
+        &:nth-child(2)
+            .megamenu__item
+                +delayLoop(0.6)
     &__item
+        +megaItem()
         &:not(:last-child)
             margin-bottom: 20px
     &__link
@@ -34,11 +61,17 @@
         justify-content: center
         align-items: center
 
+    &__btn
+        +megaItem(100)
+        +delayLoop(0.95)
+
     &__social
         display: flex
         flex-direction: column
         justify-content: space-between
     &__icon
+        +megaItem()
+        +delayLoop(1)
         &:hover, &:focus
             svg
                 fill: darken($white, 30%)

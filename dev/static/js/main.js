@@ -82,8 +82,27 @@ $(document).ready(function () {
         if (eventObject.which == 27) {
             closePopup();
         }
-        ;
     });
+
+
+    // Megamenu
+
+    $('.sandwich').click(function () {
+        const th = $(this),
+              header = $('.header'),
+              megamenu = $('.megamenu');
+
+        if (th.hasClass('is-active')) {
+            th.removeClass('is-active');
+            header.removeClass('header--active-menu');
+            megamenu.removeClass('is-active');
+
+        } else {
+            megamenu.addClass('is-active');
+            header.addClass('header--active-menu');
+            th.addClass('is-active');
+        }
+    })
 
 });
 
