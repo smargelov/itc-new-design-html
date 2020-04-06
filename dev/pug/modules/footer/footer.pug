@@ -35,3 +35,18 @@ footer.b-footer
                 a(href= icon.link, title= icon.name)._icon
                     +icon(icon.icon, 'footer__social-icon')
 
+// Popups
+
+.overlay
+.b-popup
+    ._close
+        +icon('close', 'popup__icon-close')
+    #consultation.consultation
+        h4.h4._title Свяжитесь с нами
+        form._form
+            textarea(placeholder='Опишите идею или ситуацию', name='message')._textarea
+            input(type='text' name='user-name', placeholder='Имя')._input
+            input(type='tel' name='user-phone', placeholder='Телефон')._input.-phone
+            input(type='checkbox', id='consultation-approve', name='approve' checked)._checkbox
+            label(for='consultation-approve')._label Даю согласие на обработку своих персональных данных и соглашаюсь с политикой конфиденциальности
+            input(type='submit', value='Отправить').b-btn.-flat._btn

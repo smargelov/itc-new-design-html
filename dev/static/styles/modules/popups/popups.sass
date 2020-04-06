@@ -1,0 +1,96 @@
+.overlay
+    position: fixed
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    z-index: 50
+    background-color: rgba($accent, .85)
+    backdrop-filter: blur(6px)
+.popup
+    background-color: $white
+    padding: 40px 50px 60px
+    z-index: 53
+    position: fixed
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+
+    &__close
+        position: absolute
+        right: 30px
+        top: 30px
+        cursor: pointer
+        svg
+            width: 29px
+            height: 29px
+
+    &__title
+        font-size: 40px
+        line-height: 55px
+        font-weight: 100
+        margin-bottom: 35px
+
+    &__form
+        display: flex
+        flex-direction: column
+        max-width: 600px
+
+    &__input, &__textarea
+        background-color: $grey
+        width: 100%
+        padding-left: 30px
+        padding-right: 30px
+        border: none
+        margin-bottom: 20px
+        &:focus
+            outline: none
+
+    &__textarea
+        height: 135px
+        padding-top: 15px
+        padding-bottom: 15px
+
+    &__input
+        height: 48px
+
+    &__checkbox
+        opacity: 0
+        height: 0
+        overflow: hidden
+        &:checked
+            & + label
+                &::before
+                    background-color: $accent
+                &::after
+                    display: inline-block
+                    position: absolute
+                    content: url('../images/general/done.png')
+                    top: 7px
+                    left: 5px
+                    width: 19px
+                    height: 14px
+
+
+    &__label
+        padding-left: 40px
+        position: relative
+        font-size: 15px
+        line-height: 22px
+        font-weight: 100
+        margin-bottom: 20px
+
+        &::before
+            position: absolute
+            content: ''
+            display: inline-block
+            width: 30px
+            height: 30px
+            left: 0
+            top: 0
+            border: 1px solid $accent
+            transition: all .3s ease
+
+    &__btn
+        align-self: flex-start
+
