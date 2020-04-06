@@ -1,10 +1,28 @@
 .header
     height: 120px
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    z-index: 10
+    background-color: rgba($white, .95)
+    backdrop-filter: blur(6px)
 
     &__top-line
         display: flex
         justify-content: space-between
         align-items: center
+    &__top-left
+        display: flex
+        align-items: center
+        & > *
+            margin-right: 40px
+    &__top-right
+        display: flex
+        align-items: center
+        & > *
+            &:not(:last-child)
+                margin-right: 40px
 
     &__logo
         &-icon
@@ -33,6 +51,10 @@
             z-index: 5
         +sm-block()
             margin-right: 20px
+    &__showreel
+        display: flex
+        svg
+            margin-right: 10px
     &__cities
         position: absolute
         z-index: 4
@@ -42,7 +64,8 @@
         padding-top: 70px
         padding-left: 25px
         padding-right: 25px
-        background-color: rgba($grey, .95)
+        background-color: rgba($grey, .9)
+        backdrop-filter: blur(6px)
         padding-bottom: 60px
         display: none
     &__subcities
@@ -50,9 +73,6 @@
         transition: opacity .3s ease
         &.active
             opacity: 1
-
-    &__links
-        display: flex
 
     &__link
         display: flex
