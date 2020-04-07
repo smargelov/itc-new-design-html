@@ -21,13 +21,17 @@
     padding-top: 150px
     transform: translate3d(0, -100%, 0)
     transition: transform .5s cubic-bezier(.785,.135,.15,.86)
+    +xs-block()
+        padding-top: 120px
 
     &.is-active
         transform: none
         .megamenu__item,
         .megamenu__icon,
-        .megamenu__btn
+        .megamenu__btn,
+        .megamenu__col:nth-child(4) > *
             +megaItemView()
+
 
     &__cols
         +row-flex()
@@ -37,30 +41,63 @@
     &__col
         +col()
         +size(4)
-        &:nth-child(3)
-            display: flex
-            align-self: flex-start
         &:nth-child(1)
             .megamenu__item
                 +delayLoop()
+            +size-md(6)
+            +size-sm(4)
+            +md-block()
+                order: 2
         &:nth-child(2)
             .megamenu__item
                 +delayLoop(0.6)
+            +size-md(6)
+            +size-sm(8)
+            +md-block()
+                order: 1
+        &:nth-child(3)
+            display: flex
+            align-self: flex-start
+            +size-md(12)
+            +md-block()
+                order: 4
+                margin-top: 30px
+        &:nth-child(4)
+            display: none
+            +size-md(12)
+            +md-block()
+                border-top: 1px solid rgba($white, .3)
+                display: flex
+                align-items: center
+                justify-content: space-between
+                margin-top: 30px
+                padding-top: 30px
+                order: 3
+            +sm-block()
+                justify-content: space-around
+            & > *
+                +delayLoop(0.95)
+                +megaItem()
     &__item
         +megaItem()
         &:not(:last-child)
             margin-bottom: 20px
+
     &__link
         color: $white
         &:hover, &:focus
             color: darken($white, 30%)
+        +xs-block()
+            font-size: 16px
+            line-height: 22px
 
     &__btn-wrap
         flex: 1
         display: flex
         justify-content: center
         align-items: center
-
+        +md-block()
+            display: none
     &__btn
         +megaItem(100)
         +delayLoop(0.95)
@@ -69,12 +106,20 @@
         display: flex
         flex-direction: column
         justify-content: space-between
+        +md-block()
+            padding-top: 30px
+            flex-direction: row
+            justify-content: center
+            flex: 1
     &__icon
         +megaItem()
         +delayLoop(1)
         &:hover, &:focus
             svg
                 fill: darken($white, 30%)
+        +md-block()
+            &:not(:last-child)
+                margin-right: 30px
     &__social-icon
         height: 26px
         fill: $white

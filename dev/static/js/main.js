@@ -53,10 +53,10 @@ $(document).ready(function () {
 
     // City menu
 
-    $('#cityView').on('click', function (e) {
+    $('.city-view').on('click', function (e) {
         e.preventDefault();
     });
-    $('#cityView').parent('.header__city').hover(function () {
+    $('.city-view').parent('.header__city').hover(function () {
         $(this).addClass('active');
         $(this).find('.header__cities').slideDown(300);
         $(this).find('.header__subcities').addClass('active');

@@ -26,3 +26,17 @@ include ../../utils/data
                         if icon.name !== 'Agima'
                             a(href= icon.link, title= icon.name)._icon
                                 +icon(icon.icon, 'megamenu__social-icon')
+            ._col.header--active-menu
+                .header__phone
+                    a.header__link(href='tel:+78005512557', title='8 (800) 551-25-57') 8 (800) 551-25-57
+                .header__city
+                    a.header__link.link--icon.city-view(href='#', title='Брянск')
+                        | Брянск
+                        +icon('triangle-down')
+                    .header__cities
+                        ul.header__subcities
+                            each city in cities
+                                li.header__subcity
+                                    a.header__link(href= city.link, title= city.name)= city.name
+
+                button.b-btn.-flat.header__btn(data-action='popup', data-target='consultation') Заказать консультацию

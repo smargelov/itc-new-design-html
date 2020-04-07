@@ -61,12 +61,22 @@
         align-items: center
         & > *
             margin-right: 40px
+            +xs-block()
+                margin-right: 20px
+        +md-block()
+            justify-content: space-between
+            flex: 1
     &__top-right
         display: flex
         align-items: center
         & > *
             &:not(:last-child)
                 margin-right: 40px
+        +md-block()
+            display: none
+    &--active-menu.megamenu__col
+        +sm-block()
+            flex-wrap: wrap
 
     &__logo
         &-icon
@@ -81,20 +91,29 @@
 
     &__phone
         +sm-block()
-            display: none
+            order: 2
+        +xs-block()
+            a
+                font-size: 13px
 
     &__city
         display: flex
         margin-right: 40px
         position: relative
         min-width: 200px
+        +sm-block()
+            order: 1
         +xs-block()
-            display: none
-
+            min-width: 150px
         a
             z-index: 5
         +sm-block()
             margin-right: 20px
+    &__btn
+        +sm-block()
+            order: 3
+            margin-top: 30px
+            width: 100%
     &__showreel
         display: flex
         svg
@@ -127,3 +146,7 @@
             height: 17px
             margin-left: 10px
             fill: $accent
+
+        +xs-block()
+            font-size: 16px
+            line-height: 22px
