@@ -29,7 +29,13 @@ $(document).ready(function () {
     // Owl carousel
 
     let feedbackCarousel = $('#feedback-carousel');
-    feedbackCarousel.owlCarousel({
+    feedbackCarousel.on('initialized.owl.carousel changed.owl.carousel', function (e) {
+        if (!e.namespace) {
+            return;
+        }
+        var carousel = e.relatedTarget;
+        $('.feedback__counter').text(carousel.relative(carousel.current()) + 1 + '/' + carousel.items().length);
+    }).owlCarousel({
         items: 1,
         loop: true
     });
@@ -89,8 +95,8 @@ $(document).ready(function () {
 
     $('.sandwich').click(function () {
         const th = $(this),
-              header = $('.header'),
-              megamenu = $('.megamenu');
+            header = $('.header'),
+            megamenu = $('.megamenu');
 
         if (th.hasClass('is-active')) {
             th.removeClass('is-active');

@@ -43,14 +43,23 @@
             +sizebox(100px)
     &__text
         margin-bottom: 50px
-    &__navigation
+    &__controls
         +col()
         +size(2)
         +size-md(12)
 
         display: flex
-        align-self: center
-        justify-content: flex-end
+        flex-direction: column
+        align-items: center
         +md-block()
             justify-content: center
             margin-top: 20px
+    &__navigation
+        display: flex
+    &__counter
+        margin-bottom: 10px
+        font-size: 30px
+        line-height: 40px
+        color: $accent
+    &__prev
+        margin-right: 10px
