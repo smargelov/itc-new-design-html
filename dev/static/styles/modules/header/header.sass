@@ -72,11 +72,8 @@
         & > *
             &:not(:last-child)
                 margin-right: 40px
-        +md-block()
-            display: none
-    &--active-menu.megamenu__col
-        +sm-block()
-            flex-wrap: wrap
+
+
 
     &__logo
         &-icon
@@ -93,31 +90,31 @@
         +sm-block()
             order: 2
         +xs-block()
+            margin-right: 10px !important
             a
                 font-size: 13px
+
 
     &__city
         display: flex
         margin-right: 40px
         position: relative
         min-width: 200px
-        +sm-block()
-            order: 1
-        +xs-block()
-            min-width: 150px
         a
             z-index: 5
-        +sm-block()
-            margin-right: 20px
+        +md-block()
+            display: none
+
     &__btn
-        +sm-block()
-            order: 3
-            margin-top: 30px
-            width: 100%
+        +md-block()
+            display: none
+
     &__showreel
         display: flex
         svg
             margin-right: 10px
+        +md-block()
+            display: none
     &__cities
         position: absolute
         z-index: 4
