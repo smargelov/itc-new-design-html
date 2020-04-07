@@ -28,15 +28,13 @@
         transform: none
         .megamenu__item,
         .megamenu__icon,
-        .megamenu__btn,
-        .megamenu__col:nth-child(4) > *
+        .megamenu__btn
             +megaItemView()
 
 
     &__cols
         +row-flex()
         padding-top: 35px
-
         border-top: 1px solid rgba($white, .3)
     &__col
         +col()
@@ -60,24 +58,9 @@
             align-self: flex-start
             +size-md(12)
             +md-block()
-                order: 4
-                margin-top: 30px
-        &:nth-child(4)
-            display: none
-            +size-md(12)
-            +md-block()
-                border-top: 1px solid rgba($white, .3)
-                display: flex
-                align-items: center
-                justify-content: space-between
-                margin-top: 30px
-                padding-top: 30px
                 order: 3
-            +sm-block()
-                justify-content: space-around
-            & > *
-                +delayLoop(0.95)
-                +megaItem()
+                margin-top: 30px
+
     &__item
         +megaItem()
         &:not(:last-child)
@@ -91,16 +74,6 @@
             font-size: 16px
             line-height: 22px
 
-    &__btn-wrap
-        flex: 1
-        display: flex
-        justify-content: center
-        align-items: center
-        +md-block()
-            display: none
-    &__btn
-        +megaItem(100)
-        +delayLoop(0.95)
 
     &__social
         display: flex
