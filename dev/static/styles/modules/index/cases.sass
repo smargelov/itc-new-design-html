@@ -16,15 +16,29 @@
         height: 330px
         margin-bottom: 20px
         transition: all .8s ease
+        position: relative
         &:hover,
         &:focus
-            background-image: url(attr(data-img-src))
             color: $white
             & .cases__btn-wrap
                 width: 30%
                 margin-right: 4%
                 +xs-block()
                     width: 25%
+        &::before
+            content: ''
+            display: block
+            background-image: url(attr(data-img-src))
+            background-repeat: no-repeat
+            position: absolute
+            background-size: cover
+            background-position: center center
+            top: 0
+            bottom: 0
+            left: 0
+            right: 0
+            z-index: 3
+
         &-title
             font-size: 40px
             line-height: 50px

@@ -1,13 +1,9 @@
 -
     var counts = [
         {
-            num: 2010,
-            text: 'год образования ITC MEDIA',
-        },
-        {
             num: 300,
             text: 'успешных кейсов',
-            before: '>',
+            after: '+',
         },
         {
             num: 25,
@@ -23,6 +19,10 @@
             text: 'место в составе AGIMA Partners Club',
             special: true,
         },
+        {
+            num: 2010,
+            text: 'год образования ITC MEDIA',
+        },
     ]
 
 // Counters
@@ -31,7 +31,7 @@ section.section.mobile-none
         each card in counts
             ._card(class= card.special ? 'counters__card--spec' : '')
                 ._top
-                    if card.before
-                        ._before= card.before
                     ._num(data-num= card.num) 0
+                    if card.after
+                        ._after= card.after
                 ._desc= card.text
