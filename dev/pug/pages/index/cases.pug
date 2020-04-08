@@ -41,9 +41,10 @@
 section.section
     .b-cases
         h2.h2._title Кейсы
-        ._cards(date-img-src='../images/content/cases/case-1.jpg')
+        ._cards
             each card in cases
                 a(href=card.link, title=card.name)._card
+                    ._hover-card(style='background-image: url(/images/content/cases/case-1.jpg)')
                     .h3._card-title= card.name
                     ._card-footer
                         ._btn-wrap
