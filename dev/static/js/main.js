@@ -56,7 +56,6 @@ $(document).ready(function () {
         $('#' + target).addClass('active');
     });
 
-
     // City menu
 
     $('.city-view').on('click', function (e) {

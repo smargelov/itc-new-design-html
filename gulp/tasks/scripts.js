@@ -10,6 +10,7 @@ module.exports = function () {
     $.gulp.task('libsJS:dev', () => {
         return $.gulp.src(['node_modules/svg4everybody/dist/svg4everybody.min.js',
                             'node_modules/owl.carousel/dist/owl.carousel.min.js',
+                            // 'node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.js',
                             'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js'])
             .pipe(concat('libs.min.js'))
             .pipe($.gulp.dest(scriptsPATH.output));
@@ -18,6 +19,7 @@ module.exports = function () {
     $.gulp.task('libsJS:build', () => {
         return $.gulp.src(['node_modules/svg4everybody/dist/svg4everybody.min.js',
                             'node_modules/owl.carousel/dist/owl.carousel.min.js',
+                            // 'node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.js',
                             'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js'])
             .pipe(concat('libs.min.js'))
             .pipe(uglify())

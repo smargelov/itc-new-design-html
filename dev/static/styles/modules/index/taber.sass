@@ -6,6 +6,8 @@
     color: $white
     +sm-block()
         flex-wrap: wrap
+    +xs-block()
+        padding: 30px 20px
 
     &__left
         width: 50%
@@ -21,34 +23,52 @@
             background-color: $white
             opacity: .3
             +sm-block()
-                bottom: 0
+                bottom: auto
                 right: 0
                 left: 0
-                top: auto
+                top: 0
                 width: auto
                 height: 1px
 
         +sm-block()
+            order: 2
             width: 100%
-            padding-bottom: 40px
-            margin-bottom: 40px
+            padding-top: 40px
+            margin-top: 40px
 
     &__right
         width: 50%
         +sm-block()
+            order: 1
             width: 100%
-
+    &__title-items
+        +sm-block()
+            display: flex
+            overflow: scroll
+            overflow-scrolling: touch
     &__title-item
         opacity: .5
         transition: all .5s ease
         cursor: pointer
+        +sm-block()
+            display: flex
+            justify-content: center
+            align-items: center
+            padding: 10px 20px
+            height: 50px
+            border-radius: 25px
+            border: 1px solid $white
+        +xs-block()
+            height: 30px
+            border-radius: 15px
         &:focus, &:hover
             opacity: 1
 
         &:not(:last-child)
             margin-bottom: 30px
             +sm-block()
-                margin-bottom: 10px
+                margin-right: 10px
+                margin-bottom: 0
         &.active
             opacity: 1
             position: relative
@@ -62,8 +82,8 @@
                 top: 50%
                 background-color: $white
                 +md(width, 30px)
-                +xs-block()
-                    width: 10px
+                +sm-block()
+                    display: none
 
     &__title
         font-size: 40px
@@ -73,9 +93,13 @@
         +md-block()
             font-size: 25px
             line-height: 35px
+        +sm-block()
+            font-size: 16px
+            line-height: 22px
+            white-space: nowrap
         +xs-block()
-            font-size: 18px
-            line-height: 24px
+            font-size: 13px
+            line-height: 18px
     &__card
         display: none
         flex-direction: column
@@ -84,13 +108,14 @@
             display: flex
         p
             line-height: 27px
-            +sm-block()
-                padding-left: 0
+
             +xs-block()
                 font-size: 16px
                 line-height: 20px
             &:not(:last-child)
                 margin-bottom: 20px
+        +sm-block()
+            padding-left: 0
 
     &__link
         color: $white
@@ -98,3 +123,6 @@
         text-decoration: underline
         font-weight: 100
         font-size: .8em
+//
+//.mCSB_container
+//    display: flex
