@@ -68,8 +68,11 @@
 
     &__link
         color: $white
+        font-size: 40px
         &:hover, &:focus
             color: darken($white, 30%)
+        +sm-block()
+            font-size: 23px
         +xs-block()
             font-size: 16px
             line-height: 22px
@@ -80,13 +83,17 @@
         flex-direction: column
         justify-content: space-between
         +sm-block()
-            padding-top: 30px
+            position: fixed
+            bottom: 0
+            right: 0
+            left: 0
             flex-direction: row
             justify-content: center
             flex: 1
     &__icon
         +megaItem()
         +delayLoop(1)
+        margin-bottom: 40px
         &:hover, &:focus
             svg
                 fill: darken($white, 30%)
