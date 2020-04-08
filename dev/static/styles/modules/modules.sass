@@ -1,6 +1,5 @@
 @import "buttons/buttons"
 @import "index/index"
-@import "page-blocks/page-blocks"
 @import "footer/footer"
 @import "header/header"
 @import "main-nav/main-nav"
@@ -13,3 +12,48 @@
         font-size: 110px
         line-height: 125px
         font-weight: 500
+
+
+// Badges
+.badges
+    +row-flex()
+    &__desc
+        +col()
+        +size(6)
+        +size-sm(12)
+    &__badge
+        +col()
+        +size(2)
+        +size-sm(4)
+        display: flex
+    &__icon
+        +sizebox(30px)
+        min-width: 30px
+        margin-right: 10px
+    &__badge-text
+        font-size: 15px
+        line-height: 22px
+
+
+// Focus
+.focus-page
+    &__items
+        +row-flex()
+    &__item
+        +col()
+        +size(6)
+    &__text
+        padding-left: 38px
+        position: relative
+        &::before
+            position: absolute
+            display: block
+            content: ''
+            left: 0
+            top: 15px
+            width: 19px
+            height: 1px
+            background-color: $accent
+
+
+
