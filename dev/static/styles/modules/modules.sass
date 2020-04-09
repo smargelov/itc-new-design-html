@@ -5,6 +5,7 @@
 @import "main-nav/main-nav"
 @import "popups/popups"
 @import "taber"
+@import "topcases"
 
 
 // Page title h1
@@ -57,4 +58,26 @@
             background-color: $accent
 
 
+// Controls
+.controls
+    +col()
+    +size(2)
+    +size-md(12)
 
+    display: flex
+    flex-direction: column
+    align-items: center
+    +md-block()
+        justify-content: center
+        margin-top: 20px
+    &__navigation
+        display: flex
+    &__counter
+        margin-bottom: 10px
+        font-size: 30px
+        line-height: 40px
+        color: $accent
+        &--light
+            color: $white
+    &__prev
+        margin-right: 10px

@@ -1,0 +1,81 @@
+.topcases
+
+.topcases__tabs
+    +row-flex()
+
+.topcases__tab
+    +col()
+    +size(3)
+
+.topcases-tab
+    padding-bottom: 20px
+    transition: all .3s
+
+.topcases-tab--active
+    color: $white
+    background-color: $accent
+    .topcases-tab__content
+        background-color: transparent
+
+.topcases-tab__content
+    padding: 25px 30px
+    background-color: $grey
+    height: 100%
+
+.topcases-tab__title
+    font-size: 25px
+    line-height: 30px
+    margin-bottom: 20px
+
+.topcases-tab__cols
+    display: flex
+    justify-content: space-between
+
+.topcases-tab__col
+    max-width: 47%
+    display: flex
+    flex-direction: column
+
+.topcases-tab__desc
+    font-size: 13px
+    line-height: 17px
+
+.topcases__cards
+    +row-flex()
+
+.topcases-card
+    display: none
+    +col()
+    +size(12)
+    color: $white
+    padding: 40px 30px
+    background-color: $accent
+    opacity: 0
+    transition: all .3s
+    transition-delay: .3s
+
+.topcases-card--active
+    display: flex
+    opacity: 1
+
+.topcases-card__left
+    flex: 2
+    padding-right: 24px
+
+.topcases-card__right
+    flex: 1
+    display: flex
+    flex-direction: column
+    align-items: center
+    padding-left: 24px
+
+.topcases-card__images
+    display: flex
+
+.topcases-card__text
+    margin-bottom: 40px
+    line-height: 27px
+
+.topcases-card__controls
+    margin-top: auto
+    padding-top: 40px

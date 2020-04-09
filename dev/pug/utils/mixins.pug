@@ -6,6 +6,17 @@ mixin icon(name,mod)
         svg(class="svg-sprite-icon icon-" + name)
             use(xlink:href="images/svg/symbol/sprite.svg#" + name)
 
+mixin controlsSlider(parrent, mod)
+    .b-controls(class= parrent+'__controls')
+        ._counter(class= mod === 'light' ? 'controls__counter--light' : '')
+        ._navigation
+            ._prev
+                button.b-btn.-round._btn(class= mod === 'light' ? 'btn--light' : '')
+                    +icon('arrow-left', 'btn__icon-arrow btn__icon-arrow-left')
+            ._next
+                button.b-btn.-round._btn(class= mod === 'light' ? 'btn--light' : '')
+                    +icon('arrow', 'btn__icon-arrow')
+
 mixin taber(tabs, light)
     section.section
         .b-taber(class= light ? 'taber--light' : '')
@@ -20,3 +31,31 @@ mixin taber(tabs, light)
                         - var text = item.text
                         div(id="tab-num-" + (index + 1), class= index === 0 ? 'active' : '')._card
                             | !{text}
+
+mixin feedbackSlider (title, feedbacks, mod)
+    // todo доделать
+    // Feedback section
+    section.section
+        .b-feedback
+            h2.h2._title title
+            ._wrap
+                ._desc
+                    .feedback-carousel.owl-carousel
+                        each item in feedbacks
+                            ._item
+                                ._item-left
+                                    ._name= item.name
+                                    +icon('quotes', 'feedback__icon-quotes')
+                                ._item-right
+                                    ._text= item.text
+                                    if item.original
+                                        a(href= item.original, title="Оригинал отзыва " + item.name)._original Смотреть оригинал
+                ._controls
+                    ._counter
+                    ._navigation
+                        ._prev
+                            button.b-btn.-round._btn
+                                +icon('arrow-left', 'btn__icon-arrow btn__icon-arrow-left')
+                        ._next
+                            button.b-btn.-round._btn
+                                +icon('arrow', 'btn__icon-arrow')

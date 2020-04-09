@@ -14,17 +14,19 @@ $(document).ready(function () {
     };
     let countBlock = $('.counters'),
         counterStatus = true;
-    $(window).scroll(function () {
-        let scrollEvent = ($(window).scrollTop() > (countBlock.offset().top - $(window).height()));
+    if (countBlock.length) {
+        $(window).scroll(function () {
+            let scrollEvent = ($(window).scrollTop() > (countBlock.offset().top - $(window).height()));
 
-        if (scrollEvent && counterStatus) {
-            counterStatus = false;
-            $('.counters__num').each(function () {
-                    countNum(this, $(this).data('num'))
-                }
-            )
-        }
-    });
+            if (scrollEvent && counterStatus) {
+                counterStatus = false;
+                $('.counters__num').each(function () {
+                        countNum(this, $(this).data('num'))
+                    }
+                )
+            }
+        });
+    }
 
     // Owl carousel
 
@@ -45,6 +47,13 @@ $(document).ready(function () {
     $('.feedback__next').click(function () {
         feedbackCarousel.trigger("next.owl.carousel")
     });
+
+    // $('.topcases-card__images').each(function (index) {
+    //     $(this).owlCarousel({
+    //         items: 1,
+    //         loop: true
+    //     });
+    // });
 
     // Taber
 
@@ -109,6 +118,15 @@ $(document).ready(function () {
         }
     })
 
+    // Top cases
+    $('.topcases-tab').click(function (e) {
+        let target = $(this).data('case-target');
+        $('.topcases-tab').removeClass('topcases-tab--active');
+        $(this).addClass('topcases-tab--active');
+        $('.topcases-card').removeClass('topcases-card--active');
+        $('.topcases-card.' + target).addClass('topcases-card--active');
+
+    })
 });
 
 

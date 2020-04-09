@@ -1,0 +1,27 @@
+section.section
+    .b-topcases
+        h2.h2._title Наши кейсы
+        ._wrap
+            ul._tabs
+                each tab, index in topCases
+                    li.b-topcases-tab._tab(data-case-target='tab-' + (index + 1), class= index === 0 ? 'topcases-tab--active' : '')
+                        ._content
+                            ._title= tab.name
+                            ._cols
+                                each col in tab.cols
+                                    ._col
+                                        ._num= col.num
+                                        ._desc= col.desc
+
+            ul._cards
+                each card, index in topCases
+                    li.b-topcases-card._card(class='tab-' + (index + 1), class= index === 0 ? 'topcases-card--active' : '')
+                        ._left
+                            ._images
+                                each img in card.images
+                                    ._img
+                                        img(src= img)
+                        ._right
+                            ._text= card.text
+                            button.b-btn.-flat.-light._btn Смотреть кейс
+                            +controlsSlider('topcases-card', 'light')
