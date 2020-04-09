@@ -15,13 +15,15 @@ section.section
 
             ul._cards
                 each card, index in topCases
+                    - let isCaruosel = card.images.length > 1
                     li.b-topcases-card._card(class='tab-' + (index + 1), class= index === 0 ? 'topcases-card--active' : '')
                         ._left
-                            ._images
+                            card.images.length
+                            ._images(class= isCaruosel ? 'owl-carousel owl-theme' : '')
                                 each img in card.images
-                                    ._img
-                                        img(src= img)
+                                    img(src= img)._img
                         ._right
                             ._text= card.text
                             button.b-btn.-flat.-light._btn Смотреть кейс
-                            +controlsSlider('topcases-card', 'light')
+                            if (isCaruosel)
+                                +controlsSlider('topcases-card', 'light')
