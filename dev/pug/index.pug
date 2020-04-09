@@ -1,15 +1,15 @@
 extends template/main
 
 block variables
-	- var title = 'Главная страница'
+    - var title = 'Главная страница'
 
 block content
-	include pages/index/hero
-	include pages/index/taber
-	include pages/index/cases
-	include pages/index/showreel
-	include pages/index/counters
-	include pages/index/clients
-	include pages/index/feedback
-	include pages/index/latest-post
-	include pages/index/hr
+    include pages/index/hero
+    +taber(tabsIndex)
+    include pages/index/cases
+    include pages/index/showreel
+    include pages/index/counters
+    include pages/index/clients
+    include pages/index/feedback
+    include pages/index/latest-post
+    include pages/index/hr

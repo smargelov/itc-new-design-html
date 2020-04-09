@@ -3,7 +3,9 @@ extends template/main
 block variables
     - var title = 'Продвижение сайтов'
 
+
 block content
     include modules/page-title
     include modules/badges
     include modules/focus
+    +taber(tabsPromo1, true)

@@ -110,22 +110,33 @@
             display: flex
         p
             line-height: 27px
-
             +xs-block()
                 font-size: 16px
                 line-height: 20px
             &:not(:last-child)
                 margin-bottom: 20px
+        ul
+            list-style: none
+
+        li
+            display: flex
+            &:not(:last-child)
+                margin-bottom: 30px
+            &::before
+                content: '—'
+                display: inline-flex
+                margin-right: 20px
+
         +sm-block()
             padding-left: 0
 
-    &__link
-        color: $white
-        opacity: .6
-        text-decoration: underline
-        font-weight: 100
-        font-size: .8em
-        &:hover, &:focus
+        a
             color: $white
-            text-decoration: none
-            opacity: 1
+            opacity: .6
+            text-decoration: underline
+            font-weight: 100
+            font-size: .8em
+            &:hover, &:focus
+                color: $white
+                text-decoration: none
+                opacity: 1
