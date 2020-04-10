@@ -71,13 +71,16 @@ $(document).ready(function () {
     });
 
     // Taber
+    $('.taber').each(function (i) {
+        let th = $(this);
+        th.find('.taber__title-item').on('click', function () {
+            let target = $(this).data('target');
+            th.find('.taber__title-item').removeClass('active');
+            $(this).addClass('active');
+            th.find('.taber__card').removeClass('active');
+            th.find('#' + target).addClass('active');
+        });
 
-    $('.taber__title-item').on('click', function () {
-        let target = $(this).data('target');
-        $('.taber__title-item').removeClass('active');
-        $(this).addClass('active');
-        $('.taber__card').removeClass('active');
-        $('#' + target).addClass('active');
     });
 
     // City menu

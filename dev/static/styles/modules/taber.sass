@@ -4,6 +4,23 @@
     padding: 60px 30px
     background-color: $accent
     color: $white
+    &--light
+        color: $main-font-color
+        border: 1px solid $accent
+        background-color: $white
+        .taber
+            &__left
+                &::after
+                    background-color: $accent
+            &__title-item
+                opacity: 1
+                color: $accent
+                &.active
+                    color: $main-font-color
+                    &::after
+                        background-color: $accent
+
+
     +sm-block()
         flex-wrap: wrap
         padding: 30px 30px 10px
