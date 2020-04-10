@@ -81,3 +81,32 @@
             color: $white
     &__prev
         margin-right: 10px
+
+
+// Autor vidio
+.avideo
+    &__wrap
+        background-repeat: no-repeat
+        background-size: cover
+        background-position: center center
+        min-height: 553px
+        padding: 40px 30px
+        color: $white
+        +row-flex()
+    &__text
+        +col()
+        +size(5)
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+    &__btn-wrap
+        +col()
+        +size(7)
+        display: flex
+        align-items: center
+    &__subtitle
+        font-size: 40px
+        line-height: 50px
+    &__step
+        &:not(:last-child)
+            margin-bottom: 10px
