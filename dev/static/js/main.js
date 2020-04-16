@@ -157,6 +157,18 @@ $(document).ready(function () {
         $('.topcases-card.' + target).addClass('topcases-card--active');
 
     })
+
+    // City on contacts page
+    $('.contacts-page__city-tab').click(function (e) {
+        let target = $(this).data('target');
+        $('.contacts-page__city-tab').removeClass('contacts-page__city-tab--active');
+        $(this).addClass('contacts-page__city-tab--active');
+        $('.contacts-page__address').removeClass('contacts-page__address--active');
+        $(`.contacts-page__address[data-city=${target}]`).addClass('contacts-page__address--active');
+        $('.contacts-page__map-wrap').removeClass('contacts-page__map-wrap--active');
+        $(`.contacts-page__map-wrap[data-city=${target}]`).addClass('contacts-page__map-wrap--active');
+    })
+
 });
 
 
