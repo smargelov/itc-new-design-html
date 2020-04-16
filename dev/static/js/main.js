@@ -30,23 +30,26 @@ $(document).ready(function () {
 
     // Owl carousel
 
-    let feedbackCarousel = $('#feedback-carousel');
-    feedbackCarousel.on('initialized.owl.carousel changed.owl.carousel', function (e) {
-        if (!e.namespace) {
-            return;
-        }
-        var carousel = e.relatedTarget;
-        $('.feedback__counter').text(carousel.relative(carousel.current()) + 1 + '/' + carousel.items().length);
-    }).owlCarousel({
-        items: 1,
-        loop: true,
-        dots: false
-    });
-    $('.feedback__prev').click(function () {
-        feedbackCarousel.trigger("prev.owl.carousel")
-    });
-    $('.feedback__next').click(function () {
-        feedbackCarousel.trigger("next.owl.carousel")
+    $('.feedback-carousel').each(function () {
+
+        let th = $(this);
+        th.on('initialized.owl.carousel changed.owl.carousel', function (e) {
+            if (!e.namespace) {
+                return;
+            }
+            var carousel = e.relatedTarget;
+            th.parents('.feedback__wrap').find('.feedback__counter').text(carousel.relative(carousel.current()) + 1 + '/' + carousel.items().length);
+        }).owlCarousel({
+            items: 1,
+            loop: true,
+            dots: false
+        });
+        th.parents('.feedback__wrap').find('.feedback__prev').click(function () {
+            th.trigger("prev.owl.carousel")
+        });
+        th.parents('.feedback__wrap').find('.feedback__next').click(function () {
+            th.trigger("next.owl.carousel")
+        });
     });
 
     $('.topcases-card__images.owl-carousel').each(function (index) {

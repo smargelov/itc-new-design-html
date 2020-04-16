@@ -1,11 +1,19 @@
 .feedback
+    &--rules
+        .feedback__item-left
+            width: 50%
+        .feedback__item-right
+            width: 50%
+        .feedback__name
+            font-size: 40px
+            line-height: 55px
     &__wrap
         background-color: $grey
         padding: 60px 30px
         +row-flex()
     &__desc
         +col()
-        +size(10)
+        +size(9)
         +size-md(12)
         overflow: hidden
 
@@ -42,10 +50,11 @@
         +sm-block()
             +sizebox(100px)
     &__text
-        margin-bottom: 50px
+        &:not(:last-child)
+            margin-bottom: 50px
     &__controls
         +col()
-        +size(2)
+        +size(3)
         +size-md(12)
 
         display: flex
