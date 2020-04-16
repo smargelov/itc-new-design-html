@@ -1,12 +1,18 @@
 .clients
+    .owl-stage
+        display: flex
+        align-items: center
+    .owl-carousel .owl-item img
+        width: auto
     &__list
-        display: grid
-        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr))
-        grid-gap: 50px
+        //display: grid
+        //grid-template-columns: repeat(auto-fill, minmax(130px, 1fr))
+        //grid-gap: 50px
     &__item
         display: flex
         justify-content: center
         align-items: center
+        width: 215px
     &__img
         &:hover
             filter: url(#monochrome)

@@ -70,6 +70,15 @@ $(document).ready(function () {
         });
     });
 
+    $('.clients__list').owlCarousel({
+        loop: true,
+        autoplay: true,
+        autoplayHoverPause: true,
+        autoWidth: true,
+        margin: 40,
+        items: 6,
+    });
+
     // Taber
     $('.taber').each(function (i) {
         let th = $(this);
