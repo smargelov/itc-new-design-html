@@ -1,0 +1,47 @@
+section.section
+    .b-contacts-page
+        ._left
+            ._city-tabs
+                ._city-tab.-active(data-target='Брянск') Брянск
+                ._city-tab(data-target='Москва') Москва
+            ._info
+                p
+                    a(href='mailto:manager@itc-media.ru', title='Электронная почта')._email manager@itc-media.ru
+                p._phone-wrap
+                    a(href='tel:+78005512557', title='Телефон')._phone 8 (800) 551-25-57
+                    a(href='whatsapp://send/?phone=78005512557', title='WhatsApp')
+                        +icon('whatsapp', 'contacts-page__phone-icon')
+                p Бесплатно по России
+                p Работаем по будням с 9:00 до 18:00
+
+                ._dop-phones
+                    ._dop-phone
+                        p доб.
+                    ._dop-phone
+                        p 106 бухгалтерия
+                        p 104 тендерный отдел
+
+                button.b-btn.-flat._btn Реквизиты
+
+                address._address.-active(data-city='Брянск') 241007, Брянская обл, г. Брянск,  ул Бежицкая, д 54
+                address._address(data-city='Москва') г. Москва, ЮЗАО, район Коньково, ул Бутлерова, д 17
+            h3.h3._subtitle Свяжитесь с нами
+            form.b-contacts-form._form
+                textarea(placeholder='Опишите идею или ситуацию', name='message')._textarea
+                input(type='text' name='user-name', placeholder='Имя')._input
+                input(type='tel' name='user-phone', placeholder='Телефон')._input.-phone
+                input(type='checkbox', id='consultation-approve', name='approve' checked)._checkbox
+                label(for='consultation-approve')._label Даю согласие на обработку своих персональных данных и соглашаюсь с политикой конфиденциальности
+                input(type='submit', value='Отправить').b-btn.-flat._btn
+        ._right
+            ._map-wrap.-active(data-city='Брянск')
+                div(style='position:relative;overflow:hidden;')
+                    a(href='https://yandex.ru/maps/191/bryansk/?utm_medium=mapframe&utm_source=maps', style='color:#eee;font-size:12px;position:absolute;top:0px;') Брянск
+                    a(href='https://yandex.ru/maps/191/bryansk/house/bezhitskaya_ulitsa_54/Z00YdQNpQEYEQFtpfX52cn5hYg==/?ll=34.349533%2C53.273067&utm_medium=mapframe&utm_source=maps&z=17.53', style='color:#eee;font-size:12px;position:absolute;top:14px;') Бежицкая улица, 54 — Яндекс.Карты
+                    iframe(src='https://yandex.ru/map-widget/v1/-/COgAUR-8', width='100%', height='100%', frameborder='0', allowfullscreen='true', style='position:relative;')
+            ._map-wrap(data-city='Москва')
+                div(style='position:relative;overflow:hidden;')
+                    a(href='https://yandex.ru/maps/213/moscow/?utm_medium=mapframe&utm_source=maps', style='color:#eee;font-size:12px;position:absolute;top:0px;') Москва
+                    a(href='https://yandex.ru/maps/213/moscow/house/ulitsa_butlerova_17/Z04YcwRpT0cBQFtvfXp0cX1nYQ==/?ll=37.539326%2C55.650462&sll=34.349942%2C53.273176&sspn=0.007137%2C0.002574&utm_medium=mapframe&utm_source=maps&z=15.96', style='color:#eee;font-size:12px;position:absolute;top:14px;') Улица Бутлерова, 17 — Яндекс.Карты
+                    iframe(src='https://yandex.ru/map-widget/v1/-/COgHEYzy', width='100%', height='100%', frameborder='0', allowfullscreen='true', style='position:relative;')
+
