@@ -7,11 +7,11 @@ section.section
                     li.b-topcases-tab._tab(data-case-target='tab-' + (index + 1), class= index === 0 ? 'topcases-tab--active' : '')
                         ._content
                             ._title= tab.name
-                            ._cols
+                            ._cols(class= tab.cols.length < 2 ? 'topcases-tab__cols--single' : '')
                                 each col in tab.cols
                                     ._col
                                         ._num= col.num
-                                        ._desc= col.desc
+                                        ._desc !{col.desc}
 
             ul._cards
                 each card, index in topCases

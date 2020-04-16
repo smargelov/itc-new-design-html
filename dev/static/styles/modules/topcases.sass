@@ -5,10 +5,10 @@
 
 .topcases__tab
     +col()
-    +size(3)
+    +size(4)
 
 .topcases-tab
-    padding-bottom: 20px
+    //padding-bottom: 20px
     //transition: all .3s
 
 .topcases-tab--active
@@ -21,15 +21,30 @@
     padding: 25px 30px
     background-color: $grey
     height: 100%
+    font-weight: 100
 
 .topcases-tab__title
-    font-size: 25px
-    line-height: 30px
-    margin-bottom: 20px
+    font-size: 40px
+    line-height: 50px
+    margin-bottom: 30px
 
 .topcases-tab__cols
     display: flex
     justify-content: space-between
+
+.topcases-tab__cols--single
+    .topcases-tab__col
+        max-width: 100%
+        flex-direction: row
+        align-items: center
+    .topcases-tab__num
+        font-size: 40px
+        line-height: 40px
+        margin-right: 8px
+    .topcases-tab__desc
+        font-size: 16px
+        line-height: 17px
+
 
 .topcases-tab__col
     max-width: 47%
