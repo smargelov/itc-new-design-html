@@ -6,12 +6,12 @@ block variables
 
 block content
     include modules/page-title
-    include modules/badges
+    +badges(promBadges)
     include modules/focus
     +taber(tabsPromo1)
     include modules/topcases
     +feedbackSlider(feedbacks, 'Отзывы')
-    include pages/site-promotion/autor-video
+    +avideo(promAvideo)
     +taber(tabsStrategy, 'Стратегия поискового продвижения', 'light')
     +feedbackSlider(ourRules, 'Наш подход', 'feedback--rules')
     include modules/consult-form

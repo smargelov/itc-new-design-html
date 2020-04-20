@@ -17,6 +17,6 @@ include ../../utils/data
             ._col
                 ul._social
                     each icon in socialIcons
-                        if icon.name !== 'Agima'
+                        if icon.name !== 'Agima' && icon.name !== 'РАЕК'
                             a(href= icon.link, title= icon.name)._icon
                                 +icon(icon.icon, 'megamenu__social-icon')

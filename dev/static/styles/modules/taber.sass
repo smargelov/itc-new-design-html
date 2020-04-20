@@ -4,7 +4,8 @@
     padding: 60px 30px
     background-color: $accent
     color: $white
-    &--light
+    &--light,
+    &--grey
         color: $main-font-color
         border: 1px solid $accent
         background-color: $white
@@ -19,7 +20,9 @@
                     color: $main-font-color
                     &::after
                         background-color: $accent
-
+    &--grey
+        background-color: $grey
+        border-color: transparent
 
     +sm-block()
         flex-wrap: wrap

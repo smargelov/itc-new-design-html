@@ -39,9 +39,9 @@
         +col()
         +size(2)
         +size-md(4)
-        +size-xs(12)
+        +size-sm(12)
         display: flex
-        +xs-block()
+        +sm-block()
             &:not(:last-child)
                 margin-bottom: 20px
     &__icon
@@ -164,3 +164,54 @@
             text-decoration: none
             &:hover, &:focus
                 text-decoration: underline
+
+// Support format
+
+.sformat
+    &__cards
+        +row-flex()
+    &__card
+        +col()
+        +size(6)
+        +size-sm(12)
+        padding: 40px
+        background-color: $grey
+        display: flex
+        flex-direction: column
+        +sm-block()
+            &:not(:last-child)
+                margin-bottom: 20px
+    &__subtitle
+        font-size: 40px
+        line-height: 50px
+        font-weight: 200
+        margin-bottom: 50px
+        +xs-block()
+            font-size: 27px
+            line-height: 32px
+            margin-bottom: 30px
+    &__list
+        margin-bottom: 40px
+    &__item
+        position: relative
+        padding-left: 30px
+        &:not(:last-child)
+            margin-bottom: 20px
+            +xs-block()
+                margin-bottom: 10px
+        &::before
+            display: inline-block
+            content: '— '
+            position: absolute
+            left: 0
+    &__price
+        font-size: 40px
+        line-height: 50px
+        font-weight: bold
+        margin-top: auto
+        +md-block()
+            font-size: 30px
+            line-height: 37px
+        +xs-block()
+            font-size: 24px
+            line-height: 28px
