@@ -4,15 +4,26 @@
             width: 50%
         .feedback__item-right
             width: 50%
+            +xs-block()
+                width: 100%
         .feedback__name
             font-size: 40px
             line-height: 55px
+            +md-block()
+                font-size: 30px
+                line-height: 35px
+            +sm-block()
+                font-size: 20px
+                line-height: 27px
+                font-weight: bold
     &__wrap
         background-color: $grey
         padding: 60px 30px
         +row-flex()
         margin-left: 0
         margin-right: 0
+        +xs-block()
+            padding: 30px 10px
     &__desc
         +col()
         +size(9)

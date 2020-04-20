@@ -25,6 +25,21 @@ section.section
 
                 address._address.-active(data-city='Брянск') 241007, Брянская обл, г. Брянск,  ул Бежицкая, д 54
                 address._address(data-city='Москва') г. Москва, ЮЗАО, район Коньково, ул Бутлерова, д 17
+
+                ._mob-map.desktop-none
+                    ._map-wrap.-active(data-city='Брянск')
+                        div(style='position:relative;overflow:hidden;')
+                            a(href='https://yandex.ru/maps/191/bryansk/?utm_medium=mapframe&utm_source=maps', style='color:#eee;font-size:12px;position:absolute;top:0px;') Брянск
+                            a(href='https://yandex.ru/maps/191/bryansk/house/bezhitskaya_ulitsa_54/Z00YdQNpQEYEQFtpfX52cn5hYg==/?ll=34.349932%2C53.273227&sll=34.363731%2C53.243325&sspn=0.246506%2C0.088351&utm_medium=mapframe&utm_source=maps&z=17.17', style='color:#eee;font-size:12px;position:absolute;top:14px;') Бежицкая улица, 54 — Яндекс.Карты
+                            iframe(src='https://yandex.ru/map-widget/v1/-/CODsVQ6c', width='100%', height='300', frameborder='0', allowfullscreen='true', style='position:relative;')
+
+                    ._map-wrap(data-city='Москва')
+                        div(style='position:relative;overflow:hidden;')
+                            a(href='https://yandex.ru/maps/213/moscow/?utm_medium=mapframe&utm_source=maps', style='color:#eee;font-size:12px;position:absolute;top:0px;') Москва
+                            a(href='https://yandex.ru/maps/213/moscow/house/ulitsa_butlerova_17/Z04YcwRpT0cBQFtvfXp0cX1nYQ==/?ll=37.539326%2C55.650462&sll=34.349942%2C53.273176&sspn=0.007137%2C0.002574&utm_medium=mapframe&utm_source=maps&z=15.96', style='color:#eee;font-size:12px;position:absolute;top:14px;') Улица Бутлерова, 17 — Яндекс.Карты
+                            iframe(src='https://yandex.ru/map-widget/v1/-/COgHEYzy', width='100%', height='300', frameborder='0', allowfullscreen='true', style='position:relative;')
+
+
             h3.h3._subtitle Свяжитесь с нами
             form.b-contacts-form._form
                 textarea(placeholder='Опишите идею или ситуацию', name='message')._textarea

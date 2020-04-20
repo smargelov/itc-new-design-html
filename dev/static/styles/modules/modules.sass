@@ -15,6 +15,12 @@
         font-size: 110px
         line-height: 125px
         font-weight: 500
+        +md-block()
+            font-size: 90px
+            line-height: 105px
+        +sm-block()
+            font-size: 50px
+            line-height: 60px
         +xs-block()
             font-size: 30px
             line-height: 40px
@@ -26,12 +32,18 @@
     &__desc
         +col()
         +size(6)
-        +size-sm(12)
+        +size-md(12)
+        +md-block()
+            margin-bottom: 20px
     &__badge
         +col()
         +size(2)
-        +size-sm(4)
+        +size-md(4)
+        +size-xs(12)
         display: flex
+        +xs-block()
+            &:not(:last-child)
+                margin-bottom: 20px
     &__icon
         +sizebox(30px)
         min-width: 30px
@@ -48,6 +60,10 @@
     &__item
         +col()
         +size(6)
+        +size-sm(12)
+        +sm-block()
+            &:not(:last-child)
+                margin-bottom: 30px
     &__text
         padding-left: 38px
         position: relative
@@ -99,23 +115,41 @@
         +row-flex()
         margin-left: 0
         margin-right: 0
+        +md-block()
+            min-height: 450px
+
     &__text
         +col()
         +size(5)
+        +size-md(12)
         display: flex
         flex-direction: column
         justify-content: space-between
+        +md-block()
+            align-items: center
+            text-align: center
+
     &__btn-wrap
         +col()
         +size(7)
+        +size-md(12)
         display: flex
         align-items: center
+        +md-block()
+            justify-content: center
+
     &__subtitle
         font-size: 40px
         line-height: 50px
+        +sm-block()
+            font-size: 27px
+            line-height: 32px
+
     &__step
         &:not(:last-child)
             margin-bottom: 10px
+        +md-block()
+            display: none
 
 // Consult form
 .consult-form

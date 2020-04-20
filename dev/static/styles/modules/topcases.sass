@@ -8,11 +8,11 @@
 .topcases__tab
     +col()
     +size(4)
+    +size-sm(12)
 
 .topcases-tab
-    //padding-bottom: 20px
-    //transition: all .3s
-
+    +sm-block()
+        margin-bottom: 30px
 .topcases-tab--active
     color: $white
     background-color: $accent
@@ -29,6 +29,9 @@
     font-size: 40px
     line-height: 50px
     margin-bottom: 30px
+    +md-block()
+        font-size: 27px
+        line-height: 32px
 
 .topcases-tab__cols
     display: flex
@@ -43,6 +46,9 @@
         font-size: 40px
         line-height: 40px
         margin-right: 8px
+        +md-block()
+            font-size: 27px
+            line-height: 32px
     .topcases-tab__desc
         font-size: 16px
         line-height: 17px
@@ -61,6 +67,8 @@
     +row-flex()
     margin-left: -10px
     margin-right: -10px
+    +md-block()
+        display: none
 
 .topcases-card
     display: none
