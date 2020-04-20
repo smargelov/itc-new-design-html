@@ -215,3 +215,28 @@
         +xs-block()
             font-size: 24px
             line-height: 28px
+
+// Two cols
+
+.two-col
+    &__cols
+        +row-flex()
+    &__col
+        +col()
+        +size(6)
+        +size-sm(12)
+        +sm-block()
+            &:not(:last-child)
+                margin-bottom: 20px
+    &__item
+        position: relative
+        padding-left: 30px
+        &:not(:last-child)
+            margin-bottom: 20px
+            +xs-block()
+                margin-bottom: 10px
+        &::before
+            display: inline-block
+            content: '— '
+            position: absolute
+            left: 0
