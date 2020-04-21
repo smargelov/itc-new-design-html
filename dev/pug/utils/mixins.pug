@@ -84,3 +84,19 @@ mixin avideo(arr)
                 ._btn-wrap
                     a(data-fancybox, href= arr.link).b-btn.-big.-full.-blue.-round._btn
                         +icon('empty_triangle', 'btn__icon-empty-triangle')
+
+mixin pageSlider(title, arr)
+    section.section.section--top-line
+        .b-page-slider
+            h2.h2._title= title
+            ._wrap
+                ._left
+                    ._imgs.owl-carousel
+                        each img in arr.imgs
+                            img(src="images/content/" + img, alt= title)._img
+                ._right
+                    ._content
+                        each item in arr.content
+                            p= item
+                    if arr.imgs.length > 1
+                        +controlsSlider('page-slider')

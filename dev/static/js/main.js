@@ -52,6 +52,28 @@ $(document).ready(function () {
         });
     });
 
+    $('.page-slider').each(function (index) {
+        let th = $(this),
+            images = th.find('.page-slider__imgs.owl-carousel');
+        images.on('initialized.owl.carousel changed.owl.carousel', function (e) {
+            if (!e.namespace) {
+                return;
+            }
+            var carousel = e.relatedTarget;
+            th.find('.controls__counter').text(carousel.relative(carousel.current()) + 1 + '/' + carousel.items().length);
+        }).owlCarousel({
+            items: 1,
+            loop: true,
+            dots: false
+        });
+        th.find('.controls__prev').click(function () {
+            images.trigger("prev.owl.carousel")
+        });
+        th.find('.controls__next').click(function () {
+            images.trigger("next.owl.carousel")
+        });
+    })
+
     $('.topcases-card__images.owl-carousel').each(function (index) {
         let th = $(this);
         th.on('initialized.owl.carousel changed.owl.carousel', function (e) {
