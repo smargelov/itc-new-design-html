@@ -3,13 +3,14 @@
 
     &__text
         +col()
-        +size(8)
+        +size(9)
 
     &__action
         +col()
-        +size(4)
+        +size(3)
         display: flex
-        justify-content: flex-end
+        flex-direction: column
+        justify-content: center
         align-items: center
 
     &__title
@@ -32,3 +33,12 @@
             font-size: 10px
             line-height: 14px
             +sizebox(80px)
+    &__desc
+        margin-top: 20px
+        text-align: center
+        +sm-block()
+            font-size: 16px
+            line-height: 20px
+
+.blue-text
+    color: $accent
