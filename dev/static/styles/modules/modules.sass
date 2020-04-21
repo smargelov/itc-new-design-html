@@ -240,3 +240,26 @@
             content: '— '
             position: absolute
             left: 0
+
+// Description block
+
+.description-block
+    +row-flex()
+    &__title-block
+        +col()
+        +size(4)
+    &__title
+        font-size: 30px
+        line-height: 40px
+    &__desc-block
+        +col()
+        +size(8)
+
+.content-footer
+    display: flex
+    justify-content: flex-start
+    align-items: center
+    margin-top: 50px
+    & > *
+        &:not(:last-child)
+            margin-right: 30px

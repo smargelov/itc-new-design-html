@@ -70,6 +70,10 @@ img
     max-width: 100%
     display: block
 
+p:not([class])
+    &:not(:last-child)
+        margin-bottom: 20px
+
 input,
 button,
 textarea,
@@ -124,6 +128,8 @@ button
     +xs-block()
         padding-top: 20px
         padding-bottom: 20px
+    &--top-line
+        border-top: 1px solid rgba($main-font-color, .2)
 
 .h2
     font-size: 45px
@@ -147,6 +153,28 @@ button
         line-height: 35px
         margin-bottom: 20px
 
+h4:not([class])
+    font-size: 20px
+    line-height: 27px
+    margin-bottom: 20px
+    &:not(:first-child)
+        margin-top: 40px
+
+ul:not([class])
+    padding-left: 0
+    margin-bottom: 20px
+
+li:not([class])
+    list-style: none
+    position: relative
+    padding-left: 30px
+    &::before
+        position: absolute
+        content: '— '
+        display: inline-block
+        left: 0
+    &:not(:last-child)
+        margin-bottom: 10px
 
 .hidden
     overflow: hidden
