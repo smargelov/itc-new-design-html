@@ -20,6 +20,9 @@
                     color: $main-font-color
                     &::after
                         background-color: $accent
+        a:not([class])
+            color: $accent
+            opacity: 1
     &--grey
         background-color: $grey
         border-color: transparent
@@ -160,3 +163,9 @@
                 color: $white
                 text-decoration: none
                 opacity: 1
+
+    h5
+        padding-left: 30px
+        margin-bottom: 0
+    li:not([class])
+        margin-bottom: 0
