@@ -250,6 +250,9 @@
     &__title-block
         +col()
         +size(4)
+        +size-sm(12)
+        +sm-block()
+            margin-bottom: 30px
     &__title
         font-size: 30px
         line-height: 40px
@@ -257,6 +260,7 @@
     &__desc-block
         +col()
         +size(8)
+        +size-sm(12)
 
 .content-footer
     display: flex
@@ -279,14 +283,22 @@
     &__left
         +col()
         +size(8)
+        +size-sm(12)
     &__right
         +col()
         +size(4)
+        +size-sm(12)
         display: flex
         flex-direction: column
+        +sm-block()
+            flex-direction: column-reverse
     &__content
         margin-bottom: 30px
     &__controls
         margin-top: auto
         border-top: 1px solid rgba($main-font-color, .2)
         padding-top: 30px
+        +sm-block()
+            border-top: none
+            padding-top: 10px
+            padding-bottom: 20px
