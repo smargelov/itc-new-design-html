@@ -17,8 +17,8 @@ mixin controlsSlider(parrent, mod)
                 button.b-btn.-round._btn(class= mod === 'light' ? 'btn--light' : '')
                     +icon('arrow', 'btn__icon-arrow')
 
-mixin taber(tabs, title, light)
-    section.section
+mixin taber(tabs, title, light, id)
+    section.section(id= id || '')
         if (title)
             h2.h2.taber__title-h2= title
         .b-taber(class= light ? `taber--${light}` : '')
