@@ -1,2 +1,54 @@
 footer 
 	flex: 0 0 auto
+.footer
+    margin-top: 80px
+    padding-bottom: 22px
+    +row-flex()
+    align-items: center
+    +xs-block()
+        margin-top: 20px
+    &__col
+        +col()
+        +size(6)
+
+        +size-sm(12)
+        &:nth-child(2)
+            +sm-block()
+                margin-top: 20px
+        &:nth-child(3)
+            +size-sm(12)
+            +sm-block()
+                margin-top: 20px
+
+
+    &__social
+        display: flex
+        justify-content: flex-end
+        +sm-block()
+            justify-content: center
+    &__icon
+        &:not(:last-child)
+            margin-right: 30px
+            +sm-block()
+                margin-right: 10px
+        &:hover,
+        &:focus
+            svg
+                fill: $accent
+                transition: fill .5s ease
+    &__social-icon
+        height: 26px
+        width: auto
+    &__copy
+        +xs-block()
+            text-align: center
+
+.icon
+    &-agima
+        width: 68px
+    &-raek
+        width: 116px
+    &-fb,
+    &-vk,
+    &-insta
+        width: 26px

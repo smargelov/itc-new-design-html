@@ -1,0 +1,17 @@
+extends template/main
+
+block variables
+    - var title = 'Разработка сайтов'
+
+
+block content
+    include modules/page-title
+    +badges(developBadges)
+    +taber(tabsDevelop)
+    +portfolioCard(еtestCard)
+    +portfolioCard(еtestCard2)
+    +taber(tabsAnalitics, 'Аналитика', 'light')
+    +avideo(devAvideo)
+    +taber(tabsStepsDev, 'Этапы разработки сайта', 'grey')
+    +feedbackSlider(ourRulesDev, 'Наш подход', 'feedback--rules')
+    include modules/consult-form

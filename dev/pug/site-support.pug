@@ -1,0 +1,15 @@
+extends template/main
+
+block variables
+    - var title = 'Поддержка сайтов'
+
+
+block content
+    include modules/page-title
+    +badges(supportBadges)
+    +taber(tabsSupport)
+    include modules/support-format
+    +avideo(supportAvideo)
+    +taber(tabsStandarts, 'Стандарты обслуживания', 'light')
+    +feedbackSlider(feedbacks, 'Отзывы')
+    include modules/consult-form

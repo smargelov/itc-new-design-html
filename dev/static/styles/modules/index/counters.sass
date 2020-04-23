@@ -1,0 +1,39 @@
+.counters
+    display: flex
+    justify-content: space-between
+    +sm-block()
+
+        flex-direction: column
+        align-items: center
+    &__card
+        flex: 1
+        display: flex
+        flex-direction: column
+        align-items: center
+        &:not(:last-child)
+            margin-right: 20px
+        &--spec
+            color: $accent
+        +sm-block()
+            max-width: 300px
+            &:not(:last-child)
+                margin-bottom: 40px
+    &__top
+        display: flex
+        align-items: center
+        font-size: 80px
+        line-height: 90px
+        font-weight: 500
+        margin-bottom: 5px
+        +md-block()
+            font-size: 40px
+            line-height: 50px
+        +sm-block()
+            font-size: 80px
+            line-height: 90px
+    &__desc
+        text-align: center
+        +md-block()
+            font-size: 15px
+        +sm-block()
+            font-size: 20px

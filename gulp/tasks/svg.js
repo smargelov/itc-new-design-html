@@ -17,9 +17,9 @@ module.exports = function () {
             }))
             .pipe(cheerio({
                 run: function ($) {
-                    // $('[fill]').removeAttr('fill');
-                    // $('[stroke]').removeAttr('stroke');
-                    // $('[style]').removeAttr('style');
+                    $('[fill]').removeAttr('fill');
+                    $('[stroke]').removeAttr('stroke');
+                    $('[style]').removeAttr('style');
                 },
                 parserOptions: {
                     xmlMode: true

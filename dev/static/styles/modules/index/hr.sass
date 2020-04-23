@@ -1,0 +1,39 @@
+.hr
+    &__wrap
+        padding: 65px
+        background-color: $grey
+        +row-flex()
+        +xs-block()
+            padding: 40px 20px
+    &__vacancies
+        +col()
+        +size(6)
+        +size-sm(12)
+
+    &__vacancy
+        &:not(:last-child)
+            margin-bottom: 30px
+        +md-block()
+            &:not(:last-child)
+                margin-bottom: 15px
+        +xs-block()
+            font-size: 18px
+            line-height: 24px
+            &:not(:last-child)
+                margin-bottom: 5px
+    &__text
+        +col()
+        +size(6)
+        +size-sm(12)
+        font-size: 40px
+        line-height: 50px
+        +md-block()
+            font-size: 30px
+            line-height: 35px
+        +sm-block()
+            margin-top: 40px
+            margin-left: 0
+            margin-right: 0
+        +xs-block()
+            font-size: 20px
+            line-height: 27px

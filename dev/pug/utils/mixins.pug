@@ -1,7 +1,130 @@
 mixin icon(name,mod)
-	if(mod)
-		svg(class="svg-sprite-icon icon-" + name + ' ' + mod)
-			use(xlink:href="images/svg/symbol/sprite.svg#" + name)
-	else
-		svg(class="svg-sprite-icon icon-" + name)
-			use(xlink:href="images/svg/symbol/sprite.svg#" + name)
+    if(mod)
+        svg(class="svg-sprite-icon icon-" + name + ' ' + mod)
+            use(xlink:href="images/svg/symbol/sprite.svg#" + name)
+    else
+        svg(class="svg-sprite-icon icon-" + name)
+            use(xlink:href="images/svg/symbol/sprite.svg#" + name)
+
+mixin controlsSlider(parrent, mod)
+    .b-controls(class= parrent+'__controls')
+        ._counter(class= mod === 'light' ? 'controls__counter--light' : '')
+        ._navigation
+            ._prev
+                button.b-btn.-round._btn(class= mod === 'light' ? 'btn--light' : '')
+                    +icon('arrow-left', 'btn__icon-arrow btn__icon-arrow-left')
+            ._next
+                button.b-btn.-round._btn(class= mod === 'light' ? 'btn--light' : '')
+                    +icon('arrow', 'btn__icon-arrow')
+
+mixin taber(tabs, title, light, id)
+    section.section(id= id || '')
+        if (title)
+            h2.h2.taber__title-h2= title
+        .b-taber(class= light ? `taber--${light}` : '')
+            ._left
+                ul._title-items
+                    each item, index in tabs
+                        li(data-target="tab-num-" + (index + 1), class= index === 0 ? 'active' : '')._title-item
+                            p._title= item.title
+            ._right
+                ul._cards
+                    each item, index in tabs
+                        - var text = item.text
+                        div(id="tab-num-" + (index + 1), class= index === 0 ? 'active' : '')._card
+                            | !{text}
+
+
+mixin feedbackSlider(arr, title, mod)
+    section.section
+        .b-feedback
+            h2.h2._title= title
+            ._wrap(class= mod || mod)
+                ._desc
+                    .feedback-carousel.owl-carousel
+                        each item in arr
+                            ._item
+                                ._item-left
+                                    ._name= item.name
+                                    if !mod
+                                        +icon('quotes', 'feedback__icon-quotes')
+                                ._item-right
+                                    ._text= item.text
+                                    if item.original
+                                        a(href= item.original, title="Оригинал отзыва " + item.name)._original Смотреть оригинал
+                ._controls
+                    ._counter
+                    ._navigation
+                        ._prev
+                            button.b-btn.-round._btn
+                                +icon('arrow-left', 'btn__icon-arrow btn__icon-arrow-left')
+                        ._next
+                            button.b-btn.-round._btn
+                                +icon('arrow', 'btn__icon-arrow')
+
+mixin badges(arr)
+    section.section
+        .b-badges
+            ._desc= arr.text
+            each badge in arr.badges
+                ._badge
+                    +icon(badge.icon, 'badges__icon')
+                    ._badge-text= badge.desc
+
+mixin avideo(arr)
+    section.section
+        .b-avideo
+            h2.h2._title= arr.title
+            ._wrap(style=`background-image: url(images/general/${arr.bg})`)
+                ._text
+                    ._subtitle= arr.subtitle
+                    ul._steps
+                        each step in arr.steps
+                            li._step= step
+                ._btn-wrap
+                    a(data-fancybox, href= arr.link).b-btn.-big.-full.-blue.-round._btn
+                        +icon('empty_triangle', 'btn__icon-empty-triangle')
+
+mixin pageSlider(title, arr)
+    section.section.section--top-line
+        .b-page-slider
+            h2.h2._title= title
+            ._wrap
+                ._left
+                    ._imgs.owl-carousel
+                        each img in arr.imgs
+                            img(src="images/content/" + img, alt= title)._img
+                ._right
+                    ._content
+                        each item in arr.content
+                            p= item
+                    if arr.imgs.length > 1
+                        +controlsSlider('page-slider')
+
+mixin portfolioCard(arr)
+    section.section
+        .b-portfolio-card
+            ._left
+                ._header
+                    h3.h3._title= arr.title
+                    p._desc= arr.desc
+                ._footer
+                    ._cols
+                        each col in arr.cols
+                            ._col
+                                ._num= col.num
+                                ._text= col.text
+                    a(href= arr.link, title= arr.title).b-btn.-flat._btn Перейти на сайт
+            ._right
+                -
+                    var imgWidth = arr.width || 'auto'
+                -
+                    var bgSz = arr.type === 'dev' ? 'contain' : 'cover'
+                ._img(style=`background-image: url(images/content/${arr.img}); width: ${imgWidth}; background-size: ${bgSz};`)
+
+mixin post-card(post)
+    .b-post-card
+        ._category= post.type
+        a(href= post.link, title= post.title, style=`background-image: url(images/content/${post.img})`)._img
+        a(href= post.link, title= post.title)._name= post.title
+
