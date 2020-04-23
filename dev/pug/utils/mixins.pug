@@ -100,3 +100,31 @@ mixin pageSlider(title, arr)
                             p= item
                     if arr.imgs.length > 1
                         +controlsSlider('page-slider')
+
+mixin portfolioCard(arr)
+    section.section
+        .b-portfolio-card
+            ._left
+                ._header
+                    h3.h3._title= arr.title
+                    p._desc= arr.desc
+                ._footer
+                    ._cols
+                        each col in arr.cols
+                            ._col
+                                ._num= col.num
+                                ._text= col.text
+                    a(href= arr.link, title= arr.title).b-btn.-flat._btn Перейти на сайт
+            ._right
+                -
+                    var imgWidth = arr.width || 'auto'
+                -
+                    var bgSz = arr.type === 'dev' ? 'contain' : 'cover'
+                ._img(style=`background-image: url(images/content/${arr.img}); width: ${imgWidth}; background-size: ${bgSz};`)
+
+mixin post-card(post)
+    .b-post-card
+        ._category= post.type
+        a(href= post.link, title= post.title, style=`background-image: url(images/content/${post.img})`)._img
+        a(href= post.link, title= post.title)._name= post.title
+

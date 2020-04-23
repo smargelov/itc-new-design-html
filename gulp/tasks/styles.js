@@ -34,7 +34,7 @@ module.exports = function () {
             .pipe(autoprefixer())
             .pipe(mmq())
             .pipe(csscomb())
-           .pipe(rename('styles.min.css'))
+            .pipe(rename('styles.min.css'))
             .pipe($.gulp.dest(stylesPATH.output))
     });
     $.gulp.task('styles:build-min', () => {

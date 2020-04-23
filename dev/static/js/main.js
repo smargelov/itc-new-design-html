@@ -1,6 +1,23 @@
 $(document).ready(function () {
     svg4everybody({});
 
+    // Sticky nav
+
+    let lastScrollTop = 120;
+    $(window).scroll(function (event) {
+        let st = $(this).scrollTop();
+        if (st > lastScrollTop) {
+            $('.header').css('top', '-120px');
+        } else {
+            $('.header').css('top', '0');
+        }
+        if (st > 120) {
+            lastScrollTop = st;
+        } else {
+            lastScrollTop = 120;
+        }
+    });
+
     // Number counter
 
     const countNum = (elementClass, endNum, startNum = 0, animTime = 1000) => {
@@ -72,7 +89,7 @@ $(document).ready(function () {
         th.find('.controls__next').click(function () {
             images.trigger("next.owl.carousel")
         });
-    })
+    });
 
     $('.topcases-card__images.owl-carousel').each(function (index) {
         let th = $(this);
@@ -162,11 +179,13 @@ $(document).ready(function () {
             th.removeClass('is-active');
             header.removeClass('header--active-menu');
             megamenu.removeClass('is-active');
+            $('body').css('overflowY', 'auto');
 
         } else {
             megamenu.addClass('is-active');
             header.addClass('header--active-menu');
             th.addClass('is-active');
+            $('body').css('overflowY', 'hidden');
         }
     })
 
@@ -189,6 +208,16 @@ $(document).ready(function () {
         $(`.contacts-page__address[data-city=${target}]`).addClass('contacts-page__address--active');
         $('.contacts-page__map-wrap').removeClass('contacts-page__map-wrap--active');
         $(`.contacts-page__map-wrap[data-city=${target}]`).addClass('contacts-page__map-wrap--active');
+    })
+
+    // Cases tab
+    $('.cases-line__tab').click(function () {
+        let target = $(this).data('target');
+        $('.cases-line__tab').removeClass('cases-line__tab--active');
+        $(this).addClass('cases-line__tab--active');
+        $('.cases-content__tab').removeClass('cases-content__tab--active');
+        $(`[data-id=${target}]`).addClass('cases-content__tab--active');
+        window.location.hash = target === 'develop' ? '#develop' : '';
     })
 
 });

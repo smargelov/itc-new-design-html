@@ -3,21 +3,9 @@ section.section
     .b-latest-post
         ._title-wrap
             h2.h2._title Блог
-            button.b-btn.-flat._btn
+            //-button.b-btn.-flat._btn
                 | Подписаться на рассылку
-        ._items
-            ._item
-                ._category Интернет-маркетинг
-                a(href="#", title="Дизайн", style="background-image: url(images/content/design.jpg)")._img
-                a(href="#", title="Дизайн")._name
-                    | Дизайн, основанный на опыте пользователя
-            ._item
-                ._category Разработка
-                a(href="#", title="Вся правда про SSL-сертификаты", style="background-image: url(images/content/ssl.jpg)")._img
-                a(href="#", title="Вся правда про SSL-сертификаты")._name
-                    | Вся правда про SSL-сертификаты
-            ._item
-                ._category Разработка
-                a(href="#", title="Вся правда про SSL-сертификаты", style="background-image: url(images/content/ssl.jpg)")._img
-                a(href="#", title="Вся правда про SSL-сертификаты")._name
-                    | Заголовок 3
+        .post-cards
+            each post, key in posts
+                if key < 3
+                    +post-card(post)
