@@ -16,6 +16,7 @@
             &__title-item
                 opacity: 1
                 color: $accent
+                border-color: $accent
                 &.active
                     color: $main-font-color
                     &::after
@@ -48,24 +49,25 @@
             background-color: $white
             opacity: .3
             +sm-block()
-                bottom: auto
+                bottom: 0
                 right: 0
                 left: 0
-                top: 0
+                top: auto
                 width: auto
                 height: 1px
 
         +sm-block()
-            order: 2
+            //order: 2
             width: 100%
-            padding-top: 40px
-            margin-top: 40px
+            padding-bottom: 20px
+            margin-bottom: 40px
 
     &__right
         width: 50%
         +sm-block()
-            order: 1
+            //order: 1
             width: 100%
+            padding-bottom: 20px
     &__title-items
         +sm-block()
             display: flex
@@ -85,6 +87,8 @@
             height: 50px
             border-radius: 25px
             border: 1px solid $white
+            cursor: move
+            touch-action: pan-x
         +xs-block()
             height: 30px
             border-radius: 15px
