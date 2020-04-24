@@ -16,10 +16,14 @@
             &__title-item
                 opacity: 1
                 color: $accent
+                border-color: $accent
                 &.active
                     color: $main-font-color
                     &::after
                         background-color: $accent
+        a:not([class])
+            color: $accent
+            opacity: 1
     &--grey
         background-color: $grey
         border-color: transparent
@@ -33,6 +37,7 @@
     &__left
         width: 50%
         position: relative
+        align-self: flex-start
         &::after
             content: ''
             display: block
@@ -44,24 +49,25 @@
             background-color: $white
             opacity: .3
             +sm-block()
-                bottom: auto
+                bottom: 0
                 right: 0
                 left: 0
-                top: 0
+                top: auto
                 width: auto
                 height: 1px
 
         +sm-block()
-            order: 2
+            //order: 2
             width: 100%
-            padding-top: 40px
-            margin-top: 40px
+            padding-bottom: 20px
+            margin-bottom: 40px
 
     &__right
         width: 50%
         +sm-block()
-            order: 1
+            //order: 1
             width: 100%
+            padding-bottom: 20px
     &__title-items
         +sm-block()
             display: flex
@@ -72,6 +78,7 @@
         opacity: .5
         transition: all .5s ease
         cursor: pointer
+        padding-right: 30px
         +sm-block()
             display: flex
             justify-content: center
@@ -80,6 +87,8 @@
             height: 50px
             border-radius: 25px
             border: 1px solid $white
+            cursor: move
+            touch-action: pan-x
         +xs-block()
             height: 30px
             border-radius: 15px
@@ -160,3 +169,9 @@
                 color: $white
                 text-decoration: none
                 opacity: 1
+
+    h5
+        padding-left: 30px
+        margin-bottom: 0
+    li:not([class])
+        margin-bottom: 0

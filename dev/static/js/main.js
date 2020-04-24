@@ -1,6 +1,23 @@
 $(document).ready(function () {
     svg4everybody({});
 
+    // Sticky nav
+
+    let lastScrollTop = 120;
+    $(window).scroll(function (event) {
+        let st = $(this).scrollTop();
+        if (st > lastScrollTop) {
+            $('.header').css('top', '-120px');
+        } else {
+            $('.header').css('top', '0');
+        }
+        if (st > 120) {
+            lastScrollTop = st;
+        } else {
+            lastScrollTop = 120;
+        }
+    });
+
     // Number counter
 
     const countNum = (elementClass, endNum, startNum = 0, animTime = 1000) => {
@@ -38,16 +55,16 @@ $(document).ready(function () {
                 return;
             }
             var carousel = e.relatedTarget;
-            th.parents('.feedback__wrap').find('.feedback__counter').text(carousel.relative(carousel.current()) + 1 + '/' + carousel.items().length);
+            th.parents('.feedback__wrap').find('.controls__counter').text(carousel.relative(carousel.current()) + 1 + '/' + carousel.items().length);
         }).owlCarousel({
             items: 1,
             loop: true,
             dots: false
         });
-        th.parents('.feedback__wrap').find('.feedback__prev').click(function () {
+        th.parents('.feedback__wrap').find('.controls__prev').click(function () {
             th.trigger("prev.owl.carousel")
         });
-        th.parents('.feedback__wrap').find('.feedback__next').click(function () {
+        th.parents('.feedback__wrap').find('.controls__next').click(function () {
             th.trigger("next.owl.carousel")
         });
     });
@@ -72,7 +89,7 @@ $(document).ready(function () {
         th.find('.controls__next').click(function () {
             images.trigger("next.owl.carousel")
         });
-    })
+    });
 
     $('.topcases-card__images.owl-carousel').each(function (index) {
         let th = $(this);
@@ -114,23 +131,34 @@ $(document).ready(function () {
             th.find('.taber__card').removeClass('active');
             th.find('#' + target).addClass('active');
         });
-
     });
 
-    // City menu
+    let tabsLine = document.getElementsByClassName('taber__title-items');
+    [...tabsLine].forEach(timeline => {
 
-    $('.city-view').on('click', function (e) {
-        e.preventDefault();
+        // timeline - блок с горизонтальным скроллом
+        timeline.onmousedown = () => {
+            let pageX = 0;
+
+            document.onmousemove = e => {
+                if (pageX !== 0) {
+                    timeline.scrollLeft = timeline.scrollLeft + (pageX - e.pageX);
+                }
+                pageX = e.pageX;
+            };
+
+            // заканчиваем выполнение событий
+            timeline.onmouseup = () => {
+                document.onmousemove = null;
+                timeline.onmouseup = null;
+            };
+
+            // отменяем браузерный drag
+            timeline.ondragstart = () => {
+                return false;
+            };
+        };
     });
-    $('.city-view').parent('.header__city').hover(function () {
-        $(this).addClass('active');
-        $(this).find('.header__cities').slideDown(300);
-        $(this).find('.header__subcities').addClass('active');
-    }, function () {
-        $(this).find('.header__subcities').removeClass('active');
-        $(this).find('.header__cities').slideUp(300);
-        $(this).removeClass('active');
-    })
 
     // Popups
     $('[data-action="popup"]').click(function (e) {
@@ -162,11 +190,13 @@ $(document).ready(function () {
             th.removeClass('is-active');
             header.removeClass('header--active-menu');
             megamenu.removeClass('is-active');
+            $('body').css('overflowY', 'auto');
 
         } else {
             megamenu.addClass('is-active');
             header.addClass('header--active-menu');
             th.addClass('is-active');
+            $('body').css('overflowY', 'hidden');
         }
     })
 
@@ -189,6 +219,16 @@ $(document).ready(function () {
         $(`.contacts-page__address[data-city=${target}]`).addClass('contacts-page__address--active');
         $('.contacts-page__map-wrap').removeClass('contacts-page__map-wrap--active');
         $(`.contacts-page__map-wrap[data-city=${target}]`).addClass('contacts-page__map-wrap--active');
+    })
+
+    // Cases tab
+    $('.cases-line__tab').click(function () {
+        let target = $(this).data('target');
+        $('.cases-line__tab').removeClass('cases-line__tab--active');
+        $(this).addClass('cases-line__tab--active');
+        $('.cases-content__tab').removeClass('cases-content__tab--active');
+        $(`[data-id=${target}]`).addClass('cases-content__tab--active');
+        window.location.hash = target === 'develop' ? '#develop' : '';
     })
 
 });
