@@ -42,7 +42,7 @@ mixin feedbackSlider(arr, title, mod)
             ._wrap(class= mod || mod)
                 ._desc
                     .feedback-carousel.owl-carousel
-                        each item in arr
+                        each item, key in arr
                             ._item
                                 ._item-left
                                     ._name= item.name
@@ -51,7 +51,7 @@ mixin feedbackSlider(arr, title, mod)
                                 ._item-right
                                     ._text= item.text
                                     if item.original
-                                        a(href= item.original, title="Оригинал отзыва " + item.name)._original Смотреть оригинал
+                                        a(href= item.original, data-fancybox='', title="Оригинал отзыва " + item.name)._original Смотреть оригинал
                 ._controls
                     ._counter
                     ._navigation
