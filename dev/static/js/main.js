@@ -55,16 +55,16 @@ $(document).ready(function () {
                 return;
             }
             var carousel = e.relatedTarget;
-            th.parents('.feedback__wrap').find('.feedback__counter').text(carousel.relative(carousel.current()) + 1 + '/' + carousel.items().length);
+            th.parents('.feedback__wrap').find('.controls__counter').text(carousel.relative(carousel.current()) + 1 + '/' + carousel.items().length);
         }).owlCarousel({
             items: 1,
             loop: true,
             dots: false
         });
-        th.parents('.feedback__wrap').find('.feedback__prev').click(function () {
+        th.parents('.feedback__wrap').find('.controls__prev').click(function () {
             th.trigger("prev.owl.carousel")
         });
-        th.parents('.feedback__wrap').find('.feedback__next').click(function () {
+        th.parents('.feedback__wrap').find('.controls__next').click(function () {
             th.trigger("next.owl.carousel")
         });
     });

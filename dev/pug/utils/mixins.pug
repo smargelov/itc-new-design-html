@@ -52,15 +52,7 @@ mixin feedbackSlider(arr, title, mod)
                                     ._text= item.text
                                     if item.original
                                         a(href= item.original, data-fancybox='', title="Оригинал отзыва " + item.name)._original Смотреть оригинал
-                ._controls
-                    ._counter
-                    ._navigation
-                        ._prev
-                            button.b-btn.-round._btn
-                                +icon('arrow-left', 'btn__icon-arrow btn__icon-arrow-left')
-                        ._next
-                            button.b-btn.-round._btn
-                                +icon('arrow', 'btn__icon-arrow')
+                +controlsSlider('feedback')
 
 mixin badges(arr)
     section.section
