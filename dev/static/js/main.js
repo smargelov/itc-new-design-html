@@ -131,7 +131,33 @@ $(document).ready(function () {
             th.find('.taber__card').removeClass('active');
             th.find('#' + target).addClass('active');
         });
+    });
 
+    let tabsLine = document.getElementsByClassName('taber__title-items');
+    [...tabsLine].forEach(timeline => {
+
+        // timeline - блок с горизонтальным скроллом
+        timeline.onmousedown = () => {
+            let pageX = 0;
+
+            document.onmousemove = e => {
+                if (pageX !== 0) {
+                    timeline.scrollLeft = timeline.scrollLeft + (pageX - e.pageX);
+                }
+                pageX = e.pageX;
+            };
+
+            // заканчиваем выполнение событий
+            timeline.onmouseup = () => {
+                document.onmousemove = null;
+                timeline.onmouseup = null;
+            };
+
+            // отменяем браузерный drag
+            timeline.ondragstart = () => {
+                return false;
+            };
+        };
     });
 
     // Popups
