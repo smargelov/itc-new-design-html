@@ -42,7 +42,7 @@ mixin feedbackSlider(arr, title, mod)
             ._wrap(class= mod || mod)
                 ._desc
                     .feedback-carousel.owl-carousel
-                        each item in arr
+                        each item, key in arr
                             ._item
                                 ._item-left
                                     ._name= item.name
@@ -51,16 +51,8 @@ mixin feedbackSlider(arr, title, mod)
                                 ._item-right
                                     ._text= item.text
                                     if item.original
-                                        a(href= item.original, title="Оригинал отзыва " + item.name)._original Смотреть оригинал
-                ._controls
-                    ._counter
-                    ._navigation
-                        ._prev
-                            button.b-btn.-round._btn
-                                +icon('arrow-left', 'btn__icon-arrow btn__icon-arrow-left')
-                        ._next
-                            button.b-btn.-round._btn
-                                +icon('arrow', 'btn__icon-arrow')
+                                        a(href= item.original, data-fancybox='', title="Оригинал отзыва " + item.name)._original Смотреть оригинал
+                +controlsSlider('feedback')
 
 mixin badges(arr)
     section.section
@@ -73,14 +65,14 @@ mixin badges(arr)
 
 mixin avideo(arr)
     section.section
-        .b-avideo
+        .b-showreel
             h2.h2._title= arr.title
             ._wrap(style=`background-image: url(images/general/${arr.bg})`)
                 ._text
-                    ._subtitle= arr.subtitle
-                    ul._steps
+                    h3.h3._subtitle= arr.subtitle
+                    ul._items
                         each step in arr.steps
-                            li._step= step
+                            li._item= step
                 ._btn-wrap
                     a(data-fancybox, href= arr.link).b-btn.-big.-full.-blue.-round._btn
                         +icon('empty_triangle', 'btn__icon-empty-triangle')

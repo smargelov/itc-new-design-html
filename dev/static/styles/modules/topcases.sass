@@ -67,7 +67,7 @@
     +row-flex()
     margin-left: -10px
     margin-right: -10px
-    +md-block()
+    +sm-block()
         display: none
 
 .topcases-card
@@ -84,15 +84,31 @@
     display: flex
     justify-content: space-between
     opacity: 1
+    +md-block()
+        flex-wrap: wrap
 
 .topcases-card__left
     width: 64%
-
+    +md-block()
+        width: 100%
 .topcases-card__right
     width: 32%
     display: flex
     flex-direction: column
     align-items: center
+    +md-block()
+        width: 100%
+        flex-direction: row
+        padding-top: 30px
+
+.topcases-card__content
+    display: flex
+    flex-direction: column
+    align-items: center
+    +md-block()
+        flex: 4
+        margin-right: 20px
+        align-items: flex-start
 
 .topcases-card__images
 
@@ -104,3 +120,5 @@
 .topcases-card__controls
     margin-top: auto
     padding-top: 40px
+    +md-block()
+        flex: 1

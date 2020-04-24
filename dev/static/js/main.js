@@ -55,16 +55,16 @@ $(document).ready(function () {
                 return;
             }
             var carousel = e.relatedTarget;
-            th.parents('.feedback__wrap').find('.feedback__counter').text(carousel.relative(carousel.current()) + 1 + '/' + carousel.items().length);
+            th.parents('.feedback__wrap').find('.controls__counter').text(carousel.relative(carousel.current()) + 1 + '/' + carousel.items().length);
         }).owlCarousel({
             items: 1,
             loop: true,
             dots: false
         });
-        th.parents('.feedback__wrap').find('.feedback__prev').click(function () {
+        th.parents('.feedback__wrap').find('.controls__prev').click(function () {
             th.trigger("prev.owl.carousel")
         });
-        th.parents('.feedback__wrap').find('.feedback__next').click(function () {
+        th.parents('.feedback__wrap').find('.controls__next').click(function () {
             th.trigger("next.owl.carousel")
         });
     });
@@ -131,23 +131,34 @@ $(document).ready(function () {
             th.find('.taber__card').removeClass('active');
             th.find('#' + target).addClass('active');
         });
-
     });
 
-    // City menu
+    let tabsLine = document.getElementsByClassName('taber__title-items');
+    [...tabsLine].forEach(timeline => {
 
-    $('.city-view').on('click', function (e) {
-        e.preventDefault();
+        // timeline - блок с горизонтальным скроллом
+        timeline.onmousedown = () => {
+            let pageX = 0;
+
+            document.onmousemove = e => {
+                if (pageX !== 0) {
+                    timeline.scrollLeft = timeline.scrollLeft + (pageX - e.pageX);
+                }
+                pageX = e.pageX;
+            };
+
+            // заканчиваем выполнение событий
+            timeline.onmouseup = () => {
+                document.onmousemove = null;
+                timeline.onmouseup = null;
+            };
+
+            // отменяем браузерный drag
+            timeline.ondragstart = () => {
+                return false;
+            };
+        };
     });
-    $('.city-view').parent('.header__city').hover(function () {
-        $(this).addClass('active');
-        $(this).find('.header__cities').slideDown(300);
-        $(this).find('.header__subcities').addClass('active');
-    }, function () {
-        $(this).find('.header__subcities').removeClass('active');
-        $(this).find('.header__cities').slideUp(300);
-        $(this).removeClass('active');
-    })
 
     // Popups
     $('[data-action="popup"]').click(function (e) {

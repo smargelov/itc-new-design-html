@@ -23,7 +23,8 @@ section.section
                                 each img in card.images
                                     img(src= img)._img
                         ._right
-                            ._text= card.text
-                            button.b-btn.-flat.-light._btn Смотреть кейс
+                            ._content
+                                ._text= card.text
+                                button.b-btn.-flat.-light._btn Смотреть кейс
                             if (isCaruosel)
                                 +controlsSlider('topcases-card', 'light')
