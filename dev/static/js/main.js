@@ -134,21 +134,6 @@ $(document).ready(function () {
 
     });
 
-    // City menu
-
-    $('.city-view').on('click', function (e) {
-        e.preventDefault();
-    });
-    $('.city-view').parent('.header__city').hover(function () {
-        $(this).addClass('active');
-        $(this).find('.header__cities').slideDown(300);
-        $(this).find('.header__subcities').addClass('active');
-    }, function () {
-        $(this).find('.header__subcities').removeClass('active');
-        $(this).find('.header__cities').slideUp(300);
-        $(this).removeClass('active');
-    })
-
     // Popups
     $('[data-action="popup"]').click(function (e) {
         e.preventDefault();
