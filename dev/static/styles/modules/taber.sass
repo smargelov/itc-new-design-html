@@ -19,6 +19,9 @@
                 border-color: $accent
                 &.active
                     color: $main-font-color
+                    +sm-block()
+                        color: $white
+                        background-color: $accent
                     &::after
                         background-color: $accent
         a:not([class])
