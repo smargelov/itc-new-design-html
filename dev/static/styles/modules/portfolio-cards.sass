@@ -1,14 +1,14 @@
 .portfolio-card
     background-color: $grey
     display: flex
-    height: 630px
+    min-height: 630px
     +md-block()
-        height: 400px
+        min-height: 400px
     +sm-block()
         flex-direction: column-reverse
-        height: 800px
+        min-height: 800px
     +xs-block()
-        height: auto
+        min-height: auto
 
 .portfolio-card__left
     flex: 1
@@ -27,6 +27,9 @@
         font-size: 16px
         line-height: 22px
 
+.portfolio-card__header
+    margin-bottom: 30px
+
 .portfolio-card__footer
     margin-top: auto
     display: flex
@@ -35,16 +38,17 @@
 .portfolio-card__cols
     display: flex
     margin-bottom: 40px
+    flex-direction: column
     +xs-block()
-        flex-direction: column
         margin-top: 30px
 
 .portfolio-card__col
-    flex: 1
     margin-right: 20px
-    +xs-block()
-        &:not(:last-child)
-            margin-bottom: 20px
+    width: 50%
+    &:not(:last-child)
+        margin-bottom: 30px
+    +sm-block()
+        width: 100%
 
 .portfolio-card__num
     font-size: 40px

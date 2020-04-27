@@ -215,10 +215,8 @@ $(document).ready(function () {
         let target = $(this).data('target');
         $('.contacts-page__city-tab').removeClass('contacts-page__city-tab--active');
         $(this).addClass('contacts-page__city-tab--active');
-        $('.contacts-page__address').removeClass('contacts-page__address--active');
-        $(`.contacts-page__address[data-city=${target}]`).addClass('contacts-page__address--active');
-        $('.contacts-page__map-wrap').removeClass('contacts-page__map-wrap--active');
-        $(`.contacts-page__map-wrap[data-city=${target}]`).addClass('contacts-page__map-wrap--active');
+        $('.contacts-page__info').removeClass('contacts-page__info--active');
+        $(`.contacts-page__info[data-tab=${target}]`).addClass('contacts-page__info--active');
     })
 
     // Cases tab
