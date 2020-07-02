@@ -24,7 +24,7 @@ $.gulp.task('dev', $.gulp.series(
         'img:dev',
         'libsJS:dev',
         'js:dev',
-        'jserv',
+        // 'jserv',
         'svg'
     )
 ));

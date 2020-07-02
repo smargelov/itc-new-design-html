@@ -45,7 +45,16 @@
             +sizebox(38px)
             min-width: 38px
             min-height: 38px
-
+    &--red
+        background-color: #f00
+        border: 1px solid #ff0000
+        color: $white
+        padding: 5px 30px
+        white-space: nowrap
+        border-radius: 26px
+        &:hover, &:focus, &:active
+            background-color: darken(#ff0000, 10%)
+            border-color: darken(#ff0000, 10%)
     &--big
         +sizebox(208px)
         +sm-block()

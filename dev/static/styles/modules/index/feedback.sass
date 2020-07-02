@@ -44,6 +44,7 @@
                 width: 100%
                 flex-direction: row
                 align-items: center
+                justify-content: space-between
                 padding-bottom: 20px
                 margin-bottom: 20px
                 border-bottom: 1px solid rgba($main-font-color, .3)
@@ -62,6 +63,9 @@
         fill: $accent
         +sm-block()
             +sizebox(100px)
+        +xs-block()
+            max-width: 80px
+            min-width: 80px
     &__text
         &:not(:last-child)
             margin-bottom: 50px

@@ -1,0 +1,18 @@
+.estore-popup__overlay
+.b-estore-popup
+    ._img-wrap
+        picture._picture
+            source(media="(max-width: 480px)", srcset="/images/content/mobile-estore-popup.jpg")
+            img(src='/images/content/desktop-estore-popup.jpg')._img
+    ._form-wrap
+        h4.h4._title Свяжемся с вами в течении 15 минут
+        form.b-contacts-form.-light._form
+            input(type='text' name='user-name', placeholder='Имя')._input
+            input(type='tel' name='user-phone', placeholder='Телефон')._input.-phone.input-phone
+            input(type='checkbox', id='consultation-approve', name='approve' checked)._checkbox
+            label(for='consultation-approve')._label Даю согласие на обработку своих персональных данных и соглашаюсь с политикой конфиденциальности
+            input(type='submit', value='Отправить').b-btn.-flat.-light._btn
+        ._attention Заполнение формы не обязывает к покупке. Все данные защищены и не будут переданы третьим лицам.
+    ._close
+        +icon('close-x')
+

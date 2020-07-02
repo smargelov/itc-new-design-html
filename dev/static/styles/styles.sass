@@ -7,9 +7,11 @@
 html
     font-size: $base-font-size
     height: 100%
+    overflow: auto
     +xs-block()
         font-size: 16px
 body
+    height: 100%
     min-height: 100vh
     scroll-behavior: smooth
     text-rendering: optimizeSpeed
@@ -17,6 +19,9 @@ body
     font-family: $main-font-family
     font-weight: 300
     font-style: normal
+    //overflow: auto
+
+
 
 *,
 *::before,
@@ -167,17 +172,22 @@ ul:not([class])
     padding-left: 0
     margin-bottom: 20px
 
-li:not([class])
-    list-style: none
-    position: relative
-    padding-left: 30px
-    &::before
-        position: absolute
-        content: '— '
-        display: inline-block
-        left: 0
-    &:not(:last-child)
-        margin-bottom: 10px
+    li:not([class])
+        list-style: none
+        position: relative
+        padding-left: 30px
+        &::before
+            position: absolute
+            content: '— '
+            display: inline-block
+            left: 0
+        &:not(:last-child)
+            margin-bottom: 10px
+
+ol:not([class])
+    li
+        &:not(:last-child)
+            margin-bottom: 10px
 
 .hidden
     overflow: hidden
@@ -206,6 +216,9 @@ li:not([class])
             width: 100%
     &__line
         display: flex
+        &:not(:last-child)
+            margin-bottom: 40px
+
         & > *
             flex: 1
             &:not(:last-child)
@@ -224,6 +237,8 @@ li:not([class])
         display: flex
         justify-content: center
         align-items: center
+        &--left
+            justify-content: flex-start
 
 .contacts-form
     display: flex

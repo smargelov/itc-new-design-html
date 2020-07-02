@@ -27,6 +27,16 @@
             line-height: 40px
 
 
+.h1.page-title__text--post
+    font-size: 80px
+    line-height: 100px
+    +sm-block()
+        font-size: 50px
+        line-height: 60px
+    +xs-block()
+        font-size: 30px
+        line-height: 40px
+
 // Badges
 .badges
     +row-flex()
@@ -378,12 +388,199 @@
             right: 0
             z-index: 3
             background-color: rgba($accent, .4)
-            backdrop-filter: blur(3px)
-            transition: opacity .3s ease
+            //backdrop-filter: blur(3px)
+            transition: background-color .3s ease
+        &:hover, &:focus
+            &::after
+                background-color: transparent
+                backdrop-filter: none
+    +sm-block()
+        &:not(:first-child)
+            display: none
+    &__category
+        font-size: 13px
+        line-height: 17px
+
 
 
 .blog-page
-    .post-card
-        margin-bottom: 60px
-        +sm-block()
+    +row-flex()
+.blog-list
+    +col()
+    +size(8)
+    +size-md(12)
+.blog-aside
+    +col()
+    +size(4)
+    +size-md(12)
+
+.vacancy
+    &__title
+        font-size: 60px
+        line-height: 70px
+    &__item
+        font-size: 40px
+        line-height: 55px
+        font-weight: 200
+        &:not(:last-child)
             margin-bottom: 30px
+
+.up-button
+    position: fixed
+    bottom: 10px
+    left: 50%
+    transform: translateX(-50%)
+    background-color: rgba($white, .5)
+    backdrop-filter: blur(3px)
+    z-index: 30
+    opacity: 0
+    pointer-events: none
+    transition: bottom .5s ease-out, opacity .5s ease-out
+    &:hover, &:focus
+        border-color: $white
+    &--active
+        opacity: .6
+        pointer-events: auto
+        bottom: 30px
+
+
+.big-small
+    +row-flex()
+.big-small__left
+    +col()
+    +size(8)
+    +size-sm(12)
+.big-small__right
+    +col()
+    +size(4)
+    +size-sm(12)
+
+.h3.big-small__title
+    font-size: 30px
+    line-height: 40px
+.big-small__right
+    .case-link
+        font-size: 30px
+        line-height: 40px
+        font-weight: 300
+
+.case-slider__wrap
+    position: relative
+
+.case-page__slider--none
+    display: flex
+    justify-content: center
+
+.case-slider__controls
+    flex-direction: row
+    justify-content: space-between
+    margin-top: 40px
+    +md-block()
+        justify-content: space-between
+
+.case-page__buttons
+    display: flex
+    justify-content: center
+.case-page_btn
+    &:not(:last-child)
+        margin-right: 30px
+
+.content
+    table
+        width: 100%
+    tr
+        box-shadow: 0 1px 0 0 $grey
+    th
+        text-align: left
+    td, th
+        padding: 10px 20px
+        vertical-align: top
+        &:first-child
+            padding-left: 0
+
+    li:not([class])::before
+        color: $accent
+
+.description-block__desc-block table
+    font-size: 20px
+    line-height: 27px
+
+// A4A
+.a4a__wrap
+    background-repeat: no-repeat
+    background-size: cover
+    background-position: center center
+    color: $white
+    padding: 60px 30px 75px
+.a4a__main-line
+    display: flex
+    justify-content: center
+    margin-top: 80px
+    margin-bottom: 120px
+    +sm-block()
+        flex-wrap: wrap
+        justify-content: space-around
+        margin-bottom: 60px
+.a4a__item
+    display: flex
+    flex-direction: column
+    align-items: center
+    &:not(:last-child)
+        margin-right: 25px
+    +sm-block()
+        width: 45%
+        margin-bottom: 40px
+        &:not(:last-child)
+            margin-right: 0
+    +xs-block()
+        width: 90%
+.a4a__item-icon
+    width: 90px
+    height: 90px
+    fill: $white
+    margin-bottom: 20px
+.a4a__item-text
+    text-align: center
+.a4a__footer
+    display: flex
+    justify-content: center
+.a4a__footer-list
+    display: flex
+    padding-top: 40px
+    box-shadow: 0 -1px 0 0 $white
+.a4a__footer-icon
+    &:not(:last-child)
+        margin-right: 50px
+
+
+.swal-modal
+    border-radius: 0
+
+.swal-button
+    background-color: #fff
+    color: #1616cc
+    border: 1px solid #1616cc
+    border-radius: 22px
+    font-weight: 400
+    font-size: 17px
+    &:not([disabled]):hover,
+    &:active
+        background-color: #fff
+    &:focus
+        box-shadow: none
+
+.no-found
+    min-height: calc(100vh - 500px)
+    &__text
+        font-size: 40px
+        margin-top: 50px
+        font-weight: 500
+        +lg-block()
+            font-size: 30px
+            margin-top: 40px
+        +md-block()
+            font-size: 25px
+            margin-top: 35px
+        +sm-block()
+            font-size: 20px
+            margin-top: 25px

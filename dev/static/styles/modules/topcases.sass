@@ -9,20 +9,29 @@
     +col()
     +size(4)
     +size-sm(12)
+    cursor: pointer
 
 .topcases-tab
+    display: flex
     +sm-block()
         margin-bottom: 30px
+.topcases-tab__btn
+    display: none
+    margin-top: 30px
 .topcases-tab--active
     color: $white
     background-color: $accent
     .topcases-tab__content
         background-color: transparent
+    .topcases-tab__btn
+        +sm-block()
+            display: inline-flex
+
 
 .topcases-tab__content
     padding: 25px 30px
     background-color: $grey
-    height: 100%
+    width: 100%
     font-weight: 100
 
 .topcases-tab__title
