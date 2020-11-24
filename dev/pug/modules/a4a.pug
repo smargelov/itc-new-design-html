@@ -1,0 +1,41 @@
+-
+    var aCard = [
+        {
+            icon: 'cube-line',
+            text: 'Выполняем работы как субподрядчики'
+        },
+        {
+            icon: 'star-doc',
+            text: 'Предоставляем выгодные условия сотрудничества'
+        },
+        {
+            icon: 'friends',
+            text: 'Сотрудничаем с крупнейшими рекламными агентствами'
+        },
+        {
+            icon: 'atom',
+            text: 'Работаем по модели аутсорсинга и аутстаффинга'
+        },
+    ]
+
+-
+    var comps = [
+        'ingate-logo',
+        'completed-logo',
+        'agima-logo',
+    ]
+
+section.section
+    .b-a4a
+        ._wrap(style=`background-image: url(images/general/showreel_bg.jpg)`)
+            h3.h3._title Агентство для агентств
+            ._main-line
+                each item in aCard
+                    ._item
+                        +icon(item.icon, 'a4a__item-icon')
+                        ._item-text= item.text
+            ._footer
+                ._footer-list
+                    each item in comps
+                        ._footer-icon
+                            img(src='images/general/'+item+'.png')

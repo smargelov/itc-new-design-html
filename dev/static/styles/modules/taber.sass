@@ -1,0 +1,189 @@
+.taber
+    display: flex
+    align-items: center
+    padding: 60px 30px
+    background-color: $accent
+    color: $white
+    &--light,
+    &--grey
+        color: $main-font-color
+        border: 1px solid $accent
+        background-color: $white
+        .taber
+            &__left
+                &::after
+                    background-color: $accent
+            &__title-item
+                opacity: 1
+                color: $accent
+                border-color: $accent
+                &.active
+                    color: $main-font-color
+                    +sm-block()
+                        color: $white
+                        background-color: $accent
+                    &::after
+                        background-color: $accent
+        a:not([class])
+            color: $accent
+            opacity: 1
+    &--grey
+        background-color: $grey
+        border-color: transparent
+
+    +sm-block()
+        flex-wrap: wrap
+        padding: 30px 30px 10px
+    +xs-block()
+        padding: 30px 20px 10px
+
+    &__left
+        width: 50%
+        position: relative
+        align-self: flex-start
+        &::after
+            content: ''
+            display: block
+            position: absolute
+            top: 30px
+            bottom: 20px
+            right: 0
+            width: 1px
+            background-color: $white
+            opacity: .3
+            +sm-block()
+                bottom: 0
+                right: 0
+                left: 0
+                top: auto
+                width: auto
+                height: 1px
+
+        +sm-block()
+            //order: 2
+            width: 100%
+            padding-bottom: 20px
+            margin-bottom: 40px
+
+    &__right
+        width: 50%
+        +sm-block()
+            //order: 1
+            width: 100%
+            padding-bottom: 20px
+    &__title-items
+        +sm-block()
+            display: flex
+            overflow: scroll
+            overflow-scrolling: touch
+            padding-bottom: 20px !important
+    &__title-item
+        opacity: .5
+        transition: all .5s ease
+        cursor: pointer
+        padding-right: 30px
+        +sm-block()
+            display: flex
+            justify-content: center
+            align-items: center
+            padding: 10px 20px
+            height: 50px
+            border-radius: 25px
+            border: 1px solid $white
+            cursor: move
+            touch-action: pan-x
+        +xs-block()
+            height: 30px
+            border-radius: 15px
+        &:focus, &:hover
+            opacity: 1
+
+        &:not(:last-child)
+            margin-bottom: 30px
+            +sm-block()
+                margin-right: 10px
+                margin-bottom: 0
+        &.active
+            opacity: 1
+            position: relative
+            &::after
+                position: absolute
+                content: ''
+                display: block
+                width: 50px
+                height: 1px
+                right: 0
+                top: 50%
+                background-color: $white
+                +md(width, 30px)
+                +sm-block()
+                    display: none
+
+    &__title
+        font-size: 40px
+        line-height: 55px
+        font-weight: 100
+
+        +md-block()
+            font-size: 25px
+            line-height: 35px
+        +sm-block()
+            font-size: 16px
+            line-height: 22px
+            white-space: nowrap
+        +xs-block()
+            font-size: 13px
+            line-height: 18px
+    &__card
+        display: none
+        flex-direction: column
+        padding-left: 30px
+        &.active
+            display: flex
+        p
+            line-height: 27px
+            +xs-block()
+                font-size: 16px
+                line-height: 20px
+            &:not(:last-child)
+                margin-bottom: 20px
+        .price
+            font-size: 40px
+            line-height: 50px
+            margin-top: 32px
+            font-weight: 500
+            +xs-block()
+                font-size: 30px
+                line-height: 40px
+                margin-top: 24px
+        ul
+            list-style: none
+
+        li
+            display: flex
+            &:not(:last-child)
+                margin-bottom: 30px
+            &::before
+                content: '—'
+                display: inline-flex
+                margin-right: 20px
+
+        +sm-block()
+            padding-left: 0
+
+        a
+            color: $white
+            opacity: .6
+            text-decoration: underline
+            font-weight: 100
+            font-size: .8em
+            &:hover, &:focus
+                color: $white
+                text-decoration: none
+                opacity: 1
+
+    h5
+        padding-left: 30px
+        margin-bottom: 0
+    li:not([class])
+        margin-bottom: 0

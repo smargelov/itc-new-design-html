@@ -1,0 +1,77 @@
+.showreel
+    &__wrap
+        color: $white
+        background-repeat: no-repeat
+        background-size: cover
+        background-position: center center
+        padding: 74px 58px
+        min-height: 553px
+        align-items: center
+        +row-flex()
+        +sm-block()
+            padding: 40px
+            min-height: 400px
+        +xs-block()
+            min-height: 300px
+    &__text
+        +col()
+        +size(6)
+        +size-sm(12)
+        +sm-block()
+            display: flex
+            flex-direction: column
+            margin-bottom: 40px
+    &__subtitle
+        font-size: 40px
+        line-height: 50px
+        font-weight: 200
+        margin-bottom: 53px
+        +md-block()
+            font-size: 25px
+            line-height: 35px
+        +sm-block()
+            flex: 1
+            margin-bottom: 30px
+        +xs-block()
+            font-size: 20px
+            line-height: 27px
+            text-align: center
+            margin-bottom: 0
+
+    &__items
+        +sm-block()
+            display: none
+
+
+    &__item
+        line-height: 30px
+        font-weight: 200
+        &:not(:last-child)
+            margin-bottom: 10px
+        +md-block()
+            font-size: 17px
+            line-height: 22px
+            &:not(:last-child)
+                margin-bottom: 5px
+
+    &__btn-wrap
+        display: flex
+        align-items: center
+        justify-content: center
+        +col()
+        +size(6)
+        +size-sm(12)
+        +md-block()
+            justify-content: center
+    &__btn
+        +md-block()
+            +sizebox(150px)
+        & svg
+            width: 50px
+            height: 56px
+            margin-left: 15px
+        +xs-block()
+            +sizebox(100px)
+            .icon-empty_triangle
+                width: 40px
+                height: 44px

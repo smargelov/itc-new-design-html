@@ -1,28 +1,56 @@
-@import 'utils/libs'
 @import 'utils/vars'
-@import 'utils/grid'
+@import 'utils/animations'
 @import 'utils/mixins'
 @import 'utils/fonts'
+@import 'utils/grid'
 
-html 
-  font-size: $base-font-size
-  height: 100%
+html
+    font-size: $base-font-size
+    height: 100%
+    overflow: auto
+    +xs-block()
+        font-size: 16px
+body
+    height: 100%
+    min-height: 100vh
+    scroll-behavior: smooth
+    text-rendering: optimizeSpeed
+    line-height: 1.35
+    font-family: $main-font-family
+    font-weight: 300
+    font-style: normal
+    //overflow: auto
 
-body 
-  min-height: 100vh
-  scroll-behavior: smooth
-  text-rendering: optimizeSpeed
-  line-height: 1.5
+
 
 *,
 *::before,
-*::after  
-  box-sizing: border-box
+*::after
+    box-sizing: border-box
+
+a[href^='mailto:'],
+a[href^='tel:']
+    white-space: nowrap
+
+
+a
+    color: $accent
+    text-decoration: none
+    transition: all .5s ease
+    &:hover,
+    &:focus
+        color: $main-font-color
+    &.link--icon
+        svg
+            fill: $accent
+        &:hover, &:focus
+            svg
+                fill: $main-font-color
 
 ul[class],
-ol[class] 
-  list-style: none
-  padding: 0
+ol[class]
+    list-style: none
+    padding: 0
 
 body,
 h1,
@@ -30,36 +58,40 @@ h2,
 h3,
 h4,
 p,
-ul[class],
-ol[class],
+ul,
+ol,
 li,
 figure,
 figcaption,
 blockquote,
 dl,
 dd
-  margin: 0
+    margin: 0
 
-a:not([class]) 
-  text-decoration-skip-ink: auto
+a:not([class])
+    text-decoration-skip-ink: auto
 
-img 
-  max-width: 100%
-  display: block
+img
+    max-width: 100%
+    display: block
+
+p:not([class])
+    &:not(:last-child)
+        margin-bottom: 20px
 
 input,
 button,
 textarea,
-select 
-  font: inherit
+select
+    font: inherit
 
 /* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
-@media (prefers-reduced-motion: reduce) 
-  * 
-    animation-duration: 0.01ms !important
-    animation-iteration-count: 1 !important
-    transition-duration: 0.01ms !important
-    scroll-behavior: auto !important
+@media (prefers-reduced-motion: reduce)
+    *
+        animation-duration: 0.01ms !important
+        animation-iteration-count: 1 !important
+        transition-duration: 0.01ms !important
+        scroll-behavior: auto !important
 
 audio,
 canvas,
@@ -67,25 +99,220 @@ iframe,
 img,
 svg,
 video,
-textarea 
-  vertical-align: middle
+textarea
+    vertical-align: middle
 
-textarea 
-  resize: none
+textarea
+    resize: none
 
-section 
-  position: relative
+section
+    position: relative
 
 input,
 select,
-button 
-  outline: none
+button
+    outline: none
 
-.wrapper 
-  +wrapper()
+.wrapper
+    +wrapper()
 
-.content 
-  flex: 1 0 auto
+.before-fix
+    margin-top: 120px
 
+.content
+    flex: 1 0 auto
+
+.section
+    padding-top: 40px
+    padding-bottom: 40px
+    &--blue
+        background-color: $accent
+        color: $white
+        padding-right: 30px
+        padding-left: 30px
+    &--top-line
+        border-top: 1px solid rgba($main-font-color, .2)
+        margin-top: 60px
+    &--min-bottom
+        padding-bottom: 0
+    +xs-block()
+        padding-top: 20px
+        padding-bottom: 20px
+
+.h2
+    font-size: 45px
+    line-height: 50px
+    font-weight: 500
+    font-style: normal
+    margin-bottom: 55px
+    +xs-block()
+        font-size: 28px
+        line-height: 35px
+        margin-bottom: 20px
+
+.h3
+    font-size: 40px
+    line-height: 55px
+    font-weight: 200
+    font-style: normal
+    margin-bottom: 30px
+    +xs-block()
+        font-size: 30px
+        line-height: 35px
+        margin-bottom: 20px
+
+h4:not([class])
+    font-size: 20px
+    line-height: 27px
+    margin-bottom: 20px
+    &:not(:first-child)
+        margin-top: 40px
+
+ul:not([class])
+    padding-left: 0
+    margin-bottom: 20px
+
+    li:not([class])
+        list-style: none
+        position: relative
+        padding-left: 30px
+        &::before
+            position: absolute
+            content: '— '
+            display: inline-block
+            left: 0
+        &:not(:last-child)
+            margin-bottom: 10px
+
+ol:not([class])
+    li
+        &:not(:last-child)
+            margin-bottom: 10px
+
+.hidden
+    overflow: hidden
+    height: 0
+    width: 0
+
+.mobile-none
+    +sm-block()
+        display: none !important
+
+.desktop-none
+    display: none !important
+    +sm-block()
+        display: flex !important
+
+.page-form
+    padding-top: 40px
+    padding-bottom: 40px
+    &__input
+        padding-right: 30px
+        padding-left: 30px
+        min-height: 50px
+        +md-block()
+            width: 50%
+        +sm-block()
+            width: 100%
+    &__line
+        display: flex
+        &:not(:last-child)
+            margin-bottom: 40px
+
+        & > *
+            flex: 1
+            &:not(:last-child)
+                margin-right: 50px
+            +md-block()
+                &:not(:last-child)
+                    margin-right: 0
+        +md-block()
+            flex-direction: column
+            align-items: flex-start
+            & > *
+                &:not(:last-child)
+                    margin-bottom: 30px
+
+    &__col-wrap
+        display: flex
+        justify-content: center
+        align-items: center
+        &--left
+            justify-content: flex-start
+
+.contacts-form
+    display: flex
+    flex-direction: column
+    max-width: 600px
+
+    &__input, &__textarea
+        background-color: $white
+        width: 100%
+        padding-left: 30px
+        padding-right: 30px
+        border: none
+        margin-bottom: 20px
+        +xs-block()
+            font-size: 16px
+            line-height: 24px
+            padding-right: 13px
+            padding-left: 13px
+        &:focus
+            outline: none
+
+    &__textarea
+        height: 135px
+        padding-top: 15px
+        padding-bottom: 15px
+
+    &__input
+        height: 48px
+        +xs-block()
+            height: 45px
+
+    &__checkbox
+        opacity: 0
+        height: 0
+        overflow: hidden
+        &:checked
+            & + label
+                &::before
+                    background-color: $accent
+                &::after
+                    display: inline-block
+                    position: absolute
+                    content: url('../images/general/done.png')
+                    top: 7px
+                    left: 5px
+                    width: 19px
+                    height: 14px
+
+
+    &__label
+        padding-left: 40px
+        position: relative
+        font-size: 15px
+        line-height: 22px
+        font-weight: 100
+        margin-bottom: 20px
+        +xs-block()
+            font-size: 13px
+            line-height: 17px
+
+        &::before
+            position: absolute
+            content: ''
+            display: inline-block
+            width: 30px
+            height: 30px
+            left: 0
+            top: 0
+            border: 1px solid $accent
+            transition: all .3s ease
+
+    &__btn
+        align-self: flex-start
+        +xs-block()
+            align-self: stretch
 //Модули
 @import 'modules/modules'

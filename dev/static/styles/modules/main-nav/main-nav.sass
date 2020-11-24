@@ -1,0 +1,148 @@
+=megaItem($h: 30)
+    opacity: 0
+    transform: translate3d(0, $h * -1px ,0)
+=megaItemView()
+    opacity: 1
+    transform: none
+=delayLoop($start: 0.3)
+    @for $i from 1 through 10
+        &:nth-child(#{$i})
+            transition-delay: ($start + $i * 0.05) * 1s
+
+.megamenu
+    position: fixed
+    right: 0
+    left: 0
+    top: 0
+    z-index: 5
+    min-height: 100vh
+    background-color: rgba($accent, .85)
+    backdrop-filter: blur(10px)
+    padding-top: 150px
+    transform: translate3d(0, -100%, 0)
+    transition: transform .5s cubic-bezier(.785,.135,.15,.86)
+    +xs-block()
+        padding-top: 120px
+
+    &.is-active
+        transform: none
+        .megamenu__item,
+        .megamenu__icon,
+        .megamenu__btn
+            +megaItemView()
+
+
+    &__cols
+        +row-flex()
+        padding-top: 35px
+        border-top: 1px solid rgba($white, .3)
+    &__col
+        +col()
+        &:nth-child(1)
+            +size(5)
+            .megamenu__item
+                +delayLoop()
+            +size-sm(4)
+            +sm-block()
+                order: 2
+        &:nth-child(2)
+            +size(6)
+            .megamenu__item
+                +delayLoop(0.6)
+            +size-sm(8)
+            +sm-block()
+                order: 1
+        &:nth-child(3)
+            +size(1)
+            display: flex
+            align-self: flex-start
+            +size-sm(12)
+            +sm-block()
+                order: 3
+                margin-top: 30px
+
+    &__item
+        +megaItem()
+        &:not(:last-child)
+            margin-bottom: 20px
+
+    &__link
+        color: $white
+        font-size: 40px
+        &:hover, &:focus
+            color: darken($white, 30%)
+        +sm-block()
+            font-size: 23px
+        +xs-block()
+            font-size: 16px
+            line-height: 22px
+
+
+    &__social
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        +sm-block()
+            position: fixed
+            bottom: 0
+            right: 0
+            left: 0
+            flex-direction: row
+            justify-content: center
+            flex: 1
+    &__icon
+        +megaItem()
+        +delayLoop(1)
+        margin-bottom: 40px
+        &:hover, &:focus
+            svg
+                fill: darken($white, 30%)
+        +md-block()
+            &:not(:last-child)
+                margin-right: 30px
+    &__social-icon
+        height: 26px
+        fill: $white
+
+
+.sandwich
+    cursor: pointer
+    height: 20px
+    position: relative
+    width: 32px
+    margin-left: 30px
+    &:hover, &:focus
+        .sandwich__line
+            background-color: $accent
+
+    &.is
+        &-active
+            .sandwich__line
+                &--top
+                    top: 10px
+                    transform: rotate(45deg)
+
+                &--middle
+                    opacity: 0
+
+                &--bottom
+                    top: 10px
+                    transform: rotate(-45deg)
+
+    &__line
+        background-color: $main-font-color
+        display: block
+        height: 1px
+        left: 0
+        position: absolute
+        transition: all linear .4s
+        width: 100%
+
+        &--top
+            top: 0
+
+        &--middle
+            top: 9px
+
+        &--bottom
+            top: 18px

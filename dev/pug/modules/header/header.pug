@@ -1,1 +1,40 @@
-header.header
+if title == 'Контекстная реклама'
+    .b-estore-line.-active
+        .wrapper
+            ._content
+                ._text Интернет-магазин от 150 000 ₽ + настройка рекламы в подарок!
+                .b-btn.-red._btn(data-action='estore-popup') Узнать подробнее
+                ._close
+                    +icon('close-x')
+header.b-header
+    .wrapper
+        ._top-line
+            ._top-left
+                a(href='/')._logo
+                    +icon('logo', 'header__logo-icon')
+                //-._showreel
+                    a._link.link--icon(data-fancybox, href="https://youtu.be/I_l8eApu9G4&amp;autoplay=1&amp;rel=0&amp;controls=0&amp;showinfo=0")
+                        +icon('triangle-right')
+                        | Showreel
+            ._top-right
+
+                ._phone
+                    a._link(href='tel:+78005512557', title='8 (800) 551-25-57') 8 (800) 551-25-57
+                ._city
+                    ._link.link--icon.city-view
+                        | Брянск
+                        +icon('triangle-down')
+                        ._cities
+                            ul._subcities
+                                each city in cities
+                                    li._subcity
+                                        a._link(href= city.link, title= city.name)= city.name
+
+                button.b-btn.-flat._btn(data-action='popup', data-target='consultation') Заказать звонок
+
+            .b-sandwich._sandwich
+                ._line.-top
+                ._line.-middle
+                ._line.-bottom
+
+include megamenu

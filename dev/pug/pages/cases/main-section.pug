@@ -1,0 +1,11 @@
+section.section.section--min-bottom
+    .b-cases-line
+        a(data-target='marketing', title="Интернет маркетинг")._tab.-active Интернет маркетинг
+        a(data-target='develop', title="Разработка сайтов")._tab Разработка сайтов
+.b-cases-content
+    ._tab.-active(data-id="marketing")
+        each card in marketingCards
+            +portfolioCard(card)
+    ._tab(data-id="develop")
+        each card in developCards
+            +portfolioCard(card)

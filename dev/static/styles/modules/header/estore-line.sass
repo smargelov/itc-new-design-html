@@ -1,0 +1,133 @@
+.estore-line
+    background-image: url('../images/general/estore-line.jpg')
+    background-size: cover
+    background-position: center center
+    display: none
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    z-index: 11
+.estore-line--active
+    display: block
+.estore-line__content
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding-top: 13px
+    padding-bottom: 13px
+    +sm-block()
+        flex-wrap: wrap
+.estore-line__text
+    flex-grow: 1
+    color: $white
+    font-weight: bold
+    font-size: 25px
+    line-height: 1.35
+    margin-right: 40px
+    +sm-block()
+        margin-right: 0
+        margin-bottom: 20px
+    +xs-block()
+        font-size: 20px
+
+.estore-line__close
+    width: 30px
+    height: 30px
+    margin-left: 40px
+    cursor: pointer
+    +sm-block()
+        width: 25px
+        height: 25px
+    .icon-close-x
+        max-width: 30px
+        max-height: 30px
+        fill: $white
+        +sm-block()
+            max-width: 25px
+            max-height: 25px
+
+.estore-popup__overlay
+    position: fixed
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    background-color: rgba(#080726, .85)
+    z-index: 10
+    display: none
+
+.estore-popup
+    display: none
+    position: fixed
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    z-index: 11
+    background-color: $accent
+    color: $white
+    max-width: 95%
+    &__wrap
+        position: relative
+        display: flex
+        +md-block()
+            flex-direction: column
+    +md-block()
+        height: 100%
+        overflow: auto
+        top: 0
+        transform: translate(-50%, 0)
+
+
+.estore-popup__img-wrap
+    flex-grow: 1
+.estore-popup__img
+    min-width: 820px
+    +lg-block()
+        min-width: 740px
+    +md-block()
+        min-width: 600px
+    +sm-block()
+        min-width: 440px
+    +xs-block()
+        min-width: 300px
+.estore-popup__form-wrap
+    max-width: 100%
+    width: 650px
+    padding: 50px 30px 40px
+    position: relative
+    background-color: $accent
+.estore-popup__title
+    font-size: 40px
+    line-height: 45px
+    margin-bottom: 55px
+    //padding-right: 100px
+    font-weight: 400
+    +lg-block()
+        font-size: 35px
+        line-height: 40px
+        margin-bottom: 33px
+.estore-popup__form
+    .contacts-form__label::before
+        border: 1px solid $white
+.estore-popup__attention
+    font-size: 15px
+    line-height: 22px
+    opacity: .5
+    margin-top: 50px
+    padding-right: 40px
+    +lg-block()
+        padding-right: 0
+        margin-top: 30px
+.estore-popup__close
+    position: absolute
+    top: 30px
+    right: 30px
+    cursor: pointer
+    .icon-close-x
+        max-width: 30px
+        max-height: 30px
+        fill: $white
+        +sm-block()
+            max-width: 25px
+            max-height: 25px

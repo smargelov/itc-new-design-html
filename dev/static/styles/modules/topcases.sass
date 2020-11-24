@@ -1,0 +1,133 @@
+.topcases
+
+.topcases__tabs
+    +row-flex()
+    margin-left: -10px
+    margin-right: -10px
+
+.topcases__tab
+    +col()
+    +size(4)
+    +size-sm(12)
+    cursor: pointer
+
+.topcases-tab
+    display: flex
+    +sm-block()
+        margin-bottom: 30px
+.topcases-tab__btn
+    display: none
+    margin-top: 30px
+.topcases-tab--active
+    color: $white
+    background-color: $accent
+    .topcases-tab__content
+        background-color: transparent
+    .topcases-tab__btn
+        +sm-block()
+            display: inline-flex
+
+
+.topcases-tab__content
+    padding: 25px 30px
+    background-color: $grey
+    width: 100%
+    font-weight: 100
+
+.topcases-tab__title
+    font-size: 40px
+    line-height: 50px
+    margin-bottom: 30px
+    +md-block()
+        font-size: 27px
+        line-height: 32px
+
+.topcases-tab__cols
+    display: flex
+    justify-content: space-between
+
+.topcases-tab__cols--single
+    .topcases-tab__col
+        max-width: 100%
+        flex-direction: row
+        align-items: center
+    .topcases-tab__num
+        font-size: 40px
+        line-height: 40px
+        margin-right: 8px
+        +md-block()
+            font-size: 27px
+            line-height: 32px
+    .topcases-tab__desc
+        font-size: 16px
+        line-height: 17px
+
+
+.topcases-tab__col
+    max-width: 47%
+    display: flex
+    flex-direction: column
+
+.topcases-tab__desc
+    font-size: 13px
+    line-height: 17px
+
+.topcases__cards
+    +row-flex()
+    margin-left: -10px
+    margin-right: -10px
+    +sm-block()
+        display: none
+
+.topcases-card
+    display: none
+    +col()
+    +size(12)
+    color: $white
+    padding: 40px 30px
+    background-color: $accent
+    opacity: 0
+    transition: all .3s
+
+.topcases-card--active
+    display: flex
+    justify-content: space-between
+    opacity: 1
+    +md-block()
+        flex-wrap: wrap
+
+.topcases-card__left
+    width: 64%
+    +md-block()
+        width: 100%
+.topcases-card__right
+    width: 32%
+    display: flex
+    flex-direction: column
+    align-items: center
+    +md-block()
+        width: 100%
+        flex-direction: row
+        padding-top: 30px
+
+.topcases-card__content
+    display: flex
+    flex-direction: column
+    align-items: center
+    +md-block()
+        flex: 4
+        margin-right: 20px
+        align-items: flex-start
+
+.topcases-card__images
+
+
+.topcases-card__text
+    margin-bottom: 40px
+    line-height: 27px
+
+.topcases-card__controls
+    margin-top: auto
+    padding-top: 40px
+    +md-block()
+        flex: 1

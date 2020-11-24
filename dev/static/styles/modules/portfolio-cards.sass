@@ -1,0 +1,89 @@
+.portfolio-card
+    background-color: $grey
+    display: flex
+    min-height: 630px
+    +md-block()
+        min-height: 400px
+    +sm-block()
+        flex-direction: column-reverse
+        min-height: 800px
+    +xs-block()
+        min-height: auto
+
+.portfolio-card__left
+    flex: 1
+    padding: 40px 30px
+    display: flex
+    flex-direction: column
+
+.portfolio-card__title
+    line-height: 50px
+    +md-block()
+        font-size: 30px
+        line-height: 40px
+
+.portfolio-card__desc
+    +md-block()
+        font-size: 16px
+        line-height: 22px
+
+.portfolio-card__header
+    margin-bottom: 30px
+
+.portfolio-card__footer
+    margin-top: auto
+    display: flex
+    flex-direction: column
+
+.portfolio-card__cols
+    display: flex
+    margin-bottom: 40px
+    flex-direction: column
+    +xs-block()
+        margin-top: 30px
+
+.portfolio-card__col
+    margin-right: 20px
+    width: 50%
+    &:not(:last-child)
+        margin-bottom: 30px
+    +sm-block()
+        width: 100%
+
+.portfolio-card__num
+    font-size: 40px
+    line-height: 50px
+    font-weight: 500
+    margin-bottom: 5px
+    +md-block()
+        font-size: 22px
+        line-height: 28px
+
+.portfolio-card__text
+    +md-block()
+        font-size: 16px
+        line-height: 20px
+
+.portfolio-card__btn
+    align-self: flex-start
+
+.portfolio-card__right
+    flex: 1
+    position: relative
+    overflow: visible
+    +xs-block()
+        min-height: 100vw
+
+.portfolio-card__img
+    position: absolute
+    overflow: visible
+    top: 0
+    right: 0
+    bottom: 0
+    min-width: 100%
+    background-position: right center
+    background-repeat: no-repeat
+    +sm-block()
+        left: 0
+        background-position: center center
+        max-width: 100%

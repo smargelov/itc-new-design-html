@@ -1,20 +1,23 @@
 $columns: 12
 $atom: (100% / $columns)
 
-$break_lg: 1280px
-$break_md: 1000px
+$break_lg: 1380px
+$break_md: 1200px
+$break_mds: 960px
 $break_sm: 768px
 $break_xs: 480px
 
 $offset: 20px
 $offset_lg: $offset
 $offset_md: $offset
+$offset_mds: $offset
 $offset_sm: $offset
 $offset_xs: $offset
 
 $offset_one_side: ($offset / 2)
 $offset_lg_one_side: ($offset_lg / 2)
 $offset_md_one_side: ($offset_md / 2)
+$offset_mds_one_side: ($offset_mds / 2)
 $offset_sm_one_side: ($offset_sm / 2)
 $offset_xs_one_side: ($offset_xs / 2)
 
@@ -81,6 +84,10 @@ $fields_sm: 15px
 =size-md($n)
     $val: 100% / $columns * $n
     +md(width, #{calc(#{$val} - #{$offset_md})})
+
+=size-mds($n)
+    $val: 100% / $columns * $n
+    +mds(width, #{calc(#{$val} - #{$offset_mds})})
 
 =size-sm($n)
     $val: 100% / $columns * $n
@@ -168,6 +175,32 @@ $fields_sm: 15px
     $val: 100% / $columns * $n
     +md(padding-right, #{calc(#{$val} + #{$offset_md_one_side})})
 
+=shift-mds($n)
+    $val: 100% / $columns * $n
+    +mds(margin-left, #{calc(#{$val} + #{$offset_mds_one_side})})
+    +mds(margin-right, #{calc(#{$val} + #{$offset_mds_one_side})})
+
+=shift-mds-left($n)
+    $val: 100% / $columns * $n
+    +mds(margin-left, #{calc(#{$val} + #{$offset_mds_one_side})})
+
+=shift-mds-right($n)
+    $val: 100% / $columns * $n
+    +mds(margin-right, #{calc(#{$val} + #{$offset_mds_one_side})})
+
+=shift-mds-padding($n)
+    $val: 100% / $columns * $n
+    +mds(padding-left, #{calc(#{$val} + #{$offset_mds_one_side})})
+    +mds(padding-right, #{calc(#{$val} + #{$offset_mds_one_side})})
+
+=shift-mds-padding-left($n)
+    $val: 100% / $columns * $n
+    +mds(padding-left, #{calc(#{$val} + #{$offset_mds_one_side})})
+
+=shift-mds-padding-right($n)
+    $val: 100% / $columns * $n
+    +mds(padding-right, #{calc(#{$val} + #{$offset_mds_one_side})})
+
 =shift-sm($n)
     $val: 100% / $columns * $n
     +sm(margin-left, #{calc(#{$val} + #{$offset_sm_one_side})})
@@ -236,6 +269,14 @@ $fields_sm: 15px
     @media screen and (max-width: $break_md)
         @content
 
+=mds($name, $value)
+    @media screen and (max-width: $break_mds)
+        #{$name}: $value
+
+=mds-block()
+    @media screen and (max-width: $break_mds)
+        @content
+
 =sm($name, $value)
     @media screen and (max-width: $break_sm)
         #{$name}: $value
@@ -283,45 +324,45 @@ $fields_sm: 15px
     body,div,dl,dt,dd,ul,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,input,textarea,p,blockquote,th,td
         margin: 0
         padding: 0
-    
+
     table
         border-collapse: collapse
         border-spacing: 0
-    
+
     fieldset,img,abbr
         border: 0
-    
+
     address,caption,cite,code,dfn,em,strong,th,var
         font-style: normal
         font-weight: normal
-    
+
     ul li
         list-style: none
-    
+
     caption,th
         text-align: left
-    
+
     h1,h2,h3,h4,h5,h6
         font-size: 100%
         font-weight: normal
-    
+
     sup
         vertical-align: text-top
-    
+
     sub
         vertical-align: text-bottom
-    
+
     input,textarea,select
         font-family: inherit
         font-size: inherit
         font-weight: inherit
-    
+
     legend
         color: #000
-    
+
     article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section,main
         display: block
-    
+
     img
         max-width: 100%
         height: auto
@@ -330,15 +371,15 @@ $fields_sm: 15px
     height: 100vh
     position: fixed
     width: 100%
-    
+
     > div
         height: inherit
         +wrapper()
-        
+
         > div
             height: inherit
             +row-flex()
-            
+
             > div
                 +col()
                 +size(1)
@@ -351,4 +392,4 @@ $fields_sm: 15px
         display: block
         content: ""
         clear: both
-    
+

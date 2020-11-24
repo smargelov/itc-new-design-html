@@ -8,13 +8,23 @@ const uglify = require('gulp-uglify'),
 
 module.exports = function () {
     $.gulp.task('libsJS:dev', () => {
-        return $.gulp.src(['node_modules/svg4everybody/dist/svg4everybody.min.js'])
+        return $.gulp.src(['node_modules/svg4everybody/dist/svg4everybody.min.js',
+            'node_modules/owl.carousel/dist/owl.carousel.min.js',
+            'node_modules/jquery.maskedinput/src/jquery.maskedinput.js',
+            // 'node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.js',
+            // 'node_modules/sweetalert2/dist/sweetalert2.all.min.js',
+            'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js'])
             .pipe(concat('libs.min.js'))
             .pipe($.gulp.dest(scriptsPATH.output));
     });
 
     $.gulp.task('libsJS:build', () => {
-        return $.gulp.src(['node_modules/svg4everybody/dist/svg4everybody.min.js'])
+        return $.gulp.src(['node_modules/svg4everybody/dist/svg4everybody.min.js',
+            'node_modules/owl.carousel/dist/owl.carousel.min.js',
+            'node_modules/jquery.maskedinput/src/jquery.maskedinput.js',
+            // 'node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.js',
+            // 'node_modules/sweetalert2/dist/sweetalert2.all.min.js',
+            'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js'])
             .pipe(concat('libs.min.js'))
             .pipe(uglify())
             .pipe($.gulp.dest(scriptsPATH.output));
@@ -22,8 +32,8 @@ module.exports = function () {
 
     $.gulp.task('js:dev', () => {
         return $.gulp.src([scriptsPATH.input + '*.js',
-                '!' + scriptsPATH.input + 'libs.min.js'
-            ])
+            '!' + scriptsPATH.input + 'libs.min.js'
+        ])
             .pipe(babel({
                 presets: ['@babel/env']
             }))
@@ -35,8 +45,8 @@ module.exports = function () {
 
     $.gulp.task('js:build', () => {
         return $.gulp.src([scriptsPATH.input + '*.js',
-                '!' + scriptsPATH.input + 'libs.min.js'
-            ])
+            '!' + scriptsPATH.input + 'libs.min.js'
+        ])
             .pipe(babel({
                 presets: ['@babel/env']
             }))
@@ -45,8 +55,8 @@ module.exports = function () {
 
     $.gulp.task('js:build-min', () => {
         return $.gulp.src([scriptsPATH.input + '*.js',
-                '!' + scriptsPATH.input + 'libs.min.js'
-            ])
+            '!' + scriptsPATH.input + 'libs.min.js'
+        ])
             .pipe(concat('main.min.js'))
             .pipe(uglify())
             .pipe($.gulp.dest(scriptsPATH.output))

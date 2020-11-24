@@ -1,0 +1,15 @@
+extends template/main
+
+block variables
+    - var title = 'Маркетинг в соцсетях'
+
+
+block content
+    include modules/page-title
+    +badges(smmBadges)
+    include modules/smm/two-col
+    +taber(tabsSmm)
+    include modules/topcases
+    +taber(tabsSmmStrategy, 'Составляющие SMM-стратегии', 'light')
+    +feedbackSlider(keyMetrix, 'Ключевые метрики', 'feedback--rules')
+    include modules/consult-form

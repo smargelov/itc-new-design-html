@@ -1,0 +1,69 @@
+.hero
+    +row-flex()
+
+    &__text
+        +col()
+        +size(9)
+
+    &__action
+        +col()
+        +size(3)
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+
+    &__title
+        font-size: 120px
+        line-height: 130px
+        font-weight: 500
+        &--main
+            font-size: 108px
+            line-height: 122px
+        +md-block()
+            font-size: 75px
+            line-height: 90px
+            &--main
+                font-size: 75px
+                line-height: 90px
+        +sm-block()
+            font-size: 42px
+            line-height: 55px
+            &--main
+                font-size: 42px
+                line-height: 55px
+        +xs-block()
+            font-size: 30px
+            line-height: 40px
+            &--main
+                font-size: 30px
+                line-height: 40px
+    &__subtitle
+        font-size: 40px
+        line-height: 40px
+        margin-top: 40px
+        font-weight: 500
+        +md-block()
+            font-size: 30px
+            line-height: 37px
+        +sm-block()
+            font-size: 20px
+            line-height: 25px
+        +xs-block()
+            font-size: 16px
+            line-height: 20px
+
+
+    &__btn
+        +xs-block()
+            font-size: 10px
+            line-height: 14px
+            +sizebox(80px)
+    &__desc
+        margin-top: 20px
+        text-align: center
+        +sm-block()
+            display: none
+
+.blue-text
+    color: $accent

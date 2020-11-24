@@ -1,0 +1,17 @@
+extends template/main
+
+block variables
+    - var title = 'Продвижение сайтов'
+
+
+block content
+    include modules/page-title
+    +badges(promBadges)
+    //-include modules/focus
+    +taber(tabsPromo1)
+    include modules/topcases
+    +feedbackSlider(feedbacks, 'Отзывы')
+    +avideo(promAvideo)
+    +taber(tabsStrategy, 'Стратегия поискового продвижения', 'light')
+    +feedbackSlider(ourRules, 'Наш подход', 'feedback--rules')
+    include modules/consult-form
