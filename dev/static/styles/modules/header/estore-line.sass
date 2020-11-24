@@ -3,6 +3,11 @@
     background-size: cover
     background-position: center center
     display: none
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    z-index: 11
 .estore-line--active
     display: block
 .estore-line__content
@@ -62,8 +67,12 @@
     background-color: $accent
     color: $white
     max-width: 95%
+    &__wrap
+        position: relative
+        display: flex
+        +md-block()
+            flex-direction: column
     +md-block()
-        flex-direction: column
         height: 100%
         overflow: auto
         top: 0

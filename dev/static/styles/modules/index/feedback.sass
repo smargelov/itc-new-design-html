@@ -89,3 +89,15 @@
         color: $accent
     &__prev
         margin-right: 10px
+    &__original
+        &--video
+            position: relative
+            padding-left: 23px
+            &::before
+                position: absolute
+                content: ''
+                display: inline-block
+                left: 0
+                top: 6px
+                border: 7.5px solid transparent
+                border-left: 13px solid $accent

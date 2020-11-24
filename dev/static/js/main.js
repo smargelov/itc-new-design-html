@@ -1,6 +1,11 @@
 $(document).ready(function () {
     svg4everybody({});
 
+    let fancyIframe = $('.fancy-content').find('iframe');
+    fancyIframe.load(function () {
+        console.log(this);
+    })
+
 
     $("[data-b24form]").submit(function () {
         const th = $(this)
@@ -53,7 +58,7 @@ $(document).ready(function () {
         let adHeight = $('.estore-line--active').height();
         let headerHeight = adHeight ? 120 + adHeight : 120;
         $('.before-fix').css('marginTop', headerHeight + 'px');
-        $('.header').css('height', headerHeight + 'px');
+        $('.header').css('top', adHeight + 'px');
         $('.megamenu').css('paddingTop', headerHeight + 30 + 'px');
         let lastScrollTop = headerHeight;
         $(window).scroll(function (event) {
@@ -61,7 +66,7 @@ $(document).ready(function () {
             if (st > lastScrollTop) {
                 $('.header').css('top', '-' + headerHeight + 'px');
             } else {
-                $('.header').css('top', '0');
+                $('.header').css('top', adHeight ? adHeight + 'px' : 0);
             }
             if (st > headerHeight) {
                 lastScrollTop = st;
@@ -279,7 +284,7 @@ $(document).ready(function () {
         $('html').css('overflow', 'hidden');
         $('body').css('overflow', 'auto');
         $('.estore-popup__overlay').fadeIn(300);
-        $('.estore-popup').slideDown(500).css('display', 'flex');
+        $('.estore-popup').slideDown(500);
     })
     let closeAdPopup = () => {
         $('.estore-popup').slideUp(500);
@@ -287,7 +292,11 @@ $(document).ready(function () {
         $('html').css('overflow', 'auto');
         $('body').css('overflow', 'initial');
     }
-    $('.estore-popup__close').click(closeAdPopup);
+    $('.estore-popup__close').click(function () {
+        closeAdPopup();
+
+
+    });
     $('.estore-popup__overlay').click(closeAdPopup);
     $(document).keydown(function (eventObject) {
         if (eventObject.which == 27) {
@@ -298,6 +307,8 @@ $(document).ready(function () {
     $('.estore-line__close').click(function () {
         $('.estore-line').removeClass('estore-line--active');
         menuLogic();
+
+        $('.header').css('top', '-120px');
         document.cookie = "estore-line=1; path=/;"
     })
 
