@@ -39,6 +39,46 @@
             a
                 color: $accent
 
+.header--blue
+    &.header
+        backdrop-filter: none
+        .sandwich
+            &:hover, &:focus
+                .sandwich__line
+                    background-color: darken($white, 30%)
+        .sandwich__line
+            background-color: $white
+    .header
+        &__logo
+            &-icon
+                fill: $white
+            &:hover, &:focus
+                svg
+                    fill: darken($white, 30%)
+        &__link
+            color: $white
+            svg
+                fill: $white
+            &:hover, &:focus
+                color: darken($white, 30%)
+                svg
+                    fill: darken($white, 30%)
+        &__btn
+            color: $white
+            border: 1px solid $white
+            &:hover, &:focus
+                background-color: $white
+                color: $accent
+        &__city
+            a
+                &:hover, &:focus
+                    color: $main-font-color
+                    svg
+                        fill: $accent
+        &__cities
+            a
+                color: $accent
+
 
 .header
     height: 120px
@@ -50,6 +90,11 @@
     background-color: rgba($white, .95)
     backdrop-filter: blur(6px)
     transition: all .5s cubic-bezier(.785,.135,.15,.86)
+    &--blue
+        background-color: $accent
+        .header
+            &__logo-icon
+                fill: $white
 
 
     &__top-line

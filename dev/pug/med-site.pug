@@ -1,0 +1,17 @@
+extends template/main
+
+block variables
+  - var title = 'Продвижение медицинского сайта'
+  - var isBlue = true
+  - var fullTitle = true
+
+block content-full
+    include modules/page-title-blue
+block content
+    +badges(supportBadges)
+    +taber(tabsSupport)
+    include modules/support-format
+    +avideo(supportAvideo)
+    +taber(tabsStandarts, 'Стандарты обслуживания', 'light')
+    +feedbackSlider(feedbacks, 'Отзывы')
+    include modules/consult-form

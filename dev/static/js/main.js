@@ -1,11 +1,6 @@
 $(document).ready(function () {
     svg4everybody({});
 
-    let fancyIframe = $('.fancy-content').find('iframe');
-    fancyIframe.load(function () {
-        console.log(this);
-    })
-
 
     $("[data-b24form]").submit(function () {
         const th = $(this)

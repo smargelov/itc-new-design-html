@@ -6,7 +6,7 @@ if title == 'Контекстная реклама'
                 .b-btn.-red._btn(data-action='estore-popup') Узнать подробнее
                 ._close
                     +icon('close-x')
-header.b-header
+header(class= isBlue ? 'header--blue' : '').b-header
     .wrapper
         ._top-line
             ._top-left

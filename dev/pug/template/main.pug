@@ -22,7 +22,12 @@ html(lang="ru-RU")
     body
         include ../utils/data
         include ../modules/header/header
-        .wrapper.before-fix
+        if (fullTitle)
+            .full-block.full-block--blue.before-fix
+                .wrapper
+                    .content
+                        block content-full
+        .wrapper(class= fullTitle ? '' : 'before-fix')
             .content
                 block content
             include ../modules/footer/footer
