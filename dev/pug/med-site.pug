@@ -9,9 +9,8 @@ block content-full
     include modules/page-title-blue
 block content
     +badges(supportBadges)
-    +taber(tabsSupport)
-    include modules/support-format
-    +avideo(supportAvideo)
-    +taber(tabsStandarts, 'Стандарты обслуживания', 'light')
-    +feedbackSlider(feedbacks, 'Отзывы')
+    include modules/topcases
+    +avideo(promAvideo)
+    +taber(tabsMainSteps, 'Основные этапы работы', 'light')
+    include pages/med-site/latest-post
     include modules/consult-form

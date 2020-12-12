@@ -1,3 +1,11 @@
 section.section.section--blue
     .b-page-title
-        h1.h1._text.-one-word= title
+      - var newStr = title.split(' ')
+        h1.h1._text.-one-word
+          each str, key in newStr
+              if key === 0
+                  | !{str}
+              else
+                  br
+                  span= str
+

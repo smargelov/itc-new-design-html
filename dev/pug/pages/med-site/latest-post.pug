@@ -1,0 +1,11 @@
+// Latest-post section
+section.section
+    .b-latest-post
+        ._title-wrap
+            h2.h2._title Наши публикации в прессе
+            //-button.b-btn.-flat._btn
+                | Подписаться на рассылку
+        .post-cards
+            each post, key in posts
+                if post.press
+                    +post-card(post)
