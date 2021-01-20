@@ -57,7 +57,7 @@ mixin feedbackSlider(arr, title, mod)
 mixin badges(arr)
     section.section
         .b-badges
-            ._desc= arr.text
+            ._desc !{arr.text}
             each badge in arr.badges
                 ._badge
                     +icon(badge.icon, 'badges__icon')
