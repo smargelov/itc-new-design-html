@@ -1,0 +1,62 @@
+.price-table__list
+    +row-flex()
+    +md-block()
+        justify-content: center
+.price-table__item
+    +col()
+    +size(4)
+    +size-md(12)
+.price-table-item
+    display: flex
+    flex-direction: column
+    position: relative
+    background-color: $grey
+    padding: 40px 39px
+    margin-bottom: 30px
+    max-width: 600px
+    &__title
+        font-size: 38px
+        line-height: 50px
+        margin-bottom: 40px
+        font-weight: 200
+    &__text
+        margin-bottom: 40px
+    &__feature
+        margin-bottom: 40px
+    &__feature-title
+        margin-bottom: 15px
+        font-weight: 500
+    &__feature-item
+        position: relative
+        padding-left: 35px
+        &:not(:last-child)
+            margin-bottom: 10px
+        &::before
+            position: absolute
+            left: 0
+            top: 0
+            display: inline-block
+            content: '—'
+            color: $accent
+    &__price
+        margin-top: auto
+        margin-bottom: 10px
+        font-size: 40px
+        line-height: 50px
+        font-weight: 500
+    &__small
+        font-size: 14px
+        line-height: 21px
+        margin-bottom: 40px
+    &__badge
+        position: absolute
+        top: 0
+        right: 0
+        font-size: 14px
+        line-height: 21px
+        padding: 5px 10px
+        color: $white
+        background-color: $accent
+    &__btn-wrap
+        display: flex
+        justify-content: center
