@@ -1,0 +1,25 @@
+section.section
+    .b-price-table
+        ._list
+          each price in priceTable
+              .b-price-table-item._item
+                  ._title= price.title
+                  ._text= price.text
+                  ._features
+                    each feature in price.features
+                        ._feature
+                            ._feature-title= feature.name
+                            ul._feature-list
+                              each item in feature.list
+                                  li._feature-item= item
+                  
+                  ._price
+                      | от 
+                      | !{price.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")}
+                      |  ₽
+                  ._small * Без учета НДС
+                  ._btn-wrap
+                      button.b-btn.-flat.-blue._btn(data-target='price-type-' + price.id) Заказать продвижение
+                  
+                  if (price.popular)
+                        .price-table-item__badge Популярно
