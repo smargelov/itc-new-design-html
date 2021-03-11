@@ -125,6 +125,12 @@ button
 .section
     padding-top: 40px
     padding-bottom: 40px
+    &--with-bg
+        background-repeat: no-repeat
+        background-position: right bottom
+        +md-block()
+            background-size: 0 0
+
     &--blue
         background-color: $accent
         color: $white

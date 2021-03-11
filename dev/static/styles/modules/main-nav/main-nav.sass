@@ -9,6 +9,22 @@
         &:nth-child(#{$i})
             transition-delay: ($start + $i * 0.05) * 1s
 
+.header
+    &__menu
+        width: 100%
+        +md-block()
+            display: none
+    &__menu-list
+        display: flex
+        justify-content: center
+    &__menu-item
+        &:not(:last-child)
+            margin-right: 15px
+    &__menu-link
+        color: $black
+        &:hover, &:focus, &--current
+            font-weight: bold
+
 .megamenu
     position: fixed
     right: 0
@@ -106,11 +122,14 @@
 
 
 .sandwich
+    display: none
     cursor: pointer
     height: 20px
     position: relative
     width: 32px
     margin-left: 30px
+    +md-block()
+        display: block
     &:hover, &:focus
         .sandwich__line
             background-color: $accent

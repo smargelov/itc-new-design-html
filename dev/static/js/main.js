@@ -259,8 +259,9 @@ $(document).ready(function () {
     // Popups
     $('[data-action="popup"]').click(function (e) {
         e.preventDefault();
+        const target = $(this).data('target')
         $('.overlay').fadeIn(300);
-        $('.popup').slideDown(500);
+        $('#' + target).closest('.popup').slideDown(500);
     })
     let closePopup = () => {
         $('.popup').slideUp(500);
