@@ -10,6 +10,7 @@
 @import "portfolio-cards"
 @import "advantages"
 @import "price-table"
+@import "quote"
 
 // Page title h1
 .page-title
@@ -39,6 +40,9 @@
         line-height: 65px
         font-weight: 500
         margin-bottom: 20px
+        +sm-block()
+            font-size: 40px
+            line-height: 50px
 
     &__small-item
         margin-bottom: 0
@@ -202,7 +206,7 @@
     &__desc
         max-width: 380px
 
-    &__approwe
+    &__approve
         max-width: 570px
         color: rgba($white, .5)
 
