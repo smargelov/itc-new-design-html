@@ -1,6 +1,7 @@
 =megaItem($h: 30)
     opacity: 0
     transform: translate3d(0, $h * -1px ,0)
+    transition: all .5s cubic-bezier(.785,.135,.15,.86)
 =megaItemView()
     opacity: 1
     transform: none
@@ -42,7 +43,8 @@
 
     &.is-active
         transform: none
-        .megamenu__item,
+        .megamenu__second-item,
+        .services-list__item,
         .megamenu__icon,
         .megamenu__btn
             +megaItemView()
@@ -52,51 +54,35 @@
         +row-flex()
         padding-top: 35px
         border-top: 1px solid rgba($white, .3)
-    &__col
+    &__services-list
         +col()
-        &:nth-child(1)
-            +size(5)
-            .megamenu__item
-                +delayLoop()
-            +size-sm(4)
-            +sm-block()
-                order: 2
-        &:nth-child(2)
-            +size(6)
-            .megamenu__item
-                +delayLoop(0.6)
-            +size-sm(8)
-            +sm-block()
-                order: 1
-        &:nth-child(3)
-            +size(1)
-            display: flex
-            align-self: flex-start
-            +size-sm(12)
-            +sm-block()
-                order: 3
-                margin-top: 30px
+        +size(12)
+        margin-bottom: 45px
 
-    &__item
+    &__footer
+        +col()
+        +size(12)
+        display: flex
+        justify-content: space-between
+
+    &__second-list
+        display: flex
+    &__second-item
         +megaItem()
+        +delayLoop(1)
+        font-size: 22px
+        line-height: 30px
+        font-weight: bold
         &:not(:last-child)
-            margin-bottom: 20px
-
-    &__link
+            margin-right: 20px
+    &__second-link
         color: $white
-        font-size: 40px
         &:hover, &:focus
             color: darken($white, 30%)
-        +sm-block()
-            font-size: 23px
-        +xs-block()
-            font-size: 16px
-            line-height: 22px
 
 
     &__social
         display: flex
-        flex-direction: column
         justify-content: space-between
         +sm-block()
             position: fixed
@@ -109,17 +95,54 @@
     &__icon
         +megaItem()
         +delayLoop(1)
-        margin-bottom: 40px
+        margin-left: 40px
         &:hover, &:focus
             svg
                 fill: darken($white, 30%)
-        +md-block()
-            &:not(:last-child)
-                margin-right: 30px
+
     &__social-icon
         height: 26px
         fill: $white
 
+
+.services-list
+    +row-flex()
+    &__item
+        +megaItem()
+        +delayLoop()
+        +col()
+        +size(2)
+        +size-md(4)
+        font-size: 18px
+        line-height: 24px
+        font-weight: bold
+        display: flex
+        flex-direction: column
+        +md-block()
+            margin-bottom: 30px
+    &__link
+        color: $white
+        display: inline-block
+        height: 48px
+        +md-block()
+            height: auto
+        &--empty
+            opacity: .75
+            pointer-events: none
+        &:hover, &:focus
+            color: darken($white, 30%)
+    &__sublist
+        margin-top: 20px
+    &__subitem
+        font-size: 14px
+        line-height: 20px
+        font-weight: 300
+        &:not(:last-child)
+            margin-bottom: 14px
+    &__subitem-link
+        color: $white
+        &:hover, &:focus
+            color: darken($white, 30%)
 
 .sandwich
     display: none
