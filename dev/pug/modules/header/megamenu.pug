@@ -3,18 +3,25 @@ include ../../utils/data
 .b-megamenu
     .wrapper
         ._cols
-            ._col
-                ul._main._list
-                    each item in mainMenu
-                        li._item
-                            a(href= item.link, title= item.name)._link= item.name
-            ._col
-                ul._second._list
-                    each item in secondMenu
-                        li._item
-                            a(href= item.link, title= item.name)._link= item.name
-
-            ._col
+            ul.b-services-list._services-list
+                each item in newMega
+                    li._item
+                        a._link(href=item.link, title=item.name, class=!item.link ? 'services-list__link--empty' : '')= item.name
+                        if item.sub
+                            ul._sublist
+                                each subItem in item.sub
+                                    li._subitem
+                                        a._subitem-link(href=subItem.link, title=subItem.name)= subItem.name
+                                    
+                
+            
+        ._cols
+            ._footer
+                ul._second-list
+                    each item in headerMenu
+                        if (!item.mega)
+                            li._second-item
+                                a._second-link(href=item.link, title=item.name)= item.name
                 ul._social
                     each icon in socialIcons
                         if icon.name !== 'Agima' && icon.name !== 'РАЕК'
