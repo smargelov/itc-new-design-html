@@ -343,7 +343,13 @@ $(document).ready(function () {
         th.css('display', 'none');
         $('.sandwich').css('display', 'block').addClass('is-active');
         $('body').css('overflowY', 'hidden');
-    });
+    })
+    
+    $('.services-list__mob-plus').on('click', function () {
+        $(this).toggleClass('services-list__mob-plus--active')
+        const siblingSub = $(this).closest('.services-list__item').find('.services-list__sublist')
+        $(siblingSub).slideToggle(500)
+    })
     
     // Top cases
     $('.topcases-tab').click(function (e) {
