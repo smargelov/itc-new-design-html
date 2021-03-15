@@ -1,20 +1,21 @@
 include ../../utils/data
 
 .b-megamenu
-    .wrapper
+    ._wrap.wrapper
         ._cols
             ul.b-services-list._services-list
                 each item in newMega
                     li._item
-                        a._link(href=item.link, title=item.name, class=!item.link ? 'services-list__link--empty' : '')= item.name
+                        a._link(href=item.link, title=item.name, class=!item.link ? 'services-list__link--empty' : '')
+                            | #{item.name}
+                            if item.sub
+                                span._mob-plus
                         if item.sub
                             ul._sublist
                                 each subItem in item.sub
                                     li._subitem
                                         a._subitem-link(href=subItem.link, title=subItem.name)= subItem.name
                                     
-                
-            
         ._cols
             ._footer
                 ul._second-list
@@ -22,7 +23,22 @@ include ../../utils/data
                         if (!item.mega)
                             li._second-item
                                 a._second-link(href=item.link, title=item.name)= item.name
-                ul._social
+                ._actions
+                    ._city
+                        ._link.link--icon.city-view
+                            | Брянск
+                            +icon('triangle-down')
+                            ._cities
+                                ul._subcities
+                                    each city in cities
+                                        li._subcity
+                                            a._link(href= city.link, title= city.name)= city.name
+                    ._actions-second
+                        ._phone
+                            a._link(href='tel:+78005512557', title='8 (800) 551-25-57') 8 (800) 551-25-57
+                        button.b-btn.-flat._btn(data-action='popup', data-target='consultation') Заказать звонок
+            
+                ._social
                     each icon in socialIcons
                         if icon.name !== 'Agima' && icon.name !== 'РАЕК'
                             a(href= icon.link, title= icon.name)._icon
