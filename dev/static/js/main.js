@@ -345,9 +345,19 @@ $(document).ready(function () {
         $('body').css('overflowY', 'hidden');
     })
     
-    $('.services-list__mob-plus').on('click', function () {
+    $('.services-list__mob-plus').on('click', function (e) {
+        e.stopPropagation()
+        e.preventDefault()
         $(this).toggleClass('services-list__mob-plus--active')
         const siblingSub = $(this).closest('.services-list__item').find('.services-list__sublist')
+        $(siblingSub).slideToggle(500)
+    })
+    
+    $('.footer-services-list__mob-plus').on('click', function (e) {
+        e.stopPropagation()
+        e.preventDefault()
+        $(this).toggleClass('footer-services-list__mob-plus--active')
+        const siblingSub = $(this).closest('.footer-services-list__item').find('.footer-services-list__sublist')
         $(siblingSub).slideToggle(500)
     })
     
