@@ -28,9 +28,10 @@
 
     &__menu-link
         color: $black
+        cursor: pointer
 
         &:hover, &:focus, &--current
-            font-weight: bold
+            color: $accent
 
 .megamenu
     position: fixed
@@ -240,9 +241,8 @@
 
         &--empty
             opacity: .75
-            pointer-events: none
 
-        &:hover, &:focus
+        &:hover, &:focus, &--empty
             color: darken($white, 30%)
 
     &__mob-plus
