@@ -6,6 +6,7 @@ mixin range(name, title)
             - currentStatusIndex = index
     .range-calculator__range(data-range= name)
         input(type='range',
+            style='background-size: ' + (currentStatusIndex * 100)/(arr.length - 1)  + '% 100%;'
             min='0',
             max= arr.length - 1,
             value= currentStatusIndex).range-calculator__range-input
