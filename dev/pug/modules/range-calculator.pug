@@ -1,27 +1,82 @@
-mixin range(arr, title)
+mixin range(name, title)
+    - var arr = calculator[name]
     - var currentStatusIndex
     each val, index in arr
         if (val.isDefault)
             - currentStatusIndex = index
-    ._range
+    .range-calculator__range(data-range= name)
         input(type='range',
             min='0',
             max= arr.length - 1,
-            value= currentStatusIndex)._range-input
-        ._range-title= title
-        ._range-status= arr[currentStatusIndex].name
-
+            value= currentStatusIndex).range-calculator__range-input
+        .range-calculator__range-title= title
+        .range-calculator__range-status= arr[currentStatusIndex].name
+script.
+    var mainCalculator = {
+        startPrice: 15000,
+        concurrent: [
+            {
+                name: `Конкуренции почти нет`,
+                k: 1,
+            },
+            {
+                name: `Конкуренты есть, но жить можно`,
+                k: 1.4,
+                isDefault: true
+            },
+            {
+                name: `Конкуренция высокая, как в пластиковых окнах`,
+                k: 2,
+            },
+        ],
+        regions: [
+            {
+                name: `Продвижение по одному региону (не Москва и не Санкт-Петербург)`,
+                k: 1,
+                isDefault: true
+            },
+            {
+                name: `Продвижение по 2–3 регионам`,
+                k: 1.5,
+            },
+            {
+                name: `Продвижение в столицах (Москва, Санкт-Петербург)`,
+                k: 2.5,
+            },
+            {
+                name: `По всей РФ, а еще и Казахстан с Беларусью`,
+                k: 5,
+            },
+        ],
+        requests: [
+            {
+                name: `Начнем с урезанного количества запросов, посмотрим на результаты, потом расширимся до полной`,
+                k: 1,
+            },
+            {
+                name: `Берем стандартный набор запросов по всем категориям`,
+                k: 1.2,
+                isDefault: true
+            },
+            {
+                name: `Берем максимальный набор запросов, чтобы получить как можно больше посетителей`,
+                k: 1.8,
+            },
+        ],
+    }
+    var rangeCalculator = JSON.stringify(mainCalculator)
+    
 h2.h2 Стоимость продвижения
 section.section.section--blue
     .b-range-calculator
         ._content
             ._ranges
-                +range(calculator.concurrent, 'Количество конкурентов')
-                +range(calculator.regions, 'Регионы продвижения')
-                +range(calculator.requests, 'Количество запросов')
+                +range('concurrent', 'Количество конкурентов')
+                +range('regions', 'Регионы продвижения')
+                +range('requests', 'Количество запросов')
             ._price
                 | от 
-                | !{calculator.startPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")}
+                span._price-result= calculator.startPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")
                 |  ₽/мес
             ._btn-wrap
                 button.b-btn.-flat.-light._btn(

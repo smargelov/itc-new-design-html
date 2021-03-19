@@ -343,23 +343,23 @@ $(document).ready(function () {
         th.css('display', 'none');
         $('.sandwich').css('display', 'block').addClass('is-active');
         $('body').css('overflowY', 'hidden');
-    })
+    });
     
     $('.services-list__mob-plus').on('click', function (e) {
-        e.stopPropagation()
-        e.preventDefault()
-        $(this).toggleClass('services-list__mob-plus--active')
-        const siblingSub = $(this).closest('.services-list__item').find('.services-list__sublist')
-        $(siblingSub).slideToggle(500)
-    })
+        e.stopPropagation();
+        e.preventDefault();
+        $(this).toggleClass('services-list__mob-plus--active');
+        const siblingSub = $(this).closest('.services-list__item').find('.services-list__sublist');
+        $(siblingSub).slideToggle(500);
+    });
     
     $('.footer-services-list__mob-plus').on('click', function (e) {
-        e.stopPropagation()
-        e.preventDefault()
-        $(this).toggleClass('footer-services-list__mob-plus--active')
-        const siblingSub = $(this).closest('.footer-services-list__item').find('.footer-services-list__sublist')
-        $(siblingSub).slideToggle(500)
-    })
+        e.stopPropagation();
+        e.preventDefault();
+        $(this).toggleClass('footer-services-list__mob-plus--active');
+        const siblingSub = $(this).closest('.footer-services-list__item').find('.footer-services-list__sublist');
+        $(siblingSub).slideToggle(500);
+    });
     
     // Top cases
     $('.topcases-tab').click(function (e) {
@@ -389,6 +389,45 @@ $(document).ready(function () {
     //     $(`[data-id=${target}]`).addClass('cases-content__tab--active');
     //     // window.location.hash = target === 'develop' ? '#develop' : '';
     // })
+    
+    if (typeof rangeCalculator !== 'undefined') {
+        
+        const result = JSON.parse(rangeCalculator);
+        
+        let coefficients = {
+            concurrent: result.concurrent.find(item => item.isDefault).k,
+            regions: result.regions.find(item => item.isDefault).k,
+            requests: result.requests.find(item => item.isDefault).k,
+        };
+        
+        const calculator = document.querySelector('.range-calculator'),
+            defaultPrice = Number(result.startPrice),
+            ranges = calculator.querySelectorAll('.range-calculator__range'),
+            priceResult = calculator.querySelector('.range-calculator__price-result');
+        
+        function getCurrentPrice() {
+            return (defaultPrice * coefficients.concurrent * coefficients.regions * coefficients.requests)
+                .toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+        }
+        
+        ranges.forEach(element => {
+            
+            const typeName = element.dataset.range,
+                input = element.querySelector('.range-calculator__range-input'),
+                statusEl = element.querySelector('.range-calculator__range-status');
+            
+            input.addEventListener('change', function () {
+                
+                const indexStatus = this.value,
+                    newStatus = result[typeName][indexStatus].name;
+                
+                coefficients[typeName] = result[typeName][indexStatus].k;
+                statusEl.innerText = newStatus;
+                priceResult.innerText = getCurrentPrice();
+            });
+        });
+        priceResult.innerText = getCurrentPrice();
+    }
     
 });
 
