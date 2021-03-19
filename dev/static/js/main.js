@@ -419,8 +419,10 @@ $(document).ready(function () {
             input.addEventListener('change', function () {
                 
                 const indexStatus = this.value,
-                    newStatus = result[typeName][indexStatus].name;
+                    newStatus = result[typeName][indexStatus].name,
+                    lineWidth = (indexStatus * 100) / (result[typeName].length - 1);
                 
+                this.style.backgroundSize = lineWidth + '% 100%'
                 coefficients[typeName] = result[typeName][indexStatus].k;
                 statusEl.innerText = newStatus;
                 priceResult.innerText = getCurrentPrice();
