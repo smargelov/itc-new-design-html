@@ -1,0 +1,30 @@
+mixin range(arr, title)
+    - var currentStatusIndex
+    each val, index in arr
+        if (val.isDefault)
+            - currentStatusIndex = index
+    ._range
+        input(type='range',
+            min='0',
+            max= arr.length - 1,
+            value= currentStatusIndex)._range-input
+        ._range-title= title
+        ._range-status= arr[currentStatusIndex].name
+
+h2.h2 Стоимость продвижения
+section.section.section--blue
+    .b-range-calculator
+        ._content
+            ._ranges
+                +range(calculator.concurrent, 'Количество конкурентов')
+                +range(calculator.regions, 'Регионы продвижения')
+                +range(calculator.requests, 'Количество запросов')
+            ._price
+                | от 
+                | !{calculator.startPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")}
+                |  ₽/мес
+            ._btn-wrap
+                button.b-btn.-flat.-light._btn(
+                    data-target='price-type') Узнать точную цену
+            ._notice Калькулятор помогает определить приблизительную стоимость
+
