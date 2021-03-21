@@ -1,0 +1,97 @@
+.footer__menu
+    border-top: 1px solid rgba($accent,.2)
+    border-bottom: 1px solid rgba($accent,.2)
+    padding-top: 45px
+    padding-bottom: 45px
+    +col()
+    +size(12)
+    +sm-block()
+        padding-top: 0
+        padding-bottom: 0
+        border-top: none
+        border-bottom: none
+
+.footer-services-list
+    +row-flex()
+    display: flex
+    flex-wrap: wrap
+
+    &__item
+        +col()
+        +size(2)
+        +size-md(4)
+        +size-sm(12)
+        font-size: 18px
+        line-height: 24px
+        font-weight: bold
+        display: flex
+        flex-direction: column
+        +md-block()
+            margin-bottom: 30px
+        +sm-block()
+            border-bottom: 1px solid rgba($accent, .2)
+            margin-bottom: 0
+            &:first-child
+                border-top: 1px solid rgba($accent, .2)
+
+    &__link
+        color: $accent
+        display: inline-block
+        height: 48px
+        +md-block()
+            height: auto
+        +sm-block()
+            display: flex
+            min-height: 70px
+            align-items: center
+            justify-content: space-between
+
+        &:hover, &:focus, &--empty
+            color: $black
+
+    &__mob-plus
+        position: relative
+        display: none
+        +sm-block()
+            display: inline-flex
+            width: 31px
+            height: 31px
+            cursor: pointer
+            &::before, &::after
+                content: ''
+                display: block
+                position: absolute
+                width: 100%
+                height: 1px
+                left: 0
+                top: 50%
+                background-color: rgba($accent, .2)
+            &::after
+                height: 100%
+                width: 1px
+                top: 0
+                left: 50%
+            &--active
+                &::after
+                    display: none
+
+    &__sublist
+        margin-top: 20px
+        +sm-block()
+            display: none
+            margin-top: 0
+            margin-bottom: 30px
+
+    &__subitem
+        font-size: 14px
+        line-height: 20px
+        font-weight: 300
+
+        &:not(:last-child)
+            margin-bottom: 14px
+
+    &__subitem-link
+        color: $accent
+
+        &:hover, &:focus
+            color: $black

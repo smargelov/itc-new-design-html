@@ -1,0 +1,28 @@
+section.section
+    .b-price-table
+        ._list
+            each price in priceTable
+                .b-price-table-item._item
+                    ._title= price.title
+                    ._text= price.text
+                    ._features
+                        each feature in price.features
+                            ._feature
+                                ._feature-title= feature.name
+                                ._feature-item= feature.list
+                    ._price-wrap
+                        ._price-item
+                            ._price
+                                | от 
+                                | !{price.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")}
+                                |  ₽
+                            ._small первичная настройка
+                        ._price-item
+                            ._price
+                                | от 
+                                | !{price.priceSupport.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")}
+                                |  ₽
+                            ._small ведение кампании
+                            ._small.-light Скидка 10% при оплате за 3 месяца
+                    ._btn-wrap
+                        button.b-btn.-flat.-blue._btn(data-target='price-type-' + price.id) Заказать тариф

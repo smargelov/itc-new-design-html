@@ -1,17 +1,10 @@
 {
-  "name": "itc-complex-html",
-  "version": "1.0.0",
-  "description": "Используется связка `Gulp` + `Pug` + `sass` + `BrowserSync`",
-  "main": "gulpfile.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/smargelov/itc-new-design-html.git"
-  },
-  "author": "Sergey Margelov <smargelov@gmail.com>",
-  "license": "ISC",
+  "name": "start-template",
+  "version": "1.0.4",
+  "description": "My start Template",
+  "main": "index.js",
+  "author": "Sergey Margelov",
+  "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.12.9",
     "@babel/preset-env": "^7.12.7",
@@ -43,6 +36,7 @@
     "imagemin-jpeg-recompress": "^7.0.0",
     "jquery.maskedinput": "^1.4.1",
     "malihu-custom-scrollbar-plugin": "^3.1.5",
+    "node-sass": "^4.14.1",
     "smart-grid": "^2.1.2",
     "sweetalert2": "^10.10.4",
     "vinyl-buffer": "^1.0.1",
@@ -55,10 +49,6 @@
     "phantomjs-prebuilt": "^2.1.16",
     "svg4everybody": "^2.1.9"
   },
-  "bugs": {
-    "url": "https://github.com/smargelov/itc-new-design-html/issues"
-  },
-  "homepage": "https://itc-media.ru",
   "browserslist": [
     "last 3 version",
     "> 1%",

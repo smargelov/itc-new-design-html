@@ -1,0 +1,35 @@
+.advantages
+
+.advantages__list
+    +row-flex()
+
+.advantages__item
+    +col()
+    +size(6)
+    +size-md(12)
+    margin-bottom: 20px
+.advantages-item
+    display: flex
+    &__icon-wrap
+        max-width: 94px
+        margin-right: 24px
+        flex-basis: 94px
+    &__icon
+        width: 94px
+        max-width: 94px
+        min-width: 94px
+        height: 94px
+        fill: $accent
+        +sm-block()
+            width: 60px
+            max-width: 60px
+            min-width: 60px
+            height: 60px
+    &__title
+        font-size: 30px
+        line-height: 40px
+        font-weight: 500
+        margin-bottom: 30px
+        margin-top: 27px
+        +sm-block()
+            margin-top: 0

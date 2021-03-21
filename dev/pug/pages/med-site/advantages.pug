@@ -1,0 +1,10 @@
+section.section
+    .b-advantages
+        ._list
+          each advantage in advantages
+              .b-advantages-item._item
+                  ._icon-wrap
+                      +icon(advantage.icon, 'advantages-item__icon')
+                  ._content
+                      ._title= advantage.title
+                      ._text= advantage.text

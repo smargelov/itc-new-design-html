@@ -11,12 +11,15 @@
     +sm-block()
         font-size: 15px
         line-height: 20px
+
     svg
         fill: $accent
         stroke: $accent
+
     &:hover, &:focus
         background-color: $accent
         color: $white
+
         svg
             fill: $white
             stroke: $white
@@ -25,10 +28,13 @@
         .icon-empty_triangle,
         .icon-user
             animation: pulse 1s infinite ease-in-out
+
         .icon-arrow:not(.btn__icon-arrow-left)
             animation: right-pulse 1s infinite ease-in-out
+
         .icon-arrow-left
             animation: left-pulse 1s infinite ease-in-out
+
     &--flat
         height: 50px
         border-radius: 25px
@@ -45,6 +51,7 @@
             +sizebox(38px)
             min-width: 38px
             min-height: 38px
+
     &--red
         background-color: #f00
         border: 1px solid #ff0000
@@ -52,9 +59,11 @@
         padding: 5px 30px
         white-space: nowrap
         border-radius: 26px
+
         &:hover, &:focus, &:active
             background-color: darken(#ff0000, 10%)
             border-color: darken(#ff0000, 10%)
+
     &--big
         +sizebox(208px)
         +sm-block()
@@ -62,25 +71,34 @@
 
     &--blue
         background-color: $accent
-        svg
-            fill: $white
-            stroke: $white
-            color: $white
-        &:hover, &:focus
-            background-color: $white
-            svg
-                fill: $accent
-                stroke: $accent
-    &--light
-        border: 1px solid $white
         color: $white
+
         svg
-            stroke: $white
             fill: $white
+            stroke: $white
             color: $white
+
         &:hover, &:focus
             background-color: $white
             color: $accent
+
+            svg
+                fill: $accent
+                stroke: $accent
+
+    &--light
+        border: 1px solid $white
+        color: $white
+
+        svg
+            stroke: $white
+            fill: $white
+            color: $white
+
+        &:hover, &:focus
+            background-color: $white
+            color: $accent
+
             svg
                 fill: $accent
                 stroke: $accent
@@ -94,12 +112,14 @@
                 +sizebox(40px)
             +xs-block()
                 display: none
+
         &-arrow
             width: 38px
             height: 29px
             +sm-block()
                 width: 19px
                 height: 15px
+
         &-user
             +sizebox(40px)
             margin-bottom: 21px
@@ -108,6 +128,7 @@
             width: 38px
             height: 29px
             margin-bottom: 20px
+
         &-empty-triangle
             width: 82px
             height: 96px
@@ -121,4 +142,15 @@
                 height: 22px
                 margin-left: 8px
 
+.page-title__btn
+    height: 49px
+    color: $accent
+    background-color: $white
 
+    &:hover, &:focus
+        background-color: $accent
+        color: $white
+
+    &--big-title
+        margin-top: 60px
+        margin-bottom: 60px

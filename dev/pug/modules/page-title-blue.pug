@@ -1,0 +1,14 @@
+section.section.section--blue.section--wide.section--with-bg(style='background-image: url(../images/content/med-top-bg.png)')
+    .b-page-title
+      - var newStr = title.split(' ')
+      h1.h1._text.-one-word
+        each str, key in newStr
+            if key === 0
+                | !{str}
+            else
+                br
+                span= str
+      button.b-btn.-flat.-light._btn.-big-title Заказать продвижение
+      ._price от 15 000 ₽*
+      ._small-text
+          p._small-item * Скидка 3, 6, 12% на услугу SEO при оплате 3, 6 и 12 месяцев соответственно

@@ -1,0 +1,146 @@
+.range-calculator
+    &__content
+        padding: 10px
+
+    &__ranges
+        +row-flex
+
+    &__range
+        +col()
+        +size(4)
+        +size-sm(12)
+        +sm-block()
+            &:not(:last-child)
+                margin-bottom: 25px
+
+    &__range-input
+        height: 10px
+        -webkit-appearance: none
+        margin: 10px 0
+        width: 100%
+        background-color: rgba($white, .2)
+        border-radius: 5px
+        background-image: linear-gradient(rgba($white, .4),rgba($white, .4))
+        background-repeat: no-repeat
+        background-size: 50% 100%
+
+        &:focus
+            outline: none
+
+        &::-webkit-slider-runnable-track
+            width: 100%
+            height: 10px
+            cursor: pointer
+            animate: 0.2s
+            border-radius: 5px
+            background-color: rgba($white, .2)
+            border: 0 solid rgba($white, .2)
+
+        &::-webkit-slider-thumb
+            box-shadow: 0 0 0 $white
+            border: 0 solid $white
+            height: 30px
+            width: 30px
+            border-radius: 50%
+            background: $white
+            cursor: pointer
+            -webkit-appearance: none
+            margin-top: -10px
+
+        &::-moz-range-track
+            width: 100%
+            height: 10px
+            cursor: pointer
+            animate: 0.2s
+            box-shadow: none
+            background: rgba($white, .2)
+            border-radius: 5px
+            border: none
+
+        &::-moz-range-thumb
+            box-shadow: none
+            border: none
+            height: 30px
+            width: 30px
+            border-radius: 50%
+            background: $white
+            cursor: pointer
+
+        &::-ms-track
+            width: 100%
+            height: 10px
+            cursor: pointer
+            animate: 0.2s
+            background: transparent
+            border-color: transparent
+            color: transparent
+
+        &::-ms-fill-lower
+            background: rgba($white, .2)
+            border: none
+            border-radius: 5px
+            box-shadow: none
+
+        &::-ms-fill-upper
+            background: rgba($white, .2)
+            border: none
+            border-radius: 5px
+            box-shadow: none
+
+        &::-ms-thumb
+            margin-top: 1px
+            box-shadow: none
+            border: none
+            height: 30px
+            width: 30px
+            border-radius: 50%
+            background: $white
+            cursor: pointer
+
+        &:focus::-ms-fill-lower
+            background: rgba($white, .2)
+
+        &:focus::-ms-fill-upper
+            background: rgba($white, .2)
+
+    &__range-title
+        font-size: 18px
+        line-height: 24px
+        font-weight: bold
+        margin-top: 20px
+        margin-bottom: 10px
+
+    &__range-status
+        font-size: 16px
+        line-height: 24px
+        opacity: .75
+
+    &__price
+        font-size: 50px
+        line-height: 60px
+        margin-top: 30px
+        font-weight: 500
+        text-align: center
+        +sm-block()
+            font-size: 30px
+            line-height: 40px
+
+    &__btn-wrap
+        display: flex
+        justify-content: center
+        padding-top: 20px
+        padding-bottom: 20px
+
+    &__btn
+        color: $accent
+        background-color: $white
+
+        &:hover, &:focus
+            background-color: $accent
+            color: $white
+
+    &__notice
+        font-size: 14px
+        line-height: 20px
+        opacity: .5
+        text-align: center

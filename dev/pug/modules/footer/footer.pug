@@ -1,6 +1,21 @@
 include ../../utils/data
 
 footer.b-footer
+    
+    ._menu
+        ul.b-footer-services-list._services-list
+            each item in newMega
+                li._item
+                    a._link(href=item.link, title=item.name, class=!item.link ? 'footer-services-list__link--empty' : '')
+                        | #{item.name}
+                        if item.sub
+                            span._mob-plus
+                    if item.sub
+                        ul._sublist
+                            each subItem in item.sub
+                                li._subitem
+                                    a._subitem-link(href=subItem.link, title=subItem.name)= subItem.name
+    .b-footer-second-menu._menu
     ._col
         ._copy © 2010–2020, ITC MEDIA агентство интернет-маркетинга #[a(href="mailto:manager@itc-media.ru") manager@itc-media.ru]
 

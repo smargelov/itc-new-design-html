@@ -125,11 +125,20 @@ button
 .section
     padding-top: 40px
     padding-bottom: 40px
+    &--with-bg
+        background-repeat: no-repeat
+        background-position: right bottom
+        +md-block()
+            background-size: 0 0
+
     &--blue
         background-color: $accent
         color: $white
         padding-right: 30px
         padding-left: 30px
+    &--wide
+        padding-left: 0
+        padding-right: 0
     &--top-line
         border-top: 1px solid rgba($main-font-color, .2)
         margin-top: 60px
@@ -202,6 +211,10 @@ ol:not([class])
     display: none !important
     +sm-block()
         display: flex !important
+
+.full-block--blue
+    background-color: $accent
+    margin-bottom: 50px
 
 .page-form
     padding-top: 40px
@@ -314,5 +327,6 @@ ol:not([class])
         align-self: flex-start
         +xs-block()
             align-self: stretch
+
 //Модули
 @import 'modules/modules'

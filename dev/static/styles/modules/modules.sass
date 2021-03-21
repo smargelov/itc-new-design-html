@@ -8,7 +8,10 @@
 @import "topcases"
 @import "contacts-page"
 @import "portfolio-cards"
-
+@import "advantages"
+@import "price-table"
+@import "quote"
+@import "range-calculator"
 
 // Page title h1
 .page-title
@@ -26,6 +29,25 @@
             font-size: 30px
             line-height: 40px
 
+        &--one-word
+            font-size: 100px
+            line-height: 105px
+
+            span
+                opacity: 50%
+    &__price
+        font-size: 60px
+        line-height: 65px
+        font-weight: 500
+        margin-bottom: 20px
+        +sm-block()
+            font-size: 40px
+            line-height: 50px
+
+    &__small-item
+        margin-bottom: 0
+        font-size: 14px
+        line-height: 21px
 
 .h1.page-title__text--post
     font-size: 80px
@@ -40,12 +62,14 @@
 // Badges
 .badges
     +row-flex()
+
     &__desc
         +col()
         +size(6)
         +size-md(12)
         +md-block()
             margin-bottom: 20px
+
     &__badge
         +col()
         +size(2)
@@ -55,19 +79,21 @@
         +sm-block()
             &:not(:last-child)
                 margin-bottom: 20px
+
     &__icon
         +sizebox(30px)
         min-width: 30px
         margin-right: 10px
+
     &__badge-text
         font-size: 15px
         line-height: 22px
-
 
 // Focus
 .focus-page
     &__items
         +row-flex()
+
     &__item
         +col()
         +size(6)
@@ -75,9 +101,11 @@
         +sm-block()
             &:not(:last-child)
                 margin-bottom: 30px
+
     &__text
         padding-left: 38px
         position: relative
+
         &::before
             position: absolute
             display: block
@@ -87,7 +115,6 @@
             width: 19px
             height: 1px
             background-color: $accent
-
 
 // Controls
 .topcases-card__controls
@@ -103,21 +130,25 @@
     +md-block()
         justify-content: center
         margin-top: 20px
+
     &__navigation
         display: flex
+
     &__counter
         margin-bottom: 10px
         font-size: 30px
         line-height: 40px
         color: $accent
+
         &--light
             color: $white
+
         +sm-block()
             font-size: 20px
             line-height: 25px
+
     &__prev
         margin-right: 10px
-
 
 // Autor vidio
 .avideo
@@ -164,20 +195,25 @@
     &__step
         &:not(:last-child)
             margin-bottom: 10px
+
         +md-block()
             display: none
 
 // Consult form
 .consult-form
     padding-bottom: 30px
+
     &__desc
         max-width: 380px
-    &__approwe
+
+    &__approve
         max-width: 570px
         color: rgba($white, .5)
+
         &-link
             color: $white
             text-decoration: none
+
             &:hover, &:focus
                 color: rgba($white, .5)
                 text-decoration: underline
@@ -187,6 +223,7 @@
 .sformat
     &__cards
         +row-flex()
+
     &__card
         +col()
         +size(6)
@@ -195,9 +232,11 @@
         background-color: $grey
         display: flex
         flex-direction: column
+        margin-bottom: 30px
         +sm-block()
             &:not(:last-child)
                 margin-bottom: 20px
+
     &__subtitle
         font-size: 40px
         line-height: 50px
@@ -207,20 +246,25 @@
             font-size: 27px
             line-height: 32px
             margin-bottom: 30px
+
     &__list
         margin-bottom: 40px
+
     &__item
         position: relative
         padding-left: 30px
+
         &:not(:last-child)
             margin-bottom: 20px
             +xs-block()
                 margin-bottom: 10px
+
         &::before
             display: inline-block
             content: '— '
             position: absolute
             left: 0
+
     &__price
         font-size: 40px
         line-height: 50px
@@ -238,6 +282,7 @@
 .two-col
     &__cols
         +row-flex()
+
     &__col
         +col()
         +size(6)
@@ -245,13 +290,16 @@
         +sm-block()
             &:not(:last-child)
                 margin-bottom: 20px
+
     &__item
         position: relative
         padding-left: 30px
+
         &:not(:last-child)
             margin-bottom: 20px
             +xs-block()
                 margin-bottom: 10px
+
         &::before
             display: inline-block
             content: '— '
@@ -262,16 +310,19 @@
 
 .description-block
     +row-flex()
+
     &__title-block
         +col()
         +size(4)
         +size-sm(12)
         +sm-block()
             margin-bottom: 30px
+
     &__title
         font-size: 30px
         line-height: 40px
         font-weight: 500
+
     &__desc-block
         +col()
         +size(8)
@@ -282,6 +333,7 @@
     justify-content: flex-start
     align-items: center
     margin-top: 50px
+
     & > *
         &:not(:last-child)
             margin-right: 30px
@@ -293,12 +345,15 @@
         font-size: 30px
         line-height: 40px
         font-weight: 500
+
     &__wrap
         +row-flex()
+
     &__left
         +col()
         +size(8)
         +size-sm(12)
+
     &__right
         +col()
         +size(4)
@@ -307,8 +362,10 @@
         flex-direction: column
         +sm-block()
             flex-direction: column-reverse
+
     &__content
         margin-bottom: 30px
+
     &__controls
         margin-top: auto
         border-top: 1px solid rgba($main-font-color, .2)
@@ -343,18 +400,21 @@
             align-items: center
             text-align: center
             font-size: 13px
+
         &:not(:last-child)
             margin-right: 100px
             +sm-block()
                 margin-right: 40px
             +xs-block()
                 margin-right: 20px
+
         &--active
             border-bottom: 2px solid $accent
 
 .cases-content
     &__tab
         display: none
+
         &--active
             display: block
 
@@ -362,6 +422,7 @@
 
 .post-cards
     +row-flex()
+
 .post-card
     +col()
     +size(4)
@@ -378,6 +439,7 @@
         margin-top: 20px
         margin-bottom: 40px
         position: relative
+
         &::after
             position: absolute
             content: ''
@@ -390,25 +452,28 @@
             background-color: rgba($accent, .4)
             //backdrop-filter: blur(3px)
             transition: background-color .3s ease
+
         &:hover, &:focus
             &::after
                 background-color: transparent
                 backdrop-filter: none
+
     +sm-block()
         &:not(:first-child)
             display: none
+
     &__category
         font-size: 13px
         line-height: 17px
 
-
-
 .blog-page
     +row-flex()
+
 .blog-list
     +col()
     +size(8)
     +size-md(12)
+
 .blog-aside
     +col()
     +size(4)
@@ -418,10 +483,12 @@
     &__title
         font-size: 60px
         line-height: 70px
+
     &__item
         font-size: 40px
         line-height: 55px
         font-weight: 200
+
         &:not(:last-child)
             margin-bottom: 30px
 
@@ -436,20 +503,23 @@
     opacity: 0
     pointer-events: none
     transition: bottom .5s ease-out, opacity .5s ease-out
+
     &:hover, &:focus
         border-color: $white
+
     &--active
         opacity: .6
         pointer-events: auto
         bottom: 30px
 
-
 .big-small
     +row-flex()
+
 .big-small__left
     +col()
     +size(8)
     +size-sm(12)
+
 .big-small__right
     +col()
     +size(4)
@@ -458,6 +528,7 @@
 .h3.big-small__title
     font-size: 30px
     line-height: 40px
+
 .big-small__right
     .case-link
         font-size: 30px
@@ -481,6 +552,7 @@
 .case-page__buttons
     display: flex
     justify-content: center
+
 .case-page_btn
     &:not(:last-child)
         margin-right: 30px
@@ -488,13 +560,17 @@
 .content
     table
         width: 100%
+
     tr
         box-shadow: 0 1px 0 0 $grey
+
     th
         text-align: left
+
     td, th
         padding: 10px 20px
         vertical-align: top
+
         &:first-child
             padding-left: 0
 
@@ -512,6 +588,7 @@
     background-position: center center
     color: $white
     padding: 60px 30px 75px
+
 .a4a__main-line
     display: flex
     justify-content: center
@@ -521,12 +598,15 @@
         flex-wrap: wrap
         justify-content: space-around
         margin-bottom: 60px
+
 .a4a__item
     display: flex
     flex-direction: column
     align-items: center
+
     &:not(:last-child)
         margin-right: 25px
+
     +sm-block()
         width: 45%
         margin-bottom: 40px
@@ -534,24 +614,28 @@
             margin-right: 0
     +xs-block()
         width: 90%
+
 .a4a__item-icon
     width: 90px
     height: 90px
     fill: $white
     margin-bottom: 20px
+
 .a4a__item-text
     text-align: center
+
 .a4a__footer
     display: flex
     justify-content: center
+
 .a4a__footer-list
     display: flex
     padding-top: 40px
     box-shadow: 0 -1px 0 0 $white
+
 .a4a__footer-icon
     &:not(:last-child)
         margin-right: 50px
-
 
 .swal-modal
     border-radius: 0
@@ -563,14 +647,17 @@
     border-radius: 22px
     font-weight: 400
     font-size: 17px
+
     &:not([disabled]):hover,
     &:active
         background-color: #fff
+
     &:focus
         box-shadow: none
 
 .no-found
     min-height: calc(100vh - 500px)
+
     &__text
         font-size: 40px
         margin-top: 50px

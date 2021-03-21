@@ -57,7 +57,7 @@ mixin feedbackSlider(arr, title, mod)
 mixin badges(arr)
     section.section
         .b-badges
-            ._desc= arr.text
+            ._desc !{arr.text}
             each badge in arr.badges
                 ._badge
                     +icon(badge.icon, 'badges__icon')
@@ -116,7 +116,7 @@ mixin portfolioCard(arr)
 
 mixin post-card(post)
     .b-post-card
-        ._category= post.type
+        ._category= post.date
         a(href= post.link, title= post.title, style=`background-image: url(images/content/${post.img})`)._img
         a(href= post.link, title= post.title)._name= post.title
 

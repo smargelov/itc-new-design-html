@@ -39,8 +39,55 @@
             a
                 color: $accent
 
+.header--blue
+    &.header
+        backdrop-filter: none
+        .sandwich
+            &:hover, &:focus
+                .sandwich__line
+                    background-color: darken($white, 30%)
+        .sandwich__line
+            background-color: $white
+    .header
+        &__logo
+            &-icon
+                fill: $white
+            &:hover, &:focus
+                svg
+                    fill: darken($white, 30%)
+        &__link
+            color: $white
+            svg
+                fill: $white
+            &:hover, &:focus
+                color: darken($white, 30%)
+                svg
+                    fill: darken($white, 30%)
+        &__btn
+            color: $white
+            border: 1px solid $white
+            &:hover, &:focus
+                background-color: $white
+                color: $accent
+        &__city
+            a
+                &:hover, &:focus
+                    color: $main-font-color
+                    svg
+                        fill: $accent
+        &__cities
+            a
+                color: $accent
+        &__menu-link
+            color: $white
+
+            &:hover, &:focus, &--current
+                color: darken($white, 30%)
+
 
 .header
+    font-size: 16px
+    line-height: 24px
     height: 120px
     position: fixed
     top: 0
@@ -50,6 +97,11 @@
     background-color: rgba($white, .95)
     backdrop-filter: blur(6px)
     transition: all .5s cubic-bezier(.785,.135,.15,.86)
+    &--blue
+        background-color: $accent
+        .header
+            &__logo-icon
+                fill: $white
 
 
     &__top-line
@@ -61,7 +113,7 @@
         align-items: center
         flex: 1
         & > *
-            margin-right: 40px
+            margin-right: 20px
             +xs-block()
                 margin-right: 20px
         +md-block()
@@ -71,9 +123,7 @@
         align-items: center
         & > *
             &:not(:last-child)
-                margin-right: 40px
-
-
+                margin-right: 30px
 
     &__logo
         &-icon
@@ -86,13 +136,6 @@
             svg
                 fill: $accent
 
-    &__phone
-        +sm-block()
-            order: 2
-        +xs-block()
-            margin-right: 10px !important
-            a
-                font-size: 13px
 
     &__showreel
         display: flex
@@ -101,7 +144,30 @@
         +md-block()
             display: none
 
+    &__link
+        display: flex
+        align-items: center
+
+        svg
+            width: 17px
+            height: 17px
+            margin-left: 10px
+            fill: $accent
+
+        +xs-block()
+            font-size: 16px
+            line-height: 22px
+
+    &__phone
+        +xs-block()
+            display: none
+        +xs-block()
+            margin-right: 10px !important
+            a
+                font-size: 13px
+
     &__btn
+        height: 44px
         +sm-block()
             display: none
 
@@ -112,7 +178,7 @@
         color: $accent
         & > *
             z-index: 5
-        +md-block()
+        +sm-block()
             display: none
 
         .icon-triangle-down
@@ -147,19 +213,5 @@
         &:not(:last-child)
             margin-bottom: 10px
 
-
-    &__link
-        display: flex
-        align-items: center
-
-        svg
-            width: 17px
-            height: 17px
-            margin-left: 10px
-            fill: $accent
-
-        +xs-block()
-            font-size: 16px
-            line-height: 22px
 
 @import "estore-line"
