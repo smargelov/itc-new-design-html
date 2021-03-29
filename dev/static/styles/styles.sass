@@ -10,6 +10,7 @@ html
     overflow: auto
     +xs-block()
         font-size: 16px
+
 body
     height: 100%
     min-height: 100vh
@@ -19,7 +20,7 @@ body
     font-family: $main-font-family
     font-weight: 300
     font-style: normal
-    //overflow: auto
+//overflow: auto
 
 
 
@@ -37,12 +38,15 @@ a
     color: $accent
     text-decoration: none
     transition: all .5s ease
+
     &:hover,
     &:focus
         color: $main-font-color
+
     &.link--icon
         svg
             fill: $accent
+
         &:hover, &:focus
             svg
                 fill: $main-font-color
@@ -125,9 +129,11 @@ button
 .section
     padding-top: 40px
     padding-bottom: 40px
+
     &--with-bg
         background-repeat: no-repeat
         background-position: right bottom
+        background-size: contain
         +md-block()
             background-size: 0 0
 
@@ -136,14 +142,18 @@ button
         color: $white
         padding-right: 30px
         padding-left: 30px
+
     &--wide
         padding-left: 0
         padding-right: 0
+
     &--top-line
         border-top: 1px solid rgba($main-font-color, .2)
         margin-top: 60px
+
     &--min-bottom
         padding-bottom: 0
+
     +xs-block()
         padding-top: 20px
         padding-bottom: 20px
@@ -174,6 +184,7 @@ h4:not([class])
     font-size: 20px
     line-height: 27px
     margin-bottom: 20px
+
     &:not(:first-child)
         margin-top: 40px
 
@@ -185,11 +196,13 @@ ul:not([class])
         list-style: none
         position: relative
         padding-left: 30px
+
         &::before
             position: absolute
             content: '— '
             display: inline-block
             left: 0
+
         &:not(:last-child)
             margin-bottom: 10px
 
@@ -219,6 +232,7 @@ ol:not([class])
 .page-form
     padding-top: 40px
     padding-bottom: 40px
+
     &__input
         padding-right: 30px
         padding-left: 30px
@@ -227,18 +241,23 @@ ol:not([class])
             width: 50%
         +sm-block()
             width: 100%
+
     &__line
         display: flex
+
         &:not(:last-child)
             margin-bottom: 40px
 
         & > *
             flex: 1
+
             &:not(:last-child)
                 margin-right: 50px
+
             +md-block()
                 &:not(:last-child)
                     margin-right: 0
+
         +md-block()
             flex-direction: column
             align-items: flex-start
@@ -250,6 +269,7 @@ ol:not([class])
         display: flex
         justify-content: center
         align-items: center
+
         &--left
             justify-content: flex-start
 
@@ -270,6 +290,7 @@ ol:not([class])
             line-height: 24px
             padding-right: 13px
             padding-left: 13px
+
         &:focus
             outline: none
 
@@ -287,10 +308,12 @@ ol:not([class])
         opacity: 0
         height: 0
         overflow: hidden
+
         &:checked
             & + label
                 &::before
                     background-color: $accent
+
                 &::after
                     display: inline-block
                     position: absolute
