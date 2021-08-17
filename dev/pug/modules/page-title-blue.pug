@@ -1,14 +1,19 @@
 section.section.section--blue.section--wide.section--with-bg(style='background-image: url(../images/content/med-top-bg.png)')
-    .b-page-title
-      - var newStr = title.split(' ')
-      h1.h1._text.-one-word
-        each str, key in newStr
-            if key === 0
-                | !{str}
-            else
-                br
-                span= str
-      button.b-btn.-flat.-light._btn.-big-title Заказать продвижение
-      ._price от 15 000 ₽*
-      ._small-text
-          p._small-item * Скидка 3, 6, 12% на услугу SEO при оплате 3, 6 и 12 месяцев соответственно
+	.b-page-title
+		- var newStr = title.split(' ')
+		._action-badge
+			| Получите скидку 20%* на продвижение до 30 сентября!
+		h1.h1._text.-one-word.-action
+			each str, key in newStr
+				if key === 0
+					| !{str}
+				else
+					br
+					span= str
+		._price.-action(data-old-price='36 000')
+			| от 28 800 ₽
+			+icon('discount20', 'page-title__action-icon')
+		button.b-btn.-flat.-light._btn.-big-title Получить консультацию
+		._small-text
+			p._small-item Мы свяжемся с вами в течении 2-х часов для консультации по проекту
+			p._small-item * Скидка действует на третий месяц продвижения.
