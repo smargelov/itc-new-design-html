@@ -1,217 +1,283 @@
 .header--active-menu
-    &.header
-        background-color: transparent
-        backdrop-filter: none
-        .sandwich
-            &:hover, &:focus
-                .sandwich__line
-                    background-color: darken($white, 30%)
-        .sandwich__line
-            background-color: $white
-    .header
-        &__logo
-            &-icon
-                fill: $white
-            &:hover, &:focus
-                svg
-                    fill: darken($white, 30%)
-        &__link
-            color: $white
-            svg
-                fill: $white
-            &:hover, &:focus
-                color: darken($white, 30%)
-                svg
-                    fill: darken($white, 30%)
-        &__btn
-            color: $white
-            border: 1px solid $white
-            &:hover, &:focus
-                background-color: $white
-                color: $accent
-        &__city
-            a
-                &:hover, &:focus
-                    color: $main-font-color
-                    svg
-                        fill: $accent
-        &__cities
-            a
-                color: $accent
+	&.header
+		background-color: transparent
+		backdrop-filter: none
+
+		.sandwich
+			&:hover, &:focus
+				.sandwich__line
+					background-color: darken($white, 30%)
+
+		.sandwich__line
+			background-color: $white
+
+	.header
+		&__call-mob-icon
+			fill: $white
+
+		&__logo
+			&-icon
+				fill: $white
+
+			&:hover, &:focus
+				svg
+					fill: darken($white, 30%)
+
+		&__link
+			color: $white
+
+			svg
+				fill: $white
+
+			&:hover, &:focus
+				color: darken($white, 30%)
+
+				svg
+					fill: darken($white, 30%)
+
+		&__btn
+			color: $white
+			border: 1px solid $white
+			background-color: transparent
+
+			&:hover, &:focus
+				background-color: $white
+				color: $accent
+
+		&__city
+			a
+				&:hover, &:focus
+					color: $main-font-color
+
+					svg
+						fill: $accent
+
+		&__cities
+			a
+				color: $accent
 
 .header--blue
-    &.header
-        backdrop-filter: none
-        .sandwich
-            &:hover, &:focus
-                .sandwich__line
-                    background-color: darken($white, 30%)
-        .sandwich__line
-            background-color: $white
-    .header
-        &__logo
-            &-icon
-                fill: $white
-            &:hover, &:focus
-                svg
-                    fill: darken($white, 30%)
-        &__link
-            color: $white
-            svg
-                fill: $white
-            &:hover, &:focus
-                color: darken($white, 30%)
-                svg
-                    fill: darken($white, 30%)
-        &__btn
-            color: $accent
-            background-color: $gold
-            border: none
-            &:hover, &:focus
-                color: $accent
-        &__city
-            a
-                &:hover, &:focus
-                    color: $main-font-color
-                    svg
-                        fill: $accent
-        &__cities
-            a
-                color: $accent
-        &__menu-link
-            color: $white
+	&.header
+		backdrop-filter: none
 
-            &:hover, &:focus, &--current
-                color: darken($white, 30%)
+		.sandwich
+			&:hover, &:focus
+				.sandwich__line
+					background-color: darken($white, 30%)
+
+		.sandwich__line
+			background-color: $white
+
+	.header
+		&__logo
+			&-icon
+				fill: $white
+
+			&:hover, &:focus
+				svg
+					fill: darken($white, 30%)
+
+		&__link
+			color: $white
+
+			svg
+				fill: $white
+
+			&:hover, &:focus
+				color: darken($white, 30%)
+
+				svg
+					fill: darken($white, 30%)
+
+		&__btn
+			color: $accent
+			background-color: $gold
+			border: none
+
+			&:hover, &:focus
+				color: $accent
+
+		&__city
+			a
+				&:hover, &:focus
+					color: $main-font-color
+
+					svg
+						fill: $accent
+
+		&__cities
+			a
+				color: $accent
+
+		&__menu-link
+			color: $white
+
+			&:hover, &:focus, &--current
+				color: darken($white, 30%)
 
 
 .header
-    font-size: 16px
-    line-height: 24px
-    height: 120px
-    position: fixed
-    top: 0
-    left: 0
-    right: 0
-    z-index: 10
-    background-color: rgba($white, .95)
-    backdrop-filter: blur(6px)
-    transition: all .5s cubic-bezier(.785,.135,.15,.86)
-    &--blue
-        background-color: $accent
-        .header
-            &__logo-icon
-                fill: $white
+	font-size: 16px
+	line-height: 24px
+	height: 120px
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	z-index: 10
+	background-color: rgba($white, .95)
+	backdrop-filter: blur(6px)
+	transition: all .5s cubic-bezier(.785, .135, .15, .86)
+
+	&--blue
+		background-color: $accent
+
+		.header
+			&__logo-icon
+				fill: $white
+
+			&__call-mob-icon
+				fill: $white
 
 
-    &__top-line
-        display: flex
-        justify-content: space-between
-        align-items: center
-    &__top-left
-        display: flex
-        align-items: center
-        flex: 1
-        & > *
-            margin-right: 20px
-            +xs-block()
-                margin-right: 20px
-        +md-block()
-            justify-content: space-between
-    &__top-right
-        display: flex
-        align-items: center
-        & > *
-            &:not(:last-child)
-                margin-right: 30px
+	&__top-line
+		display: flex
+		justify-content: space-between
+		align-items: center
 
-    &__logo
-        &-icon
-            max-width: 121px
-            max-height: 120px
-            fill: $main-font-color
-        +sm-block()
-            margin-right: 20px
-        &:hover, &:focus
-            svg
-                fill: $accent
+	&__top-left
+		display: flex
+		align-items: center
+		flex: 1
+
+		& > *
+			margin-right: 20px
+			+xs-block()
+				margin-right: 20px
+
+		+md-block()
+			justify-content: space-between
+
+	&__top-right
+		display: flex
+		align-items: center
+		margin-right: -30px
+
+		& > *
+			margin-right: 30px
+
+	&__logo
+		&-icon
+			max-width: 121px
+			max-height: 120px
+			fill: $main-font-color
+
+		+sm-block()
+			margin-right: 20px
+
+		&:hover, &:focus
+			svg
+				fill: $accent
 
 
-    &__showreel
-        display: flex
-        svg
-            margin-right: 10px
-        +md-block()
-            display: none
+	&__showreel
+		display: flex
 
-    &__link
-        display: flex
-        align-items: center
+		svg
+			margin-right: 10px
 
-        svg
-            width: 17px
-            height: 17px
-            margin-left: 10px
-            fill: $accent
+		+md-block()
+			display: none
 
-        +xs-block()
-            font-size: 16px
-            line-height: 22px
+	&__link
+		display: flex
+		align-items: center
 
-    &__phone
-        +xs-block()
-            display: none
-        +xs-block()
-            margin-right: 10px !important
-            a
-                font-size: 13px
+		svg
+			width: 17px
+			height: 17px
+			margin-left: 10px
+			fill: $accent
 
-    &__btn
-        height: 44px
-        +sm-block()
-            display: none
+		+xs-block()
+			font-size: 16px
+			line-height: 22px
 
-    &__city
-        display: flex
-        margin-right: 40px
-        position: relative
-        color: $accent
-        & > *
-            z-index: 5
-        +sm-block()
-            display: none
+	&__phone
+		+xs-block()
+			display: none
+		+xs-block()
+			margin-right: 10px !important
+			a
+				font-size: 13px
 
-        .icon-triangle-down
-            width: 11px
-            height: 10px
-            transition: all 0.3s ease
+	&__call-mob
+		display: none
+		+xs-block
+			display: flex
 
-        &:hover
-            .header__cities
-                transform: none
-                opacity: 1
-                pointer-events: auto
-            .icon-triangle-down
-                transform: rotate(180deg)
+	&__call-mob-icon
+		+sizebox(35px)
+		fill: $accent
 
-    &__cities
-        position: absolute
-        z-index: 4
-        left: -25px
-        padding-top: 30px
-        top: 100%
-        white-space: nowrap
-        pointer-events: none
-        opacity: 0
-        transform: translateY(10px)
-        transition: all .3s ease
-    &__subcities
-        padding: 30px 25px !important
-        background-color: rgba($grey, .9)
-        backdrop-filter: blur(6px)
-    &__subcity
-        &:not(:last-child)
-            margin-bottom: 10px
+	&__btn
+		height: 44px
+		color: $white
+		background-color: $accent
+
+		&:hover, &:focus
+			color: $accent
+			background-color: $white
+
+		+sm-block()
+			display: none
+
+	&__city
+		display: flex
+		margin-right: 40px
+		position: relative
+		color: $accent
+
+		& > *
+			z-index: 5
+
+		+sm-block()
+			display: none
+
+		.icon-triangle-down
+			width: 11px
+			height: 10px
+			transition: all 0.3s ease
+
+		&:hover
+			.header__cities
+				transform: none
+				opacity: 1
+				pointer-events: auto
+
+			.icon-triangle-down
+				transform: rotate(180deg)
+
+	&__cities
+		position: absolute
+		z-index: 4
+		left: -25px
+		padding-top: 30px
+		top: 100%
+		white-space: nowrap
+		pointer-events: none
+		opacity: 0
+		transform: translateY(10px)
+		transition: all .3s ease
+
+	&__subcities
+		padding: 30px 25px !important
+		background-color: rgba($grey, .9)
+		backdrop-filter: blur(6px)
+
+	&__subcity
+		&:not(:last-child)
+			margin-bottom: 10px
 
 
 @import "estore-line"

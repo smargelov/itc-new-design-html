@@ -55,6 +55,11 @@
 
 
     &__btn
+        .icon-empty_triangle
+            animation: pulse 1s infinite ease-in-out
+        &:hover, &:focus
+            .icon-empty_triangle
+                animation: none
         +xs-block()
             font-size: 10px
             line-height: 14px

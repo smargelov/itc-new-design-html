@@ -17,9 +17,9 @@ header(class= isBlue ? 'header--blue' : '').b-header
                         each item in headerMenu
                             li._menu-item(data-mega=item.mega)
                                 a._menu-link(href=!item.mega ? item.link : false, title=item.name)= item.name
-            
+
             ._top-right
-                
+
                 ._city
                     ._link.link--icon.city-view
                         | Брянск
@@ -29,11 +29,12 @@ header(class= isBlue ? 'header--blue' : '').b-header
                                 each city in cities
                                     li._subcity
                                         a._link(href= city.link, title= city.name)= city.name
-                
+
                 ._phone
                     a._link(href='tel:+78005512557', title='8 (800) 551-25-57') 8 (800) 551-25-57
                 button.b-btn.-flat._btn(data-action='popup', data-target='consultation') Заказать звонок
-            
+                a._call-mob(href='tel:+78005512557', title='8 (800) 551-25-57')
+                    +icon('phone-round', 'header__call-mob-icon')
             .b-sandwich._sandwich
                 ._line.-top
                 ._line.-middle
