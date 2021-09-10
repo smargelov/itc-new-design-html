@@ -1,0 +1,83 @@
+.panel-video
+	color: $white
+	padding: 40px 40px 0
+	background: repeating-linear-gradient(0deg, $white, $white 23px, $accent 23px, $accent 100%)
+	position: relative
+	overflow: hidden
+	+md-block
+		background: repeating-linear-gradient(0deg, $white, $white 19px, $accent 19px, $accent 100%)
+	+sm-block
+		padding: 25px 20px 0
+		background: repeating-linear-gradient(0deg, $white, $white 12px, $accent 12px, $accent 100%)
+
+	&__title
+		font-size: 60px
+		line-height: 70px
+		margin-bottom: 40px
+		+md-block
+			font-size: 45px
+			line-height: 55px
+		+sm-block
+			font-size: 28px
+			line-height: 35px
+
+	&__content
+		position: relative
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		padding-bottom: 73px
+		height: 490px
+		align-items: flex-start
+		+md-block
+			height: 430px
+			padding-bottom: 69px
+		+sm-block
+			flex-direction: row
+			gap: 40px
+		+xs-block
+			flex-direction: column
+			align-items: flex-end
+			justify-content: flex-start
+			gap: 20px
+
+	&__desc
+		font-size: 18px
+		line-height: 24px
+		max-width: 327px
+		+lg-block
+			max-width: 247px
+		+md-block
+			max-width: 239px
+		+sm-block
+			max-width: 100%
+			font-size: 14px
+			line-height: 20px
+
+	&__btn
+		+md-block
+			+sizebox(142px)
+			min-width: 142px
+
+	&__air
+		position: absolute
+		background-repeat: no-repeat
+		background-size: cover
+		background-position: bottom left
+		top: 0
+		bottom: 0
+		left: auto
+		right: -40px
+		width: 845px
+
+		+md-block
+			width: 740px
+			left: 231px
+		+sm-block
+			left: -20px
+			right: -20px
+			top: auto
+			height: 280px
+			background-size: contain
+			background-position: bottom center
+			width: auto
