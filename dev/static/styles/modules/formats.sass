@@ -25,6 +25,11 @@
 		box-shadow: inset 0 0 0 2px $accent
 
 .formats-card
+	display: none
+
+	&--active
+		display: block
+
 	&__header
 		display: grid
 		gap: 25px
@@ -56,6 +61,7 @@
 	&__simple-item
 		padding-left: 35px
 		position: relative
+
 		&::before
 			position: absolute
 			content: '—'

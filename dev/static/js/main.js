@@ -398,6 +398,26 @@ $(document).ready(function () {
     //     // window.location.hash = target === 'develop' ? '#develop' : '';
     // })
 
+    if (document.querySelector('.formats')) {
+        const formats = document.querySelector('.formats')
+        const tabs = formats.querySelectorAll('.formats__tab')
+        const cards = formats.querySelectorAll('.formats-card')
+        tabs.forEach((tab, idx) => {
+            tab.addEventListener('click', (e) => {
+                if (e.target.classList.contains('formats__tab--active')) return
+                cards.forEach(card => {
+                    card.classList.remove('formats-card--active')
+                })
+                cards[idx].classList.add('formats-card--active')
+                tabs.forEach(item => {
+                    item.classList.remove('formats__tab--active')
+                })
+                e.target.classList.add('formats__tab--active')
+            })
+
+        })
+    }
+
     if (typeof rangeCalculator !== 'undefined') {
 
         const result = JSON.parse(rangeCalculator);
