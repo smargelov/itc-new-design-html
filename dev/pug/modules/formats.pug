@@ -143,26 +143,28 @@
 
 section.section
 	.b-formats
-		h2.h2._title Формат сотрудничества
-		._tabs-list
-			._tabs
-				each tab in tabs
-					._tab(
-						class=tab.active && 'formats__tab--active'
-					)= tab.name
+		h2.h2._title Форматы SEO-продвижения
+		._tabs
+			each tab in tabs
+				button._tab(
+					class=tab.active && 'formats__tab--active'
+				)= tab.name
 		._cards
 			each card in tabs
 				.b-formats-card._card(
 					class=card.active && 'formats-card--active'
+					style=!card.active ? 'display:none;' : null
 				)
 					._header
-						._target
+						._header-item._target
 							h4.h4._title Цель
 							._accent-text= card.target
-						._whom
+						._header-item._whom
 							h4.h4._title Кому подойдет
-							._simple-list= card.whom
-						._price
+							ul._simple-list
+								each item in card.whom
+									li._simple-item= item
+						._header-item._price
 							h4.h4._title Стоимость
 							._accent-text= card.price.title
 							._desc= card.price.decs

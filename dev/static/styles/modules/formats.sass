@@ -1,0 +1,102 @@
+.formats
+	&__tabs
+		display: grid
+		gap: 25px
+		grid-template-columns: repeat(3, 1fr)
+
+	&__tab
+		min-height: 95px
+		display: flex
+		align-items: center
+		padding: 10px 30px
+		background-color: $grey
+		font-size: 30px
+		line-height: 1.33
+		cursor: pointer
+		border: none
+
+		&--active
+			background-color: $accent
+			color: $white
+			cursor: auto
+
+	&__cards
+		padding: 60px 40px 40px
+		box-shadow: inset 0 0 0 2px $accent
+
+.formats-card
+	&__header
+		display: grid
+		gap: 25px
+		grid-template-columns: repeat(3, 1fr)
+		padding-bottom: 30px
+		box-shadow: inset 0 -1px rgba($accent, .15)
+		margin-bottom: 30px
+
+	&__header-item
+		display: grid
+		gap: 20px
+		align-self: start
+
+	&__title
+		font-size: 26px
+		line-height: 1.23
+
+	&__accent-text
+		font-size: 26px
+		line-height: 1.23
+		color: $accent
+
+	&__simple-list
+		font-size: 18px
+		line-height: 1.33
+		display: grid
+		gap: 10px
+
+	&__simple-item
+		padding-left: 35px
+		position: relative
+		&::before
+			position: absolute
+			content: '—'
+			color: $accent
+			left: 0
+			top: 0
+
+	&__desc
+		font-size: 13px
+		line-height: 1.38
+		opacity: .75
+		margin-top: -10px
+
+	&__body
+		display: grid
+		gap: 30px
+
+	&__spec-list
+		column-count: 2
+		column-gap: 25px
+
+	&__spec-item
+		break-inside: avoid
+		margin-bottom: 25px
+		display: grid
+		gap: 10px
+
+	&__spec-title
+		font-size: 18px
+		line-height: 1.33
+		color: $accent
+
+	&__spec-text
+		font-size: 15px
+		line-height: 1.47
+
+	&__footer
+		padding-top: 30px
+		box-shadow: inset 0 1px rgba($accent, .15)
+		margin-top: 30px
+
+	&__btn-wrap
+		display: flex
+		justify-content: center
