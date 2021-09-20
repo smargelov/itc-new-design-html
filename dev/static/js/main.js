@@ -414,7 +414,10 @@ $(document).ready(function () {
                 })
                 e.target.classList.add('formats__tab--active')
             })
-
+        })
+        $('.formats-card__title--collapse').click(() => {
+            $('.formats-card__arrow').toggleClass('formats-card__arrow--open')
+            $('.formats-card__spec-list').toggleClass('formats-card__spec-list--open')
         })
     }
 

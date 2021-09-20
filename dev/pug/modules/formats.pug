@@ -168,7 +168,21 @@ section.section
 							._accent-text= card.price.title
 							._desc= card.price.decs
 					._body
-						h4.h4._title Кому подойдет
+						h4.h4._title.-collapse
+							span Кому подойдет
+							svg(
+								width="29"
+								height="16"
+								viewBox="0 0 29 16"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							)._arrow
+								path(
+									opacity="0.4"
+									fill-rule="evenodd"
+									clip-rule="evenodd"
+									d="M14.5 14.0901L28.2875 0.5L29 1.20497L14.5 15.5L-3.08151e-08 1.20497L0.712456 0.499999L14.5 14.0901Z"
+								)
 						ul._spec-list
 							each item in card.specifications
 								li._spec-item

@@ -3,6 +3,8 @@
 		display: grid
 		gap: 25px
 		grid-template-columns: repeat(3, 1fr)
+		+sm-block
+			gap: 10px
 
 	&__tab
 		min-height: 95px
@@ -14,6 +16,11 @@
 		line-height: 1.33
 		cursor: pointer
 		border: none
+		+sm-block
+			min-height: 35px
+			padding: 10px
+			font-size: 14px
+			line-height: 1.43
 
 		&--active
 			background-color: $accent
@@ -23,8 +30,11 @@
 	&__cards
 		padding: 60px 40px 40px
 		box-shadow: inset 0 0 0 2px $accent
+		+sm-block
+			padding: 20px 20px 30px
 
 .formats-card
+	$self: &
 	display: none
 
 	&--active
@@ -37,26 +47,68 @@
 		padding-bottom: 30px
 		box-shadow: inset 0 -1px rgba($accent, .15)
 		margin-bottom: 30px
+		+sm-block
+			grid-template-columns: 1fr
+			gap: 0
+			margin-bottom: 15px
+			padding-bottom: 15px
 
 	&__header-item
 		display: grid
 		gap: 20px
 		align-self: start
+		+sm-block
+			gap: 10px
+			&:not(:last-child)
+				box-shadow: inset 0 -1px rgba($accent, .15)
+				margin-bottom: 15px
+				padding-bottom: 15px
 
 	&__title
 		font-size: 26px
 		line-height: 1.23
+		+sm-block
+			font-size: 18px
+			line-height: 1.33
+
+			&--collapse
+				display: flex
+				justify-content: space-between
+				align-items: center
+				cursor: pointer
+
+	&__arrow
+		fill: $accent
+		margin-left: auto
+		display: none
+		transition: all .5s ease-in-out
+		+sm-block
+			display: inline-block
+			&--open
+				transform: rotateZ(180deg)
 
 	&__accent-text
 		font-size: 26px
 		line-height: 1.23
 		color: $accent
+		& > span
+			color: $black
+			font-size: 24px
+		+sm-block
+			font-size: 18px
+			line-height: 1.33
+			& > span
+				font-size: 16px
 
 	&__simple-list
 		font-size: 18px
 		line-height: 1.33
 		display: grid
 		gap: 10px
+		+sm-block
+			font-size: 14px
+			line-height: 1.43
+			gap: 5px
 
 	&__simple-item
 		padding-left: 35px
@@ -74,20 +126,38 @@
 		line-height: 1.38
 		opacity: .75
 		margin-top: -10px
+		+sm-block
+			font-size: 12px
+			line-height: 1.33
+			margin-top: -5px
 
 	&__body
 		display: grid
 		gap: 30px
+		+sm-block
+			gap: 0
 
 	&__spec-list
 		column-count: 2
 		column-gap: 25px
+		+sm-block
+			column-count: 1
+			overflow: hidden
+			max-height: 0
+			padding-top: 15px !important
+			transition: all .5s ease-in-out
+			&--open
+				max-height: 1000px
+
 
 	&__spec-item
 		break-inside: avoid
 		margin-bottom: 25px
 		display: grid
 		gap: 10px
+		+sm-block
+			margin-bottom: 15px
+			gap: 5px
 
 	&__spec-title
 		font-size: 18px
@@ -97,12 +167,21 @@
 	&__spec-text
 		font-size: 15px
 		line-height: 1.47
+		padding-left: 15px
 
 	&__footer
 		padding-top: 30px
 		box-shadow: inset 0 1px rgba($accent, .15)
 		margin-top: 30px
+		+sm-block
+			margin-top: 15px
+			padding-top: 15px
 
 	&__btn-wrap
 		display: flex
 		justify-content: center
+
+	&__btn
+		+xs-block
+			height: auto
+			min-height: 50px
