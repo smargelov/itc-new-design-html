@@ -421,6 +421,15 @@ $(document).ready(function () {
         })
     }
 
+    if (document.querySelector('.smm-table')) {
+        const smmTable = $('.smm-table')
+        const collapsedTitle = $(smmTable).find('.smm-table__name--collapsed')
+        $(collapsedTitle).click((e) => {
+            $(e.target).toggleClass('close')
+            $(e.target).find('.smm-table__collapse-arrow').toggleClass('close')
+        })
+    }
+
     if (typeof rangeCalculator !== 'undefined') {
 
         const result = JSON.parse(rangeCalculator);
