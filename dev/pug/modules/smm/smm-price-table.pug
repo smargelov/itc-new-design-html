@@ -1,0 +1,182 @@
+-
+    const table = [
+        {
+            name: 'Подготовка к продвижению в социальных медиа',
+            collapsed: false,
+            list: [
+                {
+                    title: 'Социальные сети',
+                    boolean: false,
+                    start: '1 соцсеть',
+                    optima: '2 соцсети',
+                    vip: '3 соцсети'
+                },
+                {
+                    title: 'Разработка стратегии продвижения в социальных сетях',
+                    boolean: true,
+                    start: '1',
+                    optima: '1',
+                    vip: '1'
+                },
+                {
+                    title: 'Разработка продающего описания для сообществ',
+                    boolean: true,
+                    start: '',
+                    optima: '1',
+                    vip: '1'
+                },
+                {
+                    title: 'Разработка и согласование концепции дизайна сообществ',
+                    boolean: true,
+                    start: '',
+                    optima: '',
+                    vip: '1'
+                },
+                {
+                    title: 'Настройка функционала сообществ',
+                    boolean: false,
+                    start: '10 постов/месяц',
+                    optima: '15 постов/месяц',
+                    vip: '15 постов/месяц'
+                },
+                {
+                    title: 'Настройка функционала сообществ',
+                    boolean: false,
+                    start: '2 поста',
+                    optima: '3 поста',
+                    vip: '5 постов'
+                }
+            ]
+        },
+        {
+            name: 'Таргетированная реклама (минимальный бюджет – 15 000 ₽)',
+            collapsed: false,
+            list: [
+                {
+                    title: 'Социальные сети',
+                    boolean: false,
+                    start: '1 соцсеть',
+                    optima: '2 соцсети',
+                    vip: '3 соцсети'
+                },
+                {
+                    title: 'Разработка стратегии продвижения в социальных сетях',
+                    boolean: true,
+                    start: '1',
+                    optima: '1',
+                    vip: '1'
+                },
+                {
+                    title: 'Разработка продающего описания для сообществ',
+                    boolean: true,
+                    start: '',
+                    optima: '1',
+                    vip: '1'
+                },
+                {
+                    title: 'Разработка и согласование концепции дизайна сообществ',
+                    boolean: true,
+                    start: '',
+                    optima: '',
+                    vip: '1'
+                },
+                {
+                    title: 'Настройка функционала сообществ',
+                    boolean: false,
+                    start: '10 постов/месяц',
+                    optima: '15 постов/месяц',
+                    vip: '15 постов/месяц'
+                },
+                {
+                    title: 'Настройка функционала сообществ',
+                    boolean: false,
+                    start: '2 поста',
+                    optima: '3 поста',
+                    vip: '5 постов'
+                }
+            ]
+        },
+        {
+            name: 'Анализ эффективности продвижения',
+            collapsed: true,
+            list: [
+                {
+                    title: 'Социальные сети',
+                    boolean: false,
+                    start: '1 соцсеть',
+                    optima: '2 соцсети',
+                    vip: '3 соцсети'
+                },
+                {
+                    title: 'Разработка стратегии продвижения в социальных сетях',
+                    boolean: true,
+                    start: '1',
+                    optima: '1',
+                    vip: '1'
+                },
+                {
+                    title: 'Разработка продающего описания для сообществ',
+                    boolean: true,
+                    start: '',
+                    optima: '1',
+                    vip: '1'
+                },
+                {
+                    title: 'Разработка и согласование концепции дизайна сообществ',
+                    boolean: true,
+                    start: '',
+                    optima: '',
+                    vip: '1'
+                },
+                {
+                    title: 'Настройка функционала сообществ',
+                    boolean: false,
+                    start: '10 постов/месяц',
+                    optima: '15 постов/месяц',
+                    vip: '15 постов/месяц'
+                },
+                {
+                    title: 'Настройка функционала сообществ',
+                    boolean: false,
+                    start: '2 поста',
+                    optima: '3 поста',
+                    vip: '5 постов'
+                }
+            ]
+        },
+    ]
+
+mixin col(colName, arr, boolean)
+   if !boolean
+       .b-smm-table__col.-val= arr[colName]
+   else
+       .b-smm-table__col.-val
+           if arr[colName] && arr[colName] !== ''
+               +icon('check27', 'smm-table__check', 27)
+
+section.section
+    .b-smm-price
+        h2.h2._title Продвижение в социальных сетях #[span SMM + таргет]
+        .b-smm-table._table
+            ._header
+                ._col.-empty.-head
+                ._col.-head Старт
+                ._col.-head Оптима
+                ._col.-head VIP
+            ._body
+                each section in table
+                    ._section
+                        ._name(
+                            class= section.collapsed ? 'smm-table__name--collapsed close' : null
+                        )
+                            | #{section.name}
+                            if section.collapsed
+                                +icon('collapse-arrow', null, 29, 15)._collapse-arrow.close
+                        ._rows
+                            each row in section.list
+                                ._col.-title= row.title
+                                +col('start', row, row.boolean)
+                                +col('optima', row, row.boolean)
+                                +col('vip', row, row.boolean)
+
+
