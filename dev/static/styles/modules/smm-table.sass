@@ -12,6 +12,10 @@
 		padding-bottom: 10px
 		font-weight: bold
 		color: $accent
+		+sm-block
+			grid-template-columns: repeat(3, 1fr)
+			font-size: 18px
+			line-height: 1.33
 
 	&__body
 		padding-top: 15px
@@ -23,6 +27,10 @@
 
 	&__name
 		font-weight: bold
+
+		+sm-block
+			font-size: 16px
+			line-height: 1.25
 
 		&--collapsed
 			display: flex
@@ -50,6 +58,8 @@
 	&__rows
 		padding-top: 20px
 		padding-left: 25px
+		+sm-block
+			padding-left: 0
 
 	&__row
 		font-size: 18px
@@ -59,32 +69,66 @@
 		box-shadow: inset 0 -1px rgba($accent, .15)
 		padding-top: 15px
 		padding-bottom: 15px
+		+sm-block
+			grid-template-columns: repeat(3, 1fr)
+			font-size: 14px
+			line-height: 1.43
+			padding-top: 8px
+			padding-bottom: 8px
+			&:first-child
+				box-shadow: inset 0 -1px rgba($accent, .15), inset 0 1px rgba($accent, .15)
+
 
 	&__col
 		padding-right: 10px
+
 		&--val
 			color: $accent
 			fill: $accent
+
 		&--foot
 			display: grid
 			gap: 10px
+
+		&--title
+			+sm-block
+				grid-column: 1/-1
+				margin-bottom: 5px
+		&--empty
+			+sm-block
+				grid-column: 1/-1
+
+	&__check
+		width: 18px
+		height: 18px
 
 	&__footer
 		display: grid
 		grid-template-columns: 3fr repeat(3, 1fr)
 		color: $accent
+		+sm-block
+			grid-template-columns: repeat(3, 1fr)
+			row-gap: 15px
 
 	&__foot-title
 		font-weight: bold
+		+sm-block
+			font-size: 16px
+			line-height: 1.25
 
 	&__foot-desc
 		font-size: 16px
 		line-height: 1.69
+		+sm-block
+			line-height: 1.25
 
 	&__foot-price
 		font-size: 22px
 		font-weight: bold
 		line-height: 1.23
+		+sm-block
+			font-size: 20px
+			line-height: 1.35
 
 	&__btn
 		padding-right: 5px

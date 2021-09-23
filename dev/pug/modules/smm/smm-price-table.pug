@@ -153,6 +153,8 @@ mixin col(colName, arr, boolean)
        .b-smm-table__col.-val
            if arr[colName] && arr[colName] !== ''
                +icon('check27', 'smm-table__check', 27)
+           else
+               | —
 
 section.section
     .b-smm-price
@@ -180,7 +182,7 @@ section.section
                                     +col('optima', row, row.boolean)
                                     +col('vip', row, row.boolean)
             ._footer
-                ._col.-foot
+                ._col.-foot.-title
                     ._foot-title Ежемесячная абонентская плата
                     ._foot-desc (скидка 10% при оплате за 3 месяца)
                 ._col.-foot
