@@ -1,0 +1,96 @@
+.target-prices
+	&__cards
+		display: flex
+		gap: 25px
+		+sm-block
+			scroll-snap-type: x proximity
+			-webkit-overflow-scrolling: touch
+			overflow-x: auto
+			width: 100%
+	&__card
+		flex: 1 0 0
+		+xs-block
+			flex: 0 0 auto
+			width: 215px
+			min-width: 215px
+
+.target-card
+	padding: 40px
+	position: relative
+	background-color: $grey
+	display: flex
+	flex-direction: column
+	gap: 40px
+	+sm-block
+		padding: 25px 15px
+		gap: 20px
+
+	&__name
+		font-size: 40px
+		line-height: 1.25
+		font-weight: 500
+		+sm-block
+			font-size: 22px
+			line-height: 1.09
+
+	&__desc
+		+sm-block
+			font-size: 14px
+			line-height: 1.43
+
+	&__set
+		display: grid
+		gap: 15px
+
+	&__list-title
+		font-weight: bold
+
+	&__list
+		font-size: 16px
+		line-height: 1.5
+		display: grid
+		gap: 10px
+		+sm-block
+			font-size: 13px
+			line-height: 1.23
+
+	&__item
+		position: relative
+		padding-left: 38px
+		&:before
+			position: absolute
+			left: 0
+			top: 0
+			content: '—'
+			color: $accent
+
+	&__price
+		font-size: 40px
+		line-height: 1.25
+		font-weight: 500
+		margin-top: auto
+		+md-block
+			font-size: 30px
+			line-height: 37px
+		+sm-block
+			font-size: 22px
+			line-height: 1.09
+
+	&__badge
+		position: absolute
+		right: 0
+		top: 0
+		background-color: $accent
+		color: $white
+		font-size: 14px
+		line-height: 1.4
+		padding: 5px 10px
+		+sm-block
+			display: none
+
+	&__btn
+		align-self: flex-start
+		white-space: nowrap
+
+		+xs-block
+			white-space: normal

@@ -82,16 +82,21 @@
 
 	&__col
 		padding-right: 10px
+		display: flex
+		justify-content: center
+		text-align: center
 
 		&--val
 			color: $accent
 			fill: $accent
 
 		&--foot
-			display: grid
-			gap: 10px
+			display: flex
+			flex-direction: column
 
 		&--title
+			justify-content: flex-start
+			text-align: left
 			+sm-block
 				grid-column: 1/-1
 				margin-bottom: 5px
@@ -118,15 +123,18 @@
 			line-height: 1.25
 
 	&__foot-desc
-		font-size: 16px
-		line-height: 1.69
+		align-self: start
+		font-size: 17px
+		line-height: 1.59
 		+sm-block
 			line-height: 1.25
 
 	&__foot-price
+		text-align: center
 		font-size: 22px
 		font-weight: bold
 		line-height: 1.23
+		margin-bottom: 10px
 		+sm-block
 			font-size: 20px
 			line-height: 1.35
