@@ -1,222 +1,229 @@
 -
-    const table = [
-        {
-            name: 'Подготовка к продвижению в социальных медиа',
-            collapsed: false,
-            list: [
-                {
-                    title: 'Социальные сети',
-                    boolean: false,
-                    start: '1 соцсеть',
-                    optima: '2 соцсети',
-                    vip: '3 соцсети'
-                },
-                {
-                    title: 'Разработка стратегии продвижения в социальных сетях',
-                    boolean: true,
-                    start: '1',
-                    optima: '1',
-                    vip: '1'
-                },
-                {
-                    title: 'Разработка продающего описания для сообществ',
-                    boolean: true,
-                    start: '1',
-                    optima: '1',
-                    vip: '1'
-                },
-                {
-                    title: 'Разработка и согласование концепции дизайна сообществ',
-                    boolean: true,
-                    start: '1',
-                    optima: '1',
-                    vip: '1'
-                },
-                {
-                    title: 'Настройка функционала сообществ',
-                    boolean: true,
-                    start: '1',
-                    optima: '1',
-                    vip: '1'
-                },
-                {
-                    title: 'Настройка функционала сообществ',
-                    boolean: false,
-                    start: '2 поста',
-                    optima: '3 поста',
-                    vip: '5 постов'
-                }
-            ]
-        },
-        {
-            name: 'Размещение постов',
-            collapsed: false,
-            list: [
-                {
-                    title: 'Написание постов и размещение контента ',
-                    boolean: false,
-                    start: '10 постов/месяц',
-                    optima: '10 постов/месяц',
-                    vip: '10 постов/месяц'
-                },
-                {
-                    title: 'Создание инфографики',
-                    boolean: false,
-                    start: '1 в месяц',
-                    optima: '3 в месяц',
-                    vip: '4 в месяц'
-                },
-                {
-                    title: 'Создание gif-изображений',
-                    boolean: false,
-                    start: '1 в месяц',
-                    optima: '3 в месяц',
-                    vip: '4 в месяц'
-                }
-            ]
-        },
-        {
-            name: 'Проведение конкурсов, акций, интерактивов',
-            collapsed: false,
-            list: [
-                {
-                    title: 'Разработка концепции и проведение конкурсов/акций',
-                    boolean: false,
-                    start: '1 раз в 2 месяца',
-                    optima: 'Каждый месяц',
-                    vip: 'Каждый месяц'
-                },
-                {
-                    title: 'Анализ эффективности проведенных конкурсов/акций',
-                    boolean: true,
-                    start: '1',
-                    optima: '1',
-                    vip: '1'
-                }
-            ]
-        },
-        {
-            name: 'Таргетированная реклама (минимальный бюджет – 15 000 ₽)',
-            collapsed: false,
-            list: [
-                {
-                    title: 'Установка кода ретаргетинга на сайт',
-                    boolean: true,
-                    start: '1',
-                    optima: '1',
-                    vip: '1'
-                },
-                {
-                    title: 'Формирование базы ЦА (при необходимости)',
-                    boolean: true,
-                    start: '1',
-                    optima: '1',
-                    vip: '1'
-                },
-                {
-                    title: 'Создание рекламных объявлений и промопостов',
-                    boolean: true,
-                    start: '1',
-                    optima: '1',
-                    vip: '1'
-                },
-                {
-                    title: 'Запуск рекламной кампании, A/B тестирование',
-                    boolean: true,
-                    start: '1',
-                    optima: '1',
-                    vip: '1'
-                },
-                {
-                    title: 'Отслеживание эффективности рекламных кампаний',
-                    boolean: true,
-                    start: '1',
-                    optima: '1',
-                    vip: '1'
-                }
-            ]
-        },
-        {
-            name: 'Анализ эффективности продвижения',
-            collapsed: true,
-            list: [
-                {
-                    title: 'Мониторинг прироста аудитории',
-                    boolean: true,
-                    start: '1',
-                    optima: '1',
-                    vip: '1'
-                },
-                {
-                    title: 'Анализ качества трафика из социальных сетей',
-                    boolean: true,
-                    start: '1',
-                    optima: '1',
-                    vip: '1'
-                },
-                {
-                    title: 'Подготовка ежемесячного отчета',
-                    boolean: true,
-                    start: '1',
-                    optima: '1',
-                    vip: '1'
-                },
-                {
-                    title: 'Размещение первых постов в сообществах',
-                    boolean: false,
-                    start: '2 поста',
-                    optima: '3 поста',
-                    vip: '5 постов'
-                }
-            ]
-        },
-    ]
+	const table = [
+		{
+			name: 'Подготовка к продвижению в социальных медиа',
+			collapsed: false,
+			list: [
+				{
+					title: 'Социальные сети',
+					boolean: false,
+					start: '1 соцсеть',
+					optima: '2 соцсети',
+					vip: '3 соцсети'
+				},
+				{
+					title: 'Разработка стратегии продвижения в социальных сетях',
+					boolean: true,
+					start: '1',
+					optima: '1',
+					vip: '1'
+				},
+				{
+					title: 'Разработка продающего описания для сообществ',
+					boolean: true,
+					start: '1',
+					optima: '1',
+					vip: '1'
+				},
+				{
+					title: 'Разработка и согласование концепции дизайна сообществ',
+					boolean: true,
+					start: '1',
+					optima: '1',
+					vip: '1'
+				},
+				{
+					title: 'Настройка функционала сообществ',
+					boolean: true,
+					start: '1',
+					optima: '1',
+					vip: '1'
+				},
+				{
+					title: 'Настройка функционала сообществ',
+					boolean: false,
+					start: '2 поста',
+					optima: '3 поста',
+					vip: '5 постов'
+				}
+			]
+		},
+		{
+			name: 'Размещение постов',
+			collapsed: false,
+			list: [
+				{
+					title: 'Написание постов и размещение контента ',
+					boolean: false,
+					start: '10 постов/месяц',
+					optima: '10 постов/месяц',
+					vip: '10 постов/месяц'
+				},
+				{
+					title: 'Создание инфографики',
+					boolean: false,
+					start: '1 в месяц',
+					optima: '3 в месяц',
+					vip: '4 в месяц'
+				},
+				{
+					title: 'Создание gif-изображений',
+					boolean: false,
+					start: '1 в месяц',
+					optima: '3 в месяц',
+					vip: '4 в месяц'
+				}
+			]
+		},
+		{
+			name: 'Проведение конкурсов, акций, интерактивов',
+			collapsed: false,
+			list: [
+				{
+					title: 'Разработка концепции и проведение конкурсов/акций',
+					boolean: false,
+					start: '1 раз в 2 месяца',
+					optima: 'Каждый месяц',
+					vip: 'Каждый месяц'
+				},
+				{
+					title: 'Анализ эффективности проведенных конкурсов/акций',
+					boolean: true,
+					start: '1',
+					optima: '1',
+					vip: '1'
+				}
+			]
+		},
+		{
+			name: 'Таргетированная реклама (минимальный бюджет – 15 000 ₽)',
+			collapsed: false,
+			list: [
+				{
+					title: 'Установка кода ретаргетинга на сайт',
+					boolean: true,
+					start: '1',
+					optima: '1',
+					vip: '1'
+				},
+				{
+					title: 'Формирование базы ЦА (при необходимости)',
+					boolean: true,
+					start: '1',
+					optima: '1',
+					vip: '1'
+				},
+				{
+					title: 'Создание рекламных объявлений и промопостов',
+					boolean: true,
+					start: '1',
+					optima: '1',
+					vip: '1'
+				},
+				{
+					title: 'Запуск рекламной кампании, A/B тестирование',
+					boolean: true,
+					start: '1',
+					optima: '1',
+					vip: '1'
+				},
+				{
+					title: 'Отслеживание эффективности рекламных кампаний',
+					boolean: true,
+					start: '1',
+					optima: '1',
+					vip: '1'
+				}
+			]
+		},
+		{
+			name: 'Анализ эффективности продвижения',
+			collapsed: true,
+			list: [
+				{
+					title: 'Мониторинг прироста аудитории',
+					boolean: true,
+					start: '1',
+					optima: '1',
+					vip: '1'
+				},
+				{
+					title: 'Анализ качества трафика из социальных сетей',
+					boolean: true,
+					start: '1',
+					optima: '1',
+					vip: '1'
+				},
+				{
+					title: 'Подготовка ежемесячного отчета',
+					boolean: true,
+					start: '1',
+					optima: '1',
+					vip: '1'
+				},
+				{
+					title: 'Размещение первых постов в сообществах',
+					boolean: false,
+					start: '2 поста',
+					optima: '3 поста',
+					vip: '5 постов'
+				}
+			]
+		},
+	]
 
 mixin col(colName, arr, boolean)
-   if !boolean
-       .b-smm-table__col.-val= arr[colName]
-   else
-       .b-smm-table__col.-val
-           if arr[colName] && arr[colName] !== ''
-               +icon('check27', 'smm-table__check', 27)
-           else
-               | —
+	if !boolean
+		.b-smm-table__col.-val= arr[colName]
+	else
+		.b-smm-table__col.-val
+			if arr[colName] && arr[colName] !== ''
+				+icon('check27', 'smm-table__check', 27)
+			else
+				| —
 
 section.section
-    .b-smm-price
-        h2.h2._title Продвижение в социальных сетях #[span SMM + таргет]
-        .b-smm-table._table
-            ._header
-                ._col.-empty.-head
-                ._col.-head Старт
-                ._col.-head Оптима
-                ._col.-head VIP
-            ._body
-                each section in table
-                    ._section
-                        ._name(
-                            class= section.collapsed ? 'smm-table__name--collapsed close' : null
-                        )
-                            | #{section.name}
-                            if section.collapsed
-                                +icon('collapse-arrow', null, 29, 15)._collapse-arrow.close
-                        ._rows
-                            each row in section.list
-                                ._row
-                                    ._col.-title= row.title
-                                    +col('start', row, row.boolean)
-                                    +col('optima', row, row.boolean)
-                                    +col('vip', row, row.boolean)
-            ._footer
-                ._col.-foot.-title
-                    ._foot-title Ежемесячная абонентская плата
-                    ._foot-desc (скидка 10% при оплате за 3 месяца)
-                ._col.-foot
-                    ._foot-price 28 000 ₽
-                    button._btn.btn.btn--flat.btn--blue Заказать
-                ._col.-foot
-                    ._foot-price 48 000 ₽
-                    button._btn.btn.btn--flat.btn--blue Заказать
-                ._col.-foot
-                    ._foot-price 65 000 ₽
-                    button._btn.btn.btn--flat.btn--blue Заказать
+	.b-smm-price
+		h2.h2._title Продвижение в социальных сетях #[span SMM + таргет]
+		.b-smm-table._table
+			._header
+				._col.-empty.-head
+				._col.-head
+					| Старт
+					._head-desc Для малого и регионального бизнеса с незначительной конкурентной средой
+				._col.-head
+					| Оптима
+					._head-desc Для среднего бизнеса с умеренной конкурентной средой
+				._col.-head
+					| VIP
+					._head-desc Для среднего бизнеса с высококонкурентной средой
+			._body
+				each section in table
+					._section
+						._name.-collapsed(
+							class= section.collapsed ? 'close' : null
+						)
+							+icon('collapse-arrow',
+								!section.collapsed ? 'close' : null,
+								30, 30)._collapse-arrow
+							| #{section.name}
+						._rows
+							each row in section.list
+								._row
+									._col.-title= row.title
+									+col('start', row, row.boolean)
+									+col('optima', row, row.boolean)
+									+col('vip', row, row.boolean)
+			._footer
+				._col.-foot.-title
+					._foot-title Ежемесячная абонентская плата
+					._foot-desc (скидка 10% при оплате за 3 месяца)
+				._col.-foot
+					._foot-price 28 000 ₽
+					button._btn.btn.btn--flat.btn--blue Заказать
+				._col.-foot
+					._foot-price 48 000 ₽
+					button._btn.btn.btn--flat.btn--blue Заказать
+				._col.-foot
+					._foot-price 65 000 ₽
+					button._btn.btn.btn--flat.btn--blue Заказать
