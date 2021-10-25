@@ -1,133 +1,185 @@
 .topcases
 
 .topcases__tabs
-    +row-flex()
-    margin-left: -10px
-    margin-right: -10px
+	+row-flex()
+	margin-left: -10px
+	margin-right: -10px
 
 .topcases__tab
-    +col()
-    +size(4)
-    +size-sm(12)
-    cursor: pointer
+	+col()
+	+size(4)
+	+size-sm(12)
+	cursor: pointer
 
 .topcases-tab
-    display: flex
-    +sm-block()
-        margin-bottom: 30px
+	display: flex
+	+sm-block()
+		margin-bottom: 30px
+
 .topcases-tab__btn
-    display: none
-    margin-top: 30px
+	display: none
+	margin-top: 30px
+
 .topcases-tab--active
-    color: $white
-    background-color: $accent
-    .topcases-tab__content
-        background-color: transparent
-    .topcases-tab__btn
-        +sm-block()
-            display: inline-flex
+	color: $white
+	background-color: $accent
+
+	.topcases-tab__content
+		background-color: transparent
+
+	.topcases-tab__btn
+		+sm-block()
+			display: inline-flex
 
 
 .topcases-tab__content
-    padding: 25px 30px
-    background-color: $grey
-    width: 100%
-    font-weight: 100
+	padding: 25px 30px
+	background-color: $grey
+	width: 100%
+	font-weight: 100
 
 .topcases-tab__title
-    font-size: 40px
-    line-height: 50px
-    margin-bottom: 30px
-    +md-block()
-        font-size: 27px
-        line-height: 32px
+	font-size: 40px
+	line-height: 50px
+	margin-bottom: 30px
+	+md-block()
+		font-size: 27px
+		line-height: 32px
 
 .topcases-tab__cols
-    display: flex
-    justify-content: space-between
+	display: flex
+	justify-content: space-between
 
 .topcases-tab__cols--single
-    .topcases-tab__col
-        max-width: 100%
-        flex-direction: row
-        align-items: center
-    .topcases-tab__num
-        font-size: 40px
-        line-height: 40px
-        margin-right: 8px
-        +md-block()
-            font-size: 27px
-            line-height: 32px
-    .topcases-tab__desc
-        font-size: 16px
-        line-height: 17px
+	.topcases-tab__col
+		max-width: 100%
+		flex-direction: row
+		align-items: center
+
+	.topcases-tab__num
+		font-size: 40px
+		line-height: 40px
+		margin-right: 8px
+		+md-block()
+			font-size: 27px
+			line-height: 32px
+
+	.topcases-tab__desc
+		font-size: 16px
+		line-height: 17px
 
 
 .topcases-tab__col
-    max-width: 47%
-    display: flex
-    flex-direction: column
+	max-width: 47%
+	display: flex
+	flex-direction: column
 
 .topcases-tab__desc
-    font-size: 13px
-    line-height: 17px
+	font-size: 13px
+	line-height: 17px
 
 .topcases__cards
-    +row-flex()
-    margin-left: -10px
-    margin-right: -10px
-    +sm-block()
-        display: none
+	+row-flex()
+	margin-left: -10px
+	margin-right: -10px
+	+sm-block()
+		display: none
 
 .topcases-card
-    display: none
-    +col()
-    +size(12)
-    color: $white
-    padding: 40px 30px
-    background-color: $accent
-    opacity: 0
-    transition: all .3s
+	display: none
+	+col()
+	+size(12)
+	color: $white
+	padding: 40px 30px
+	background-color: $accent
+	opacity: 0
+	transition: all .3s
 
 .topcases-card--active
-    display: flex
-    justify-content: space-between
-    opacity: 1
-    +md-block()
-        flex-wrap: wrap
+	display: flex
+	justify-content: space-between
+	opacity: 1
+	+md-block()
+		flex-wrap: wrap
 
 .topcases-card__left
-    width: 64%
-    +md-block()
-        width: 100%
-.topcases-card__right
-    width: 32%
-    display: flex
-    flex-direction: column
-    align-items: center
-    +md-block()
-        width: 100%
-        flex-direction: row
-        padding-top: 30px
-
-.topcases-card__content
-    display: flex
-    flex-direction: column
-    align-items: center
-    +md-block()
-        flex: 4
-        margin-right: 20px
-        align-items: flex-start
+	width: 64%
+	position: relative
+	+md-block()
+		width: 100%
 
 .topcases-card__images
+	&::before
+		transition: opacity .3s ease-in-out
+		content: ''
+		display: block
+		position: absolute
+		top: 0
+		bottom: 0
+		left: 0
+		right: 0
+		background-color: rgba($black, .45)
+		background-image: url("data:image/svg+xml,%3Csvg width='70' height='70' viewBox='0 0 70 70' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30.6258 48.1258C35.2671 48.1258 39.7183 46.2821 43.0002 43.0002C46.2821 39.7183 48.1258 35.2671 48.1258 30.6258C48.1258 25.9845 46.2821 21.5333 43.0002 18.2514C39.7183 14.9696 35.2671 13.1258 30.6258 13.1258C25.9845 13.1258 21.5333 14.9696 18.2514 18.2514C14.9696 21.5333 13.1258 25.9845 13.1258 30.6258C13.1258 35.2671 14.9696 39.7183 18.2514 43.0002C21.5333 46.2821 25.9845 48.1258 30.6258 48.1258V48.1258ZM49.0591 44.935L59.5008 55.3767C59.7792 55.6459 60.0012 55.9679 60.1538 56.3239C60.3064 56.6798 60.3865 57.0626 60.3896 57.4499C60.3927 57.8371 60.3187 58.2211 60.1717 58.5795C60.0248 58.9378 59.808 59.2633 59.534 59.537C59.2599 59.8106 58.9342 60.027 58.5756 60.1734C58.2171 60.3198 57.8329 60.3933 57.4457 60.3897C57.0584 60.386 56.6757 60.3053 56.32 60.1522C55.9643 59.9991 55.6426 59.7767 55.3737 59.4979L44.9321 49.0562C40.2434 52.6958 34.344 54.4117 28.4347 53.8547C22.5254 53.2977 17.0505 50.5096 13.1245 46.0581C9.19851 41.6065 7.11656 35.8261 7.30248 29.8935C7.48839 23.9609 9.92818 18.3222 14.1252 14.1252C18.3222 9.92818 23.9609 7.48839 29.8935 7.30248C35.8261 7.11656 41.6065 9.19851 46.0581 13.1245C50.5096 17.0505 53.2977 22.5254 53.8547 28.4347C54.4117 34.344 52.6958 40.2434 49.0562 44.9321L49.0591 44.935ZM33.5425 27.7092H39.3758C40.1494 27.7092 40.8912 28.0164 41.4382 28.5634C41.9852 29.1104 42.2925 29.8523 42.2925 30.6258C42.2925 31.3994 41.9852 32.1412 41.4382 32.6882C40.8912 33.2352 40.1494 33.5425 39.3758 33.5425H33.5425V39.3758C33.5425 40.1494 33.2352 40.8912 32.6882 41.4382C32.1412 41.9852 31.3994 42.2925 30.6258 42.2925C29.8523 42.2925 29.1104 41.9852 28.5634 41.4382C28.0164 40.8912 27.7091 40.1494 27.7091 39.3758V33.5425H21.8758C21.1023 33.5425 20.3604 33.2352 19.8134 32.6882C19.2664 32.1412 18.9591 31.3994 18.9591 30.6258C18.9591 29.8523 19.2664 29.1104 19.8134 28.5634C20.3604 28.0164 21.1023 27.7092 21.8758 27.7092H27.7091V21.8758C27.7091 21.1023 28.0164 20.3604 28.5634 19.8134C29.1104 19.2664 29.8523 18.9591 30.6258 18.9591C31.3994 18.9591 32.1412 19.2664 32.6882 19.8134C33.2352 20.3604 33.5425 21.1023 33.5425 21.8758V27.7092Z' fill='white'/%3E%3C/svg%3E ")
+		background-position: center center
+		background-repeat: no-repeat
+		z-index: 5
+		opacity: 0
+		pointer-events: none
+	&:hover
+		&::before
+			opacity: 1
+	.owl-nav
+		position: absolute
+		z-index: 10
+		top: 50%
+		transform: translateY(-50%)
+		left: 0
+		right: 0
+		display: flex
+		justify-content: space-between
+		pointer-events: none
 
+		button.owl-prev, button.owl-next
+			pointer-events: auto
+			background-color: rgba($white, .7)
+			font-weight: 100
+			display: flex
+			justify-content: center
+			align-items: center
+			width: 50px
+			height: 50px
+			border: none
+			fill: $black
+			opacity: .5
+			transition: all .3s ease-in-out
+			&.disabled
+				opacity: 0
+			&:hover, &:focus
+				opacity: 1
+				&.disabled
+					opacity: 0
+
+.topcases-card__right
+	width: 32%
+	display: flex
+	flex-direction: column
+	align-items: center
+	justify-content: center
+	+md-block()
+		width: 100%
+		flex-direction: row
+		padding-top: 30px
+
+.topcases-card__content
+	display: flex
+	flex-direction: column
+	align-items: center
+	+md-block()
+		flex: 4
+		margin-right: 20px
+		align-items: flex-start
 
 .topcases-card__text
-    margin-bottom: 40px
-    line-height: 27px
+	margin-bottom: 40px
+	line-height: 27px
 
-.topcases-card__controls
-    margin-top: auto
-    padding-top: 40px
-    +md-block()
-        flex: 1

@@ -197,22 +197,21 @@ $(document).ready(function () {
 
     $('.topcases-card__images.owl-carousel').each(function (index) {
         let th = $(this);
-        th.on('initialized.owl.carousel changed.owl.carousel', function (e) {
-            if (!e.namespace) {
-                return;
-            }
-            var carousel = e.relatedTarget;
-            th.parents('.topcases-card').find('.controls__counter').text(carousel.relative(carousel.current()) + 1 + '/' + carousel.items().length);
-        }).owlCarousel({
+        const prevIcon = `<svg class="svg-sprite-icon icon-arrow-left btn__icon-arrow btn__icon-arrow-left">
+                        <use xlink:href="images/svg/symbol/sprite.svg#arrow-left"></use>
+                      </svg>`
+        const nextIcon = `<svg class="svg-sprite-icon icon-arrow btn__icon-arrow">
+                        <use xlink:href="images/svg/symbol/sprite.svg#arrow"></use>
+                      </svg>`
+        th.owlCarousel({
             items: 1,
-            loop: true,
+            loop: false,
             dots: false,
-        });
-        th.parents('.topcases-card').find('.controls__prev').click(function () {
-            th.trigger('prev.owl.carousel');
-        });
-        th.parents('.topcases-card').find('.controls__next').click(function () {
-            th.trigger('next.owl.carousel');
+            nav: true,
+            navText: [
+                prevIcon,
+                nextIcon
+            ]
         });
     });
 
