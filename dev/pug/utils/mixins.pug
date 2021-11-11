@@ -35,6 +35,37 @@ mixin taber(tabs, title, light, id)
 						div(id="tab-num-" + (index + 1), class= index === 0 ? 'active' : '')._card
 							| !{text}
 
+mixin newFeedback(arr, title, mod)
+	section.section
+		.b-new-feedback
+			h2.h2._title= title
+			._wrap(class= mod || mod)
+				._left
+					+icon('quotes', 'new-feedback__icon-quotes')
+				._desc
+					._carousel.owl-carousel
+						each item, key in arr
+							._item
+								._item-head
+									._photo
+										img._img(
+											src='images/content/' + item.photo
+											alt= item.person
+										)
+									._name
+										._person= item.person
+										._from= item.name
+								._item-body
+									._text= item.text
+								if item.video || item.original
+									._item-foot
+										if item.video
+											a._video(data-fancybox, href= arr.video)
+												+icon('blue-video', 'new-feedback__icon-video')
+												| Смотреть видеоотзыв
+										if item.original
+											a(href= item.original, data-fancybox='', title="Оригинал отзыва " +
+											item.name)._original Смотреть оригинал
 
 mixin feedbackSlider(arr, title, mod)
 	section.section

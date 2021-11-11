@@ -173,6 +173,33 @@ $(document).ready(function () {
         });
     });
 
+    $('.new-feedback__carousel').each(function () {
+
+        let th = $(this);
+        const prevIcon = `<svg class="svg-sprite-icon icon-arrow-left btn__icon-arrow btn__icon-arrow-left">
+                        <use xlink:href="images/svg/symbol/sprite.svg#arrow-left"></use>
+                      </svg>`
+        const nextIcon = `<svg class="svg-sprite-icon icon-arrow btn__icon-arrow">
+                        <use xlink:href="images/svg/symbol/sprite.svg#arrow"></use>
+                      </svg>`
+        th.owlCarousel({
+            items: 1,
+            loop: true,
+            dots: true,
+            nav: true,
+            navText: [
+                prevIcon,
+                nextIcon
+            ]
+        });
+        th.parents('.new-feedback__wrap').find('.new-feedback__prev > .new-feedback__btn').click(function () {
+            th.trigger('prev.owl.carousel');
+        });
+        th.parents('.new-feedback__wrap').find('.new-feedback__next > .new-feedback__btn').click(function () {
+            th.trigger('next.owl.carousel');
+        });
+    });
+
     $('.page-slider').each(function (index) {
         let th = $(this),
             images = th.find('.page-slider__imgs.owl-carousel');

@@ -1,0 +1,113 @@
+.new-feedback
+	&__wrap
+		background-color: $grey
+		padding: 30px 50px 50px 30px
+		+row-flex
+		+sm-block
+			padding: 20px
+
+	&__left
+		+col
+		+size(3)
+		+sm-block
+			display: none
+
+	&__icon-quotes
+		width: 156px
+		height: 153px
+		fill: $accent
+
+	&__desc
+		+col
+		+size(9)
+		+size-sm(12)
+
+	&__item
+		display: flex
+		flex-direction: column
+		gap: 35px
+		padding-bottom: 50px
+
+	&__item-head
+		display: flex
+		gap: 20px
+		align-items: center
+
+	&__photo
+		width: 100px
+		height: 100px
+		min-width: 100px
+		min-height: 100px
+		border-radius: 50%
+		overflow: hidden
+
+	&__name
+		display: flex
+		flex-direction: column
+		gap: 5px
+
+	&__from
+		font-size: 16px
+		opacity: .75
+
+	&__img
+		max-width: 100%
+		max-height: 100%
+		object-fit: cover
+
+	&__icon-video
+		fill: $accent
+		width: 35px
+		height: 35px
+		min-width: 35px
+		min-height: 35px
+		margin-right: 15px
+
+	.owl-dots
+		display: flex
+		gap: 10px
+		position: absolute
+		left: 0
+		bottom: 30px
+		+xs-block
+			bottom: 15px
+
+	button.owl-dot
+		width: 12px
+		height: 12px
+		border-radius: 50%
+		background-color: $accent
+		opacity: .2
+		transition: opacity .3s ease-in-out
+
+		&.active
+			opacity: 1
+
+	.owl-nav
+		padding-top: 32px
+		display: flex
+		justify-content: flex-end
+		box-shadow: inset 0 1px rgba(#080726, .1)
+		button
+			border-radius: 50%
+			width: 76px
+			height: 76px
+			display: flex
+			align-items: center
+			justify-content: center
+			box-shadow: inset 0 0 0 1px $accent
+			transition: all .3s ease-in-out
+			+xs-block
+				width: 40px
+				height: 40px
+			svg
+				fill: $accent
+				width: 38px
+				height: 29px
+				+xs-block
+					width: 19px
+					height: 15px
+			&:hover, &:focus
+				background-color: $accent
+				svg
+					fill: $white
