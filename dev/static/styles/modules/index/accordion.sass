@@ -1,0 +1,64 @@
+.accordion
+	$self: &
+
+	&__item
+		+row-flex
+		padding-top: 20px
+		padding-bottom: 30px
+		border-bottom: solid 1px rgba($black, .2)
+
+		&:first-child
+			border-top: solid 1px rgba($black, .2)
+
+
+		+sm-block
+			padding-top: 16px
+			padding-bottom: 20px
+
+	&__item-title
+		+col
+		+size(5)
+		+size-sm(12)
+		display: flex
+		font-weight: 400
+		cursor: pointer
+
+		&::before
+			width: 24px
+			min-width: 24px
+			height: 24px
+			background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 4.5L16.5 12L9 19.5' stroke='%23080726' stroke-linecap='square'/%3E%3C/svg%3E%0A")
+			content: ''
+			display: block
+			margin-right: 15px
+			margin-top: 3px
+			transition: all .3s ease-in-out
+			+sm-block
+				margin-right: 10px
+
+	&__desc
+		+col
+		+size(7)
+		+size-sm(12)
+		font-size: 17px
+		line-height: 1.35
+		max-height: 0
+		overflow: hidden
+		transition: all .3s ease-in-out
+
+		+sm-block
+			font-size: 14px
+			line-height: 1.29
+
+	&__item--open
+		opacity: 1
+
+		#{$self}__item-title
+			margin-bottom: 20px
+
+			&::before
+				transform: rotateZ(90deg)
+
+		#{$self}__desc
+			max-height: 500px
+

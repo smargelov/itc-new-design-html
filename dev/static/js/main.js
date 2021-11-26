@@ -53,7 +53,6 @@ $(document).ready(function () {
         return false;
     });
 
-
     $('.input-phone').mask('+7 (999) 999-9999');
 
     // Sticky nav
@@ -342,6 +341,9 @@ $(document).ready(function () {
         document.cookie = 'estore-line=1; path=/;';
     });
 
+    $('.accordion').find('.accordion__item-title').click(function() {
+        $(this).closest('.accordion__item').toggleClass('accordion__item--open')
+    })
 
     // Megamenu
 
