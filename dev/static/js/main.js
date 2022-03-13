@@ -241,6 +241,26 @@ $(document).ready(function () {
         });
     });
 
+    $('.new-slider__images.owl-carousel').each(function (index) {
+        let th = $(this);
+        const prevIcon = `<svg class="svg-sprite-icon icon-arrow-left btn__icon-arrow btn__icon-arrow-left">
+                        <use xlink:href="images/svg/symbol/sprite.svg#arrow-left"></use>
+                      </svg>`
+        const nextIcon = `<svg class="svg-sprite-icon icon-arrow btn__icon-arrow">
+                        <use xlink:href="images/svg/symbol/sprite.svg#arrow"></use>
+                      </svg>`
+        th.owlCarousel({
+            items: 1,
+            loop: false,
+            dots: false,
+            nav: true,
+            navText: [
+                prevIcon,
+                nextIcon
+            ]
+        });
+    });
+
     $('.clients__list').owlCarousel({
         loop: true,
         autoplay: true,

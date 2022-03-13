@@ -1,0 +1,21 @@
+-
+	const images = [
+		'/images/content/med-slider.jpeg',
+		'/images/content/med-slider2.jpeg'
+	]
+- const isCaruosel = images.length > 1
+
+section.section
+	.b-new-slider
+		h2.h2._title Индивидуальная стратегия
+		._content
+			p._text В течение 1-ого месяца сотрудничества оптимизатор, на основании анализа сайта, формирует индивидуальную стратегию продвижения сайта, с учетом степени влияния SEO-работ на результаты продвижения.
+			p._text.-bold Предпочтение отдается работам/услугам, требующим меньших ресурсов с Вашей стороны для внедрения и предполагающим лучший результат.
+		._slider-wrap
+			._images(class= isCaruosel ? 'owl-carousel owl-theme' : '')
+				each img in images
+					a(
+						data-fancybox="images-new-slider"
+						href= img
+					)
+						img(src= img)._img
