@@ -3,23 +3,37 @@
 	grid-template-columns: repeat(2, 1fr)
 	grid-template-rows: auto 1fr auto
 	gap: 40px 60px
-	padding-bottom: 36px
+	+mds-block
+		grid-template-columns: 1fr
+		padding-right: 17%
+	+sm-block
+		padding-right: 0
 
 	&__title
 		font-size: 48px
 		line-height: 1.1
+		+sm-block
+			font-size: 30px
+			line-height: 1.17
 
 	&__badges
 		display: grid
 		grid-template-columns: repeat(3, 1fr)
 		gap: 20px
-
+		+mds-block
+			grid-template-columns: 1fr
+			max-width: 254px
+			gap: 30px
+		+sm-block
+			gap: 20px
+		+xs-block
+			max-width: 195px
 
 	&__footer
 		display: grid
-		grid-template-columns: repeat(2, auto)
+		grid-template-columns: auto 1fr
 		gap: 30px 20px
-		padding-bottom: 53px
+		padding-top: 20px
 
 	&__small-text
 		grid-column: 1/-1
@@ -30,7 +44,8 @@
 	&__picture
 		grid-row: 1/span 3
 		grid-column: 2/-1
-
+		+mds-block
+			display: none
 
 .hero-badge
 	display: grid
@@ -45,4 +60,7 @@
 		opacity: .7
 		font-size: 14px
 		line-height: 1.3
-
+		+mds-block
+			opacity: .9
+		+xs-block
+			font-size: 12px
