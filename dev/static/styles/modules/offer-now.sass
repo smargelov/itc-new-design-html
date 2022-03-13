@@ -1,0 +1,86 @@
+.offer-now
+	&__content
+		display: grid
+		gap: 40px 20px
+		grid-template-columns: 220px 1fr 285px
+		grid-template-rows: auto 1fr
+		grid-template-areas: "mg dc fr" "mg ps fr"
+		+mds-block
+			grid-template-columns: 100px 1fr
+			grid-template-areas: "mg ps" "dc dc" "fr fr"
+			align-items: center
+			gap: 30px 15px
+
+	&__manager
+		grid-area: mg
+		width: 220px
+		height: 220px
+		border-radius: 50%
+		overflow: hidden
+		+mds-block
+			width: 100px
+			height: 100px
+
+	&__img
+		max-width: 100%
+		width: 100%
+		object-fit: cover
+
+	&__desc
+		grid-area: dc
+		max-width: 406px
+		font-size: 22px
+		line-height: 1.28
+		+mds-block
+			max-width: 100%
+			font-size: 16px
+			line-height: 1.5
+
+	&__person
+		grid-area: ps
+		max-width: 406px
+		font-size: 14px
+		line-height: 1.29
+		+mds-block
+			max-width: 295px
+
+	&__person-name
+		font-size: 16px
+		line-height: 1.69
+
+	&__person-position
+		opacity: .5
+		margin-top: 4px
+
+	&__form
+		grid-area: fr
+		position: relative
+		margin-top: -10px
+		+mds-block
+			margin-top: 30px
+
+	&__input
+		background-color: transparent
+		color: $white
+		border: none
+		height: 50px
+		margin-bottom: 13px
+		width: 100%
+		box-shadow: inset 0 -1px 0 rgba($white, .5)
+		+mds-block
+			height: 45px
+		+placeholder
+			color: $white
+			font-size: 20px
+			line-height: 1
+			+baseTransition()
+			+mds-block
+				font-size: 15px
+
+		&:focus
+			+placeholder
+				opacity: .4
+
+	&__btn
+		background-color: $white
+		margin: 40px auto 0

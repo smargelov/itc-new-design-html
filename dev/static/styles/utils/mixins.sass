@@ -1,4 +1,4 @@
-= sizebox($a,$b: $a) 
+= sizebox($a,$b: $a)
   width: $a
   height: $b
 
@@ -10,9 +10,21 @@
     font-weight: $weight
     font-style: $style
 
-// @mixin placeholder {
-//   ::-webkit-input-placeholder {@content}
-//   :-moz-placeholder           {@content}
-//   ::-moz-placeholder          {@content}
-//   :-ms-input-placeholder      {@content}
-// }
+
+=baseTransition($param: all, $duration: .3)
+  transition: $param #{$duration}s ease-in-out
+
+=placeholder
+  &::-webkit-input-placeholder
+    @content
+
+  &:-moz-placeholder
+    /* Firefox 18-
+    @content
+
+  &::-moz-placeholder
+    /* Firefox 19+
+    @content
+
+  &:-ms-input-placeholder
+    @content
