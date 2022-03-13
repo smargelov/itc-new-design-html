@@ -1,0 +1,17 @@
+section.section
+	.b-price-table
+		._list
+			each price in newMedPriceTable
+				.b-price-table-item._item
+					._title= price.title
+					._text= price.text
+					ul._list
+						each item in price.list
+							li._list-item= item
+					._price-wrap.-center
+						._price.-once
+							| от 
+							| !{price.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")}
+							|  ₽/мес
+					._btn-wrap
+						button.b-btn.-flat.-blue._btn(data-target='price-type-' + price.id) Заявка
