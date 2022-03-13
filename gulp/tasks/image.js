@@ -1,7 +1,7 @@
 const imagemin = require('gulp-imagemin'),
     buffer = require('vinyl-buffer'),
     imgPATH = {
-        "input": ["./dev/static/images/**/*.{png,jpg,gif,svg}",
+        "input": ["./dev/static/images/**/*.{png,jpg,jpeg,webp,gif,svg}",
             '!./dev/static/images/svg/*'
         ],
         "output": "./build/images/"

@@ -1,0 +1,20 @@
+extends template/main
+
+block variables
+  - var title = 'Продвижение медицинских сайтов от 30 000 ₽ с гарантией'
+  - var isBlue = true
+  - var fullTitle = true
+
+block content-full
+    include modules/page-title-hero
+block content
+    +badges(medBadges)
+    include pages/med-site/two-col
+    include pages/med-site/advantages
+    include pages/med-site/quote
+    include modules/topcases
+    include pages/med-site/price-table
+    +avideo(promAvideo)
+    +taber(tabsMainSteps, 'Основные этапы работы', 'light')
+    include pages/med-site/latest-post
+    include modules/consult-form

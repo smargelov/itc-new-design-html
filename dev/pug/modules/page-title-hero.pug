@@ -1,0 +1,42 @@
+-
+	const hero = {
+		badges: [
+			{
+				icon: 'presentation-chart',
+				text: 'Индивидуальная стратегия продвижения'
+			},
+			{
+				icon: 'check-star',
+				text: 'Финансовые гарантии в договоре'
+			},
+			{
+				icon: 'round-star',
+				text: 'Профессиональная работа с репутацией'
+			}
+		]
+	}
+
+section.section.section--blue.section--wide
+	.b-blue-hero
+		h1.h1._title= title
+		._badges
+			each item in hero.badges
+				.b-hero-badge._badge
+					+icon(item.icon, '', 40)._icon
+					._desc= item.text
+		._footer
+			button.b-btn.-flat.-light._btn.-big-title Бесплатная консультация
+			a._telegram(href='tg://resolve?domain=rusalexandrov' title='Наш телеграм для связи')
+				img._messager-icon(
+					src='/images/content/telegram-logo.svg'
+					alt='Иконка телеграма'
+					width=50
+					height=50
+				)
+			._small-text
+				p._small-item Мы свяжемся с вами в течении 2-х часов для консультации по проекту
+				p._small-item * Скидка действует на третий месяц продвижения.
+		picture._picture
+			source(srcset='/images/content/med-hero-img@2x.jpeg 2x')
+			source(srcset='/images/content/med-hero-img.webp')
+			img(src='/images/content/med-hero-img.jpeg' alt=title)._img
