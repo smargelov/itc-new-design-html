@@ -24,6 +24,16 @@
 		justify-content: center
 
 	&__menu-item
+		&--mega
+			display: flex
+			gap: 5px
+			align-items: center
+			&::after
+				content: ''
+				background-image: url("data:image/svg+xml,%3Csvg width='11' height='7' viewBox='0 0 11 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.469727 1.53039L1.53039 0.469727L5.00006 3.9394L8.46973 0.469727L9.53039 1.53039L5.00006 6.06072L0.469727 1.53039Z' fill='currentColor'/%3E%3C/svg%3E%0A")
+				width: 10px
+				height: 6px
+				margin-top: 2px
 		&:not(:last-child)
 			margin-right: 14px
 
