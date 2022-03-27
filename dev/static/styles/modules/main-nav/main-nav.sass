@@ -16,26 +16,33 @@
 .header
 	&__menu
 		width: 100%
-		+md-block()
+		+sm-block()
 			display: none
 
 	&__menu-list
 		display: flex
-		justify-content: center
+		justify-content: flex-start
+		gap: 14px
+		+md-block
+			gap: 10px
 
 	&__menu-item
+		font-size: 24px
+		line-height: 1.17
+		+md-block
+			font-size: 17px
+
 		&--mega
 			display: flex
 			gap: 5px
 			align-items: center
+
 			&::after
 				content: ''
 				background-image: url("data:image/svg+xml,%3Csvg width='11' height='7' viewBox='0 0 11 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.469727 1.53039L1.53039 0.469727L5.00006 3.9394L8.46973 0.469727L9.53039 1.53039L5.00006 6.06072L0.469727 1.53039Z' fill='currentColor'/%3E%3C/svg%3E%0A")
 				width: 10px
 				height: 6px
 				margin-top: 2px
-		&:not(:last-child)
-			margin-right: 14px
 
 	&__menu-link
 		color: $black
@@ -45,177 +52,177 @@
 			color: $accent
 
 .megamenu
-    position: fixed
-    right: 0
-    left: 0
-    top: 0
-    z-index: 5
-    height: 100vh
-    background-color: rgba($accent, .85)
-    backdrop-filter: blur(10px)
-    padding-top: 150px
-    padding-bottom: 50px
-    transform: translate3d(0, -100%, 0)
-    transition: transform .5s cubic-bezier(.785, .135, .15, .86)
-    +xs-block()
-        padding-top: 120px
+	position: fixed
+	right: 0
+	left: 0
+	top: 0
+	z-index: 5
+	height: 100vh
+	background-color: rgba($accent, .85)
+	backdrop-filter: blur(10px)
+	padding-top: 150px
+	padding-bottom: 50px
+	transform: translate3d(0, -100%, 0)
+	transition: transform .5s cubic-bezier(.785, .135, .15, .86)
+	+xs-block()
+		padding-top: 120px
 
-    &__wrap
-        height: 100%
-        overflow-y: auto
+	&__wrap
+		height: 100%
+		overflow-y: auto
 
-    &.is-active
-        transform: none
+	&.is-active
+		transform: none
 
-        .megamenu__second-item,
-        .services-list__item,
-        .megamenu__icon,
-        .megamenu__btn
-            +megaItemView()
+		.megamenu__second-item,
+		.services-list__item,
+		.megamenu__icon,
+		.megamenu__btn
+			+megaItemView()
 
-    &__cols
-        +row-flex()
-        padding-top: 35px
-        border-top: 1px solid rgba($white, .3)
-        +sm-block()
-            padding-top: 0
-            border-top: none
+	&__cols
+		+row-flex()
+		padding-top: 35px
+		border-top: 1px solid rgba($white, .3)
+		+sm-block()
+			padding-top: 0
+			border-top: none
 
-    &__services-list
-        +col()
-        +size(12)
-        margin-bottom: 45px
+	&__services-list
+		+col()
+		+size(12)
+		margin-bottom: 45px
 
-    &__footer
-        +col()
-        +size(12)
-        display: flex
-        justify-content: space-between
-        +sm-block()
-            flex-direction: column
+	&__footer
+		+col()
+		+size(12)
+		display: flex
+		justify-content: space-between
+		+sm-block()
+			flex-direction: column
 
-    &__second-list
-        display: flex
-        +sm-block()
-            flex-direction: column
-            width: 100%
+	&__second-list
+		display: flex
+		+sm-block()
+			flex-direction: column
+			width: 100%
 
-    &__second-item
-        +megaItem()
-        +delayLoop(1)
-        font-size: 22px
-        line-height: 30px
-        font-weight: bold
-        +sm-block()
-            margin-bottom: 20px
+	&__second-item
+		+megaItem()
+		+delayLoop(1)
+		font-size: 22px
+		line-height: 30px
+		font-weight: bold
+		+sm-block()
+			margin-bottom: 20px
 
-        &:not(:last-child)
-            margin-right: 20px
+		&:not(:last-child)
+			margin-right: 20px
 
-    &__actions
-        display: none
-        padding-bottom: 20px
-        +sm-block()
-            display: flex
-            flex-direction: column
+	&__actions
+		display: none
+		padding-bottom: 20px
+		+sm-block()
+			display: flex
+			flex-direction: column
 
-        &-second
-            display: none
-            +sm-block
-                display: flex
-                flex-direction: column
-                align-items: stretch
-                margin-bottom: 20px
+		&-second
+			display: none
+			+sm-block
+				display: flex
+				flex-direction: column
+				align-items: stretch
+				margin-bottom: 20px
 
-    &__phone
-        a
-            color: $white
+	&__phone
+		a
+			color: $white
 
-    &__btn
-        height: 44px
-        color: $white
-        border: 1px solid $white
+	&__btn
+		height: 44px
+		color: $white
+		border: 1px solid $white
 
-        &:hover, &:focus
-            background-color: $white
-            color: $accent
+		&:hover, &:focus
+			background-color: $white
+			color: $accent
 
-        +xs-block()
-            margin-top: 15px
+		+xs-block()
+			margin-top: 15px
 
-    &__city
-        display: flex
-        margin-right: 40px
-        position: relative
-        color: $white
+	&__city
+		display: flex
+		margin-right: 40px
+		position: relative
+		color: $white
 
-        & > *
-            z-index: 5
+		& > *
+			z-index: 5
 
-        .icon-triangle-down
-            width: 11px
-            height: 10px
-            fill: $white
-            transition: all 0.3s ease
+		.icon-triangle-down
+			width: 11px
+			height: 10px
+			fill: $white
+			transition: all 0.3s ease
 
-        &:hover
-            .megamenu__cities
-                transform: none
-                opacity: 1
-                pointer-events: auto
+		&:hover
+			.megamenu__cities
+				transform: none
+				opacity: 1
+				pointer-events: auto
 
-            .icon-triangle-down
-                transform: rotate(180deg)
+			.icon-triangle-down
+				transform: rotate(180deg)
 
-    &__cities
-        position: absolute
-        z-index: 4
-        left: 0
-        padding-top: 30px
-        top: 100%
-        white-space: nowrap
-        pointer-events: none
-        opacity: 0
-        transform: translateY(10px)
-        transition: all .3s ease
+	&__cities
+		position: absolute
+		z-index: 4
+		left: 0
+		padding-top: 30px
+		top: 100%
+		white-space: nowrap
+		pointer-events: none
+		opacity: 0
+		transform: translateY(10px)
+		transition: all .3s ease
 
-    &__subcities
-        padding: 30px 25px !important
-        background-color: rgba($grey, .9)
-        backdrop-filter: blur(6px)
+	&__subcities
+		padding: 30px 25px !important
+		background-color: rgba($grey, .9)
+		backdrop-filter: blur(6px)
 
-    &__subcity
-        &:not(:last-child)
-            margin-bottom: 10px
+	&__subcity
+		&:not(:last-child)
+			margin-bottom: 10px
 
-    &__second-link
-        color: $white
+	&__second-link
+		color: $white
 
-        &:hover, &:focus
-            color: darken($white, 30%)
+		&:hover, &:focus
+			color: darken($white, 30%)
 
-    &__social
-        display: flex
-        justify-content: space-between
-        +sm-block()
-            justify-content: flex-start
-            flex: 1
+	&__social
+		display: flex
+		justify-content: space-between
+		+sm-block()
+			justify-content: flex-start
+			flex: 1
 
-    &__icon
-        +megaItem()
-        +delayLoop(1)
-        margin-left: 40px
-        +sm-block()
-            &:first-child
-                margin-left: 0
+	&__icon
+		+megaItem()
+		+delayLoop(1)
+		margin-left: 40px
+		+sm-block()
+			&:first-child
+				margin-left: 0
 
-        &:hover, &:focus
-            svg
-                fill: darken($white, 30%)
+		&:hover, &:focus
+			svg
+				fill: darken($white, 30%)
 
-    &__social-icon
-        height: 26px
-        fill: $white
+	&__social-icon
+		height: 26px
+		fill: $white
 
 .megamenu__wrap
 	+sm-block
@@ -311,47 +318,47 @@
 			color: darken($white, 30%)
 
 .sandwich
-    display: none
-    cursor: pointer
-    height: 20px
-    position: relative
-    width: 32px
-    margin-left: 30px
-    +md-block()
-        display: block
+	display: none
+	cursor: pointer
+	height: 20px
+	position: relative
+	width: 32px
+	margin-left: 30px
+	+sm-block()
+		display: block
 
-    &:hover, &:focus
-        .sandwich__line
-            background-color: $accent
+	&:hover, &:focus
+		.sandwich__line
+			background-color: $accent
 
-    &.is
-        &-active
-            .sandwich__line
-                &--top
-                    top: 10px
-                    transform: rotate(45deg)
+	&__line
+		background-color: $main-font-color
+		display: block
+		height: 1px
+		left: 0
+		position: absolute
+		transition: all linear .4s
+		width: 100%
 
-                &--middle
-                    opacity: 0
+		&--top
+			top: 0
 
-                &--bottom
-                    top: 10px
-                    transform: rotate(-45deg)
+		&--middle
+			top: 9px
 
-    &__line
-        background-color: $main-font-color
-        display: block
-        height: 1px
-        left: 0
-        position: absolute
-        transition: all linear .4s
-        width: 100%
+		&--bottom
+			top: 18px
 
-        &--top
-            top: 0
+	&.is-active .sandwich__line
+		&--top
+			top: 10px
+			transform: rotate(45deg)
 
-        &--middle
-            top: 9px
+		&--middle
+			opacity: 0
 
-        &--bottom
-            top: 18px
+		&--bottom
+			top: 10px
+			transform: rotate(-45deg)
+
+

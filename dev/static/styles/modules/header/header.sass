@@ -45,6 +45,9 @@
 				color: $accent
 
 		&__city
+			display: flex
+			+sm-block
+				display: none
 			a
 				&:hover, &:focus
 					color: $main-font-color
@@ -55,6 +58,12 @@
 		&__cities
 			a
 				color: $accent
+
+
+		&__phone
+			display: block
+			+sm-block
+				display: none
 
 .header--blue
 	&.header
@@ -154,22 +163,18 @@
 		display: flex
 		align-items: center
 		flex: 1
-
-		& > *
-			margin-right: 20px
-			+xs-block()
-				margin-right: 20px
+		gap: 45px
 
 		+md-block()
-			justify-content: space-between
+			gap: 20px
+	&__logo
+		display: inline-flex
+		align-items: center
 
 	&__top-right
 		display: flex
 		align-items: center
-		margin-right: -30px
-
-		& > *
-			margin-right: 30px
+		gap: 30px
 
 	&__logo
 		&-icon
@@ -218,7 +223,7 @@
 
 	&__call-mob
 		display: none
-		+xs-block
+		+sm-block
 			display: flex
 
 	&__call-mob-icon
@@ -238,8 +243,7 @@
 			display: none
 
 	&__city
-		display: flex
-		margin-right: 40px
+		display: none
 		position: relative
 		color: $accent
 
@@ -274,6 +278,10 @@
 		opacity: 0
 		transform: translateY(10px)
 		transition: all .3s ease
+
+
+	&__phone
+		display: none
 
 	&__subcities
 		padding: 30px 25px !important
