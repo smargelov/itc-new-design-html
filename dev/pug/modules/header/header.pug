@@ -11,11 +11,14 @@ header(class= isBlue ? 'header--blue' : '').b-header
         ._top-line
             ._top-left
                 a(href='/')._logo
-                    +icon('logo', 'header__logo-icon')
+                    +icon('itc-logo', null, 43, 16)._logo-icon
                 nav._menu
                     ul._menu-list
                         each item in headerMenu
-                            li._menu-item(data-mega=item.mega)
+                            li._menu-item(
+                                data-mega=item.mega
+                                class=item.mega ? 'header__menu-item--mega' : null
+                                )
                                 a._menu-link(href=!item.mega ? item.link : false, title=item.name)= item.name
 
             ._top-right
