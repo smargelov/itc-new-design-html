@@ -91,13 +91,10 @@ section.section
         h2.h2._title Мы продвигаем медицинские сайты в топ 3
         ._cards
             each card in cards
-                ._card
-                    span= card.title
-                    button.button(
-                        data-fancybox
-                        data-src='#' + card.id
-                    )._more
-                        +icon('question', null, 20)._question-icon
+                button(
+                    data-fancybox
+                    data-src='#' + card.id
+                )._card= card.title
                 ._description(
                     style='display: none'
                     id= card.id
@@ -118,3 +115,4 @@ section.section
                         ul._list
                             each item in card.list
                                 li._item= item
+                        button.b-btn.-flat.-blue._btn(data-target='price-type-' + card.id) Заказать консультацию
