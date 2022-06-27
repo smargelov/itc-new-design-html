@@ -25,7 +25,7 @@
     cursor: pointer
     +baseTransition()
 
-    &:hover, &:focus
+    &:hover, &:focus-visible
       background-color: $accent
       color: $white
       +baseTransition()
@@ -67,6 +67,7 @@
           right: 5px
 
   &__modal-content
+    cursor: auto
     max-width: 720px
     display: grid
     gap: 15px
@@ -120,3 +121,6 @@
       background-position: center center
       width: 32px
       height: 32px
+
+  &__btn
+    justify-self: center
